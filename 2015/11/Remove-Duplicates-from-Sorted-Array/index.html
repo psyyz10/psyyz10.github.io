@@ -5,16 +5,19 @@
   
   <title>Remove Duplicates from Sorted Array | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516public class RemoveDuplicate &amp;#123;    public int removeDuplicates(int[] A)&amp;#123;         if (A == null &amp;amp;&amp;amp; A.length == 0)            return 0;         int size = 0;">
+  <meta name="description" content="Problem:Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+Do not allocate extra space for another array, you must do this in place">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Remove Duplicates from Sorted Array">
 <meta property="og:url" content="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="12345678910111213141516public class RemoveDuplicate &amp;#123;    public int removeDuplicates(int[] A)&amp;#123;         if (A == null &amp;amp;&amp;amp; A.length == 0)            return 0;         int size = 0;">
-<meta property="og:updated_time" content="2015-11-10T09:16:19.000Z">
+<meta property="og:description" content="Problem:Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+Do not allocate extra space for another array, you must do this in place">
+<meta property="og:updated_time" content="2015-11-10T21:52:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Remove Duplicates from Sorted Array">
-<meta name="twitter:description" content="12345678910111213141516public class RemoveDuplicate &amp;#123;    public int removeDuplicates(int[] A)&amp;#123;         if (A == null &amp;amp;&amp;amp; A.length == 0)            return 0;         int size = 0;">
+<meta name="twitter:description" content="Problem:Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+Do not allocate extra space for another array, you must do this in place">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -90,12 +93,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveDuplicate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] A)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span> &amp;&amp; A.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[size] != A[i])&#123;</span><br><span class="line">                A[++size] = A[i];</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;   </span><br><span class="line">              </span><br><span class="line">        <span class="keyword">return</span> ++size;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Problem:">Problem:</h2><p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
+<p>Example<br>Given input array A = [1,1,2],</p>
+<p>Your function should return length = 2, and A is now [1,2].</p>
+<p>Tags Expand  </p>
+<p>Related Problems Expand </p>
+<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array/" target="_blank" rel="external">lintcode link</a></p>
+<h2 id="My_Solution:">My Solution:</h2><p>In this question, a variable named ‘last’ is used to record the index of last element in the result array.<br>Go through the array, if the current element nums[i] is not equal to the  last element of result array ‘nums[last]’,<br>add the current element to end of result array.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">    &gt; File Name: RemoveDuplicate2.java</span><br><span class="line">    &gt; Author: Yao Zhang                                                                                                                                                              </span><br><span class="line">    &gt; Mail: psyyz10@163.com</span><br><span class="line">    &gt; Created Time: Thu 29 Oct 15:26:17 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveDuplicate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> last = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[last] != nums[i])&#123;</span><br><span class="line">                nums[++last] = nums[i];</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;   </span><br><span class="line">              </span><br><span class="line">        <span class="keyword">return</span> ++last;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Time complexity is O(n), space complexity is O(1)</p>
+<h5 id="Related_Quetion:">Related Quetion:</h5><p><a href="">Remove Duplicates from Sorted Array II</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cigt5ytpp000bxnu51xh2nuoz" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cigtx56zp000bguu5im5t8t3c" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
