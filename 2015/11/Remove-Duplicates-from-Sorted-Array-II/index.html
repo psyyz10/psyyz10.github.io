@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Remove Duplicates from Sorted Array | YAO&#39;s BLOG</title>
+  <title>Remove Duplicates from Sorted Array II | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516public class RemoveDuplicate &amp;#123;    public int removeDuplicates(int[] A)&amp;#123;         if (A == null &amp;amp;&amp;amp; A.length == 0)            return 0;         int size = 0;">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930/*************************************************************************    &amp;gt; File Name: RemoveDuplicate2.java    &amp;gt; Author: Yao Zhang">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Remove Duplicates from Sorted Array">
-<meta property="og:url" content="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/index.html">
+<meta property="og:title" content="Remove Duplicates from Sorted Array II">
+<meta property="og:url" content="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="12345678910111213141516public class RemoveDuplicate &amp;#123;    public int removeDuplicates(int[] A)&amp;#123;         if (A == null &amp;amp;&amp;amp; A.length == 0)            return 0;         int size = 0;">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930/*************************************************************************    &amp;gt; File Name: RemoveDuplicate2.java    &amp;gt; Author: Yao Zhang">
 <meta property="og:updated_time" content="2015-11-10T09:16:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Remove Duplicates from Sorted Array">
-<meta name="twitter:description" content="12345678910111213141516public class RemoveDuplicate &amp;#123;    public int removeDuplicates(int[] A)&amp;#123;         if (A == null &amp;amp;&amp;amp; A.length == 0)            return 0;         int size = 0;">
+<meta name="twitter:title" content="Remove Duplicates from Sorted Array II">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930/*************************************************************************    &amp;gt; File Name: RemoveDuplicate2.java    &amp;gt; Author: Yao Zhang">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Remove-Duplicates-from-Sorted-Array" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Remove-Duplicates-from-Sorted-Array-II" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/11/Remove-Duplicates-from-Sorted-Array/" class="article-date">
-  <time datetime="2015-11-10T08:52:47.000Z" itemprop="datePublished">2015-11-10</time>
+    <a href="/2015/11/Remove-Duplicates-from-Sorted-Array-II/" class="article-date">
+  <time datetime="2015-11-10T09:09:39.000Z" itemprop="datePublished">2015-11-10</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Remove Duplicates from Sorted Array
+      Remove Duplicates from Sorted Array II
     </h1>
   
 
@@ -90,14 +90,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveDuplicate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] A)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span> &amp;&amp; A.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[size] != A[i])&#123;</span><br><span class="line">                A[++size] = A[i];</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;   </span><br><span class="line">              </span><br><span class="line">        <span class="keyword">return</span> ++size;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">    &gt; File Name: RemoveDuplicate2.java</span><br><span class="line">    &gt; Author: Yao Zhang                                                                                                                                                              </span><br><span class="line">    &gt; Mail:             </span><br><span class="line">    &gt; Created Time: Thu 29 Oct 15:26:17 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line">                        </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveDuplicate2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">RemoveDuplicate2</span><span class="params">(<span class="keyword">int</span>[] A)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span> || A.length != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;   </span><br><span class="line">        &#125;               </span><br><span class="line">                        </span><br><span class="line">        <span class="keyword">int</span> number = <span class="number">0</span>; </span><br><span class="line">        <span class="keyword">int</span> size = <span class="number">0</span>;   </span><br><span class="line">                        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++    )&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[size] == A[i])</span><br><span class="line">                number ++;</span><br><span class="line">            <span class="keyword">else</span>        </span><br><span class="line">                number = <span class="number">0</span>;</span><br><span class="line">                        </span><br><span class="line">            <span class="keyword">if</span> (number &lt; <span class="number">2</span>)&#123;</span><br><span class="line">                A[++size] = A[i];</span><br><span class="line">            &#125;           </span><br><span class="line">        &#125;               </span><br><span class="line">                        </span><br><span class="line">        <span class="keyword">return</span> ++size;       </span><br><span class="line">    &#125;                   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cigt5ytpp000bxnu51xh2nuoz" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="cigt5ytpt000dxnu55irvdqib" class="article-share-link">Share</a>
       
-        <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
@@ -108,19 +108,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/11/Remove-Duplicates-from-Sorted-Array-II/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/11/Search-in-Rotated-Sorted-Array/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Remove Duplicates from Sorted Array II
+          Search in Rotated Sorted Array
         
       </div>
     </a>
   
   
-    <a href="/2015/11/Deep-Learning-Overview/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/11/Remove-Duplicates-from-Sorted-Array/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Deep Learning Overview</div>
+      <div class="article-nav-title">Remove Duplicates from Sorted Array</div>
     </a>
   
 </nav>
@@ -226,7 +226,7 @@
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/';
+  var disqus_url = 'http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/';
   
   (function(){
     var dsq = document.createElement('script');
