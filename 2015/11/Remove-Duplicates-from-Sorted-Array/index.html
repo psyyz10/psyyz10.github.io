@@ -13,7 +13,7 @@ Do not allocate extra space for another array, you must do this in place">
 <meta property="og:site_name" content="YAO's BLOG">
 <meta property="og:description" content="Problem:Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 Do not allocate extra space for another array, you must do this in place">
-<meta property="og:updated_time" content="2015-11-10T21:52:54.000Z">
+<meta property="og:updated_time" content="2015-11-12T00:07:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Remove Duplicates from Sorted Array">
 <meta name="twitter:description" content="Problem:Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
@@ -103,12 +103,12 @@ Do not allocate extra space for another array, you must do this in place">
 <h2 id="My_Solution:">My Solution:</h2><p>In this question, a variable named ‘last’ is used to record the index of last element in the result array.<br>Go through the array, if the current element nums[i] is not equal to the  last element of result array ‘nums[last]’,<br>add the current element to end of result array.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">    &gt; File Name: RemoveDuplicate2.java</span><br><span class="line">    &gt; Author: Yao Zhang                                                                                                                                                              </span><br><span class="line">    &gt; Mail: psyyz10@163.com</span><br><span class="line">    &gt; Created Time: Thu 29 Oct 15:26:17 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveDuplicate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> last = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[last] != nums[i])&#123;</span><br><span class="line">                nums[++last] = nums[i];</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;   </span><br><span class="line">              </span><br><span class="line">        <span class="keyword">return</span> ++last;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Time complexity is O(n), space complexity is O(1)</p>
-<h5 id="Related_Quetion:">Related Quetion:</h5><p><a href="">Remove Duplicates from Sorted Array II</a></p>
+<h5 id="Related_Quetion:">Related Quetion:</h5><p><a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/">Remove Duplicates from Sorted Array II</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cigvdh9ra000dm2u5s9ucf4f6" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cigwnw9vf000hc2u5xekm446h" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -157,7 +157,7 @@ Do not allocate extra space for another array, you must do this in place">
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">5</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -166,7 +166,7 @@ Do not allocate extra space for another array, you must do this in place">
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Deep-Learning/" style="font-size: 10px;">Deep Learning</a> <a href="/tags/Leetcode-and-Lintcode/" style="font-size: 20px;">Leetcode and Lintcode</a>
+      <a href="/tags/Deep-Learning/" style="font-size: 15px;">Deep Learning</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Leetcode-and-Lintcode/" style="font-size: 20px;">Leetcode and Lintcode</a>
     </div>
   </div>
 
@@ -175,7 +175,7 @@ Do not allocate extra space for another array, you must do this in place">
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -187,23 +187,23 @@ Do not allocate extra space for another array, you must do this in place">
       <ul>
         
           <li>
-            <a href="/2015/11/Median-of-Two-Sorted-Arrays/">Median of Two Sorted Arrays</a>
+            <a href="/2015/11/hello-world/">Hexo</a>
           </li>
         
           <li>
-            <a href="/2015/11/Search-in-Rotated-Sorted-Array-II/">Search in Rotated Sorted Array II</a>
+            <a href="/2015/11/4Sum/">4Sum</a>
           </li>
         
           <li>
-            <a href="/2015/11/Search-in-Rotated-Sorted-Array/">Search in Rotated Sorted Array</a>
+            <a href="/2015/11/3Sum-Closest/">3Sum Closest</a>
           </li>
         
           <li>
-            <a href="/2015/11/Remove-Duplicates-from-Sorted-Array-II/">Remove Duplicates from Sorted Array II</a>
+            <a href="/2015/11/3Sum/">3Sum</a>
           </li>
         
           <li>
-            <a href="/2015/11/Remove-Duplicates-from-Sorted-Array/">Remove Duplicates from Sorted Array</a>
+            <a href="/2015/11/Two-Sum/">Two Sum</a>
           </li>
         
       </ul>
