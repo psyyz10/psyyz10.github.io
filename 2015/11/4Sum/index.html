@@ -13,7 +13,7 @@ Note:Elements i">
 <meta property="og:site_name" content="YAO's BLOG">
 <meta property="og:description" content="Problem:Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
 Note:Elements i">
-<meta property="og:updated_time" content="2015-11-12T20:01:46.000Z">
+<meta property="og:updated_time" content="2015-11-12T20:05:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4Sum">
 <meta name="twitter:description" content="Problem:Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
@@ -100,13 +100,14 @@ Note:Elements i">
 (-<span class="number">2</span>, -<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>)
 (-<span class="number">2</span>,  <span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>)
 </code></pre><p><a href="https://leetcode.com/problems/4sum/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/four-sum/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="My_solution:">My solution:</h2><p>The solution is nearly the same as <a href="">3sum</a></p>
+<h2 id="My_solution:">My solution:</h2><p>The solution is nearly the same as <a href="http://psyyz10.github.io/2015/11/3Sum/">3sum</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: FourSum.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Wed 11 Nov 23:48:43 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FourSum</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; fourSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;     </span><br><span class="line">        <span class="comment">//write your code here</span></span><br><span class="line">        ArrayList&lt;ArrayList&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (nums.length &lt; <span class="number">4</span>) <span class="keyword">return</span> result;</span><br><span class="line">        Arrays.sort(nums);                 </span><br><span class="line">         </span><br><span class="line">        <span class="comment">// note i &lt; nums.length - 3                            </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">3</span>; i ++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i != <span class="number">0</span> &amp;&amp; nums[i - <span class="number">1</span>] == nums[i])</span><br><span class="line">                <span class="keyword">continue</span>;                  </span><br><span class="line">            </span><br><span class="line">            <span class="comment">// note j start from i + 1, but not i                               </span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.length - <span class="number">2</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (j != i + <span class="number">1</span> &amp;&amp; nums[j - <span class="number">1</span>] == nums[j])</span><br><span class="line">                    <span class="keyword">continue</span>;              </span><br><span class="line">                                           </span><br><span class="line">                <span class="keyword">int</span> start = j + <span class="number">1</span>;         </span><br><span class="line">                <span class="keyword">int</span> end = nums.length - <span class="number">1</span>;</span><br><span class="line">                                           </span><br><span class="line">                <span class="keyword">while</span> (start &lt; end)&#123;       </span><br><span class="line">                    <span class="keyword">int</span> sum = nums[i] + nums[j] + nums[start] + nums[end];</span><br><span class="line">                    <span class="keyword">if</span> (sum == target)&#123;</span><br><span class="line">                       ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">                       list.add(nums[i]);</span><br><span class="line">                       list.add(nums[j]);</span><br><span class="line">                       list.add(nums[start]);</span><br><span class="line">                       list.add(nums[end]);</span><br><span class="line">                       result.add(list);                                                                                                                                             </span><br><span class="line">                       start++;            </span><br><span class="line">                       end--;              </span><br><span class="line">                                           </span><br><span class="line">                      <span class="comment">// note condition start &lt; end</span></span><br><span class="line">                       <span class="keyword">while</span> (nums[start - <span class="number">1</span>] == nums[start] &amp;&amp; start &lt; end) </span><br><span class="line">                           start++;        </span><br><span class="line">                                           </span><br><span class="line">                       <span class="keyword">while</span> (nums[end + <span class="number">1</span>] == nums[end] &amp;&amp; start &lt; end)</span><br><span class="line">                           end--;          </span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; target)&#123;</span><br><span class="line">                        start++;           </span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;               </span><br><span class="line">                        end--;             </span><br><span class="line">                    &#125;                      </span><br><span class="line">                &#125;                          </span><br><span class="line">            &#125;                              </span><br><span class="line">        &#125;                                  </span><br><span class="line">                                           </span><br><span class="line">        <span class="keyword">return</span> result; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>Related Problem:</em><br><a href="http://psyyz10.github.io/2015/11/Two-Sum/">Two Sum</a><br><a href="http://psyyz10.github.io/2015/11/3Sum/">3Sum</a><br><a href="http://psyyz10.github.io/2015/11/3Sum-Closest/">3Sum Closest</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="cigwnw9w3000rc2u5etpeygha" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="cigwv6c3y000vk9u5aaodvvpd" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/4Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -153,7 +154,7 @@ Note:Elements i">
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">9</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -171,7 +172,7 @@ Note:Elements i">
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">15</span></li></ul>
     </div>
   </div>
 
@@ -183,6 +184,14 @@ Note:Elements i">
       <ul>
         
           <li>
+            <a href="/2015/11/Next-Permutation/">Next Permutation</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/Remove-Element/">Remove Element</a>
+          </li>
+        
+          <li>
             <a href="/2015/11/hello-world/">Hexo</a>
           </li>
         
@@ -192,14 +201,6 @@ Note:Elements i">
         
           <li>
             <a href="/2015/11/3Sum-Closest/">3Sum Closest</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/3Sum/">3Sum</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/Two-Sum/">Two Sum</a>
           </li>
         
       </ul>

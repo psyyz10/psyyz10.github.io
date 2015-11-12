@@ -13,7 +13,7 @@ The function twoSum should return indices of the two numbers such that they add 
 <meta property="og:site_name" content="YAO's BLOG">
 <meta property="og:description" content="Problem:Given an array of integers, find two numbers such that they add up to a specific target number.
 The function twoSum should return indices of the two numbers such that they add up to the target">
-<meta property="og:updated_time" content="2015-11-12T02:13:54.000Z">
+<meta property="og:updated_time" content="2015-11-12T20:06:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Two Sum">
 <meta name="twitter:description" content="Problem:Given an array of integers, find two numbers such that they add up to a specific target number.
@@ -101,12 +101,12 @@ The function twoSum should return indices of the two numbers such that they add 
 <h2 id="Solution">Solution</h2><p>We can use a hash map to record the occurrence and index of integers.</p>
 <p>When we go through the list, the key (target - current integer) exits in the hash map, then we can return current index and index corresponding to (target - current integer). </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: TwoSum.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Wed 11 Nov 17:49:20 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TwoSum</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">                       </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(nums[i])) <span class="keyword">continue</span>;</span><br><span class="line">                       </span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(target - nums[i]))&#123;</span><br><span class="line">                <span class="keyword">int</span>[] result = &#123;map.get(target - nums[i]) + <span class="number">1</span>, i + <span class="number">1</span>&#125;; </span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;          </span><br><span class="line">                       </span><br><span class="line">            map.put(nums[i],i);</span><br><span class="line">        &#125;              </span><br><span class="line">                       </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><em>Related Problem:</em></p>
+<p><em>Related Problem:</em><br><a href="http://psyyz10.github.io/2015/11/3Sum/">3Sum</a><br><a href="http://psyyz10.github.io/2015/11/4Sum/">4Sum</a><br><a href="http://psyyz10.github.io/2015/11/3Sum-Closest/">3Sum Closest</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="cigwnw9uz0008c2u5hvvlmizi" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="cigwv6c2t0008k9u5btcbg1jz" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Two-Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -155,7 +155,7 @@ The function twoSum should return indices of the two numbers such that they add 
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">9</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -173,7 +173,7 @@ The function twoSum should return indices of the two numbers such that they add 
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">15</span></li></ul>
     </div>
   </div>
 
@@ -185,6 +185,14 @@ The function twoSum should return indices of the two numbers such that they add 
       <ul>
         
           <li>
+            <a href="/2015/11/Next-Permutation/">Next Permutation</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/Remove-Element/">Remove Element</a>
+          </li>
+        
+          <li>
             <a href="/2015/11/hello-world/">Hexo</a>
           </li>
         
@@ -194,14 +202,6 @@ The function twoSum should return indices of the two numbers such that they add 
         
           <li>
             <a href="/2015/11/3Sum-Closest/">3Sum Closest</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/3Sum/">3Sum</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/Two-Sum/">Two Sum</a>
           </li>
         
       </ul>

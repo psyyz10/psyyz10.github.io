@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/</loc>
+    <lastmod>2015-11-12T23:25:38.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://psyyz10.github.io/2015/11/Next-Permutation/</loc>
+    <lastmod>2015-11-12T22:09:31.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://psyyz10.github.io/2015/11/Remove-Element/</loc>
+    <lastmod>2015-11-12T20:48:24.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://psyyz10.github.io/2015/11/Two-Sum/</loc>
+    <lastmod>2015-11-12T20:06:57.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://psyyz10.github.io/2015/11/3Sum/</loc>
+    <lastmod>2015-11-12T20:06:23.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://psyyz10.github.io/2015/11/4Sum/</loc>
-    <lastmod>2015-11-12T20:01:46.000Z</lastmod>
+    <lastmod>2015-11-12T20:05:14.000Z</lastmod>
   </url>
   
   <url>
@@ -14,16 +39,6 @@
   <url>
     <loc>http://psyyz10.github.io/2015/11/3Sum-Closest/</loc>
     <lastmod>2015-11-12T07:39:47.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://psyyz10.github.io/2015/11/3Sum/</loc>
-    <lastmod>2015-11-12T07:01:51.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://psyyz10.github.io/2015/11/Two-Sum/</loc>
-    <lastmod>2015-11-12T02:13:54.000Z</lastmod>
   </url>
   
   <url>
@@ -49,11 +64,6 @@
   <url>
     <loc>http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/</loc>
     <lastmod>2015-11-12T00:05:51.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/</loc>
-    <lastmod>2015-11-11T22:21:49.000Z</lastmod>
   </url>
   
   <url>
