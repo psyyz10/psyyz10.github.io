@@ -47,7 +47,7 @@
     <link href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/"/>
     <id>http://psyyz10.github.io/2015/11/Trapping-Rain-Water/</id>
     <published>2015-11-13T18:39:18.000Z</published>
-    <updated>2015-11-13T21:35:15.000Z</updated>
+    <updated>2015-11-13T21:37:18.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
 <pre><code>For example, 
 Given [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>], <span class="keyword">return</span> <span class="number">6.</span>
@@ -59,8 +59,10 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
 <p>There are two solutions.</p>
 <ol>
 <li><ul>
-<li><em>
-</em></li>
+<li>Find the highest bar <ul>
+<li>Process the left and right of the highest bar respectively</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><ul>
