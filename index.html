@@ -69,6 +69,122 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Rotate-Image" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Rotate-Image/" class="article-date">
+  <time datetime="2015-11-13T20:38:28.000Z" itemprop="datePublished">2015-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Rotate-Image/">Rotate Image </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).</p>
+<p>Example<br>Given a matrix</p>
+<pre><code>[
+    [<span class="number">1</span>,<span class="number">2</span>],
+    [<span class="number">3</span>,<span class="number">4</span>]
+]
+</code></pre><p>rotate it by 90 degrees (clockwise), return</p>
+<pre><code>[
+    [<span class="number">3</span>,<span class="number">1</span>],
+    [<span class="number">4</span>,<span class="number">2</span>]
+]
+</code></pre><p><a href="https://leetcode.com/problems/rotate-image/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/rotate-image/" target="_blank" rel="external">Lintcode link</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="cigy6lqdf000l8au59e3infsa" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Rotate-Image/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Trapping-Rain-Water" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Trapping-Rain-Water/" class="article-date">
+  <time datetime="2015-11-13T18:39:18.000Z" itemprop="datePublished">2015-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Trapping-Rain-Water/">Trapping Rain Water</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
+<pre><code>For example, 
+Given [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>], <span class="keyword">return</span> <span class="number">6.</span>
+</code></pre><center><br>    <img src="http://psyyz10.github.io/img/trappingwater.png" style="width=50%"><br></center>
+
+<p>The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!</p>
+<p><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/trapping-rain-water/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="My_solution:">My solution:</h2><p>For each bar, find the highest bars of the left side and right side respectively.<br>The trapping water for the bar is min(leftMax,rightmax) - its height.</p>
+<p>There are two solutions.</p>
+<ol>
+<li><ul>
+<li><em>
+</em></li>
+</ul>
+</li>
+<li><ul>
+<li>Go through the bars from left to right, calculate the left highest bar for each bar <ul>
+<li>Go through the bars form right to left, calculate the left highest bar for each bar </li>
+<li>Calculate the min(leftMax,rightmax) - its height for each bar.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: TrappingWater.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 13 Nov 10:45:30 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrappingWater</span></span>&#123;</span><br><span class="line">    <span class="comment">// Solution 1</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> area = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxIndex = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Find the index of the highest bar</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; height.length; i ++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; height[maxIndex])</span><br><span class="line">                maxIndex = i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Process the left side of the highest bar</span></span><br><span class="line">        <span class="keyword">int</span> leftMax = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; maxIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; leftMax) </span><br><span class="line">                leftMax = height[i]; </span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                area += leftMax - height[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Process the rigtht side of the highest bar</span></span><br><span class="line">        <span class="keyword">int</span> rightMax = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = height.length - <span class="number">1</span>; i &gt; maxIndex; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; rightMax) </span><br><span class="line">                rightMax = height[i]; </span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                area += rightMax - height[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> area;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Solution 2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap2</span><span class="params">(<span class="keyword">int</span>[] height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> area = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (height.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> area;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// find the left highest bar value for each bar</span></span><br><span class="line">        <span class="keyword">int</span>[] leftMax = <span class="keyword">new</span> <span class="keyword">int</span>[height.length];</span><br><span class="line">        leftMax[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; height.length; i++)&#123;</span><br><span class="line">           leftMax[i] = Math.max(height[i-<span class="number">1</span>], leftMax[i-<span class="number">1</span>]) ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// for each bar, calculate the trapping water by </span></span><br><span class="line">        <span class="comment">// calculating min(leftMax,rightmax) - height</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = height.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">int</span> diff = Math.min(max,leftMax[i]) - height[i];</span><br><span class="line">            area += diff &gt; <span class="number">0</span> ? diff : <span class="number">0</span>;</span><br><span class="line">            max = Math.max(height[i], max);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> area;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="cigy6lqcz000c8au5shbjgumg" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Valid-Sudoku" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/Valid-Sudoku/" class="article-date">
@@ -103,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="cigxzxkcp0008v8u5evfisj8h" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="cigy6lqcu00088au5ut6ct9pc" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Valid-Sudoku/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -164,7 +280,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="cigxzxkdg000pv8u5wlj6eojm" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="cigy6lqdr000t8au5il2g1res" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Permutation-Sequence/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -215,7 +331,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="cigxzxkdj000rv8u5bnlkinm4" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="cigy6lqdu000v8au5edr1zq00" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Next-Permutation/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -259,7 +375,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="cigxzxkd5000jv8u54cl0fhq2" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="cigy6lqdi000n8au5l4izmfg2" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Element/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -308,7 +424,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/hello-world/" data-id="cigxzxkcl0005v8u5vpu3crtw" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/hello-world/" data-id="cigy6lqcq00058au577ookhxb" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -358,7 +474,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="cigxzxkdu000zv8u56krdpr36" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="cigy6lqem00138au5voipwoaq" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/4Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -404,7 +520,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="cigxzxkbt0000v8u5pxxs1ci0" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="cigy6lqbt00008au58214uu3q" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum-Closest/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -453,114 +569,9 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="cigxzxkdx0010v8u5hiv5o5xy" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="cigy6lqeo00148au5ouaijkyj" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Two-Sum/" class="article-date">
-  <time datetime="2015-11-12T01:12:59.000Z" itemprop="datePublished">2015-11-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Two-Sum/">Two Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
-<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
-<p>You may assume that each input would have exactly one solution.</p>
-<pre><code>Input: numbers={<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>}, target=<span class="number">9</span>
-Output: index1=<span class="number">1</span>, index2=<span class="number">2</span>
-</code></pre><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">Leetcode</a><br><a href="http://www.lintcode.com/en/problem/two-sum/" target="_blank" rel="external">Lintcode</a></p>
-<h2 id="Solution">Solution</h2><p>We can use a hash map to record the occurrence and index of integers.</p>
-<p>When we go through the list, the key (target - current integer) exits in the hash map, then we can return current index and index corresponding to (target - current integer). </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: TwoSum.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Wed 11 Nov 17:49:20 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TwoSum</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">                       </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(nums[i])) <span class="keyword">continue</span>;</span><br><span class="line">                       </span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(target - nums[i]))&#123;</span><br><span class="line">                <span class="keyword">int</span>[] result = &#123;map.get(target - nums[i]) + <span class="number">1</span>, i + <span class="number">1</span>&#125;; </span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;          </span><br><span class="line">                       </span><br><span class="line">            map.put(nums[i],i);</span><br><span class="line">        &#125;              </span><br><span class="line">                       </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><em>Related Problem:</em><br><a href="http://psyyz10.github.io/2015/11/3Sum/">3Sum</a><br><a href="http://psyyz10.github.io/2015/11/4Sum/">4Sum</a><br><a href="http://psyyz10.github.io/2015/11/3Sum-Closest/">3Sum Closest</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="cigxzxkcr000av8u5w1pad5np" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Two-Sum/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Longest-Consecutive-Sequence" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Longest-Consecutive-Sequence/" class="article-date">
-  <time datetime="2015-11-12T00:09:38.000Z" itemprop="datePublished">2015-11-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Longest-Consecutive-Sequence/">Longest Consecutive Sequence</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
-<pre><code>Example
-Given [<span class="number">100</span>, <span class="number">4</span>, <span class="number">200</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],
-The longest consecutive elements sequence is [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]. Return its length: <span class="number">4.</span>
-</code></pre><p>Clarification<br>Your algorithm should run in O(n) complexity.</p>
-<p><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/longest-consecutive-sequence/" target="_blank" rel="external">lintcode link</a></p>
-<h2 id="My_Solution:">My Solution:</h2><p>The most intuitive solution is to sort the array and then find the longest sequence.<br>The space cost is O(1), time cost is O(Nlog N).</p>
-<p>To save time cost, we can use a hash map to record two information:</p>
-<ol>
-<li>whether the number is in the list</li>
-<li>whether the number has been visited (to avoid duplicate search)</li>
-</ol>
-<p>So we need a HashMap<integer, boolean=""> to record the information.</integer,></p>
-<p>For each number in the list, if it has not been visited, we expend it to the smaller and larger number respectively.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: LongestConsecutiveSequence.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Wed 11 Nov 16:12:07 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongestConsecutiveSequence</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestConsecutive</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Boolean&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Boolean&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) map.put(num,<span class="keyword">false</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.get(num)) <span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span> length = <span class="number">1</span>;</span><br><span class="line">            map.put(num,<span class="keyword">true</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> left = num - <span class="number">1</span>; map.containsKey(left); left--)&#123;</span><br><span class="line">                map.put(left,<span class="keyword">true</span>);</span><br><span class="line">                length ++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> right = num + <span class="number">1</span>; map.containsKey(right); right++)&#123;</span><br><span class="line">                map.put(right,<span class="keyword">true</span>);</span><br><span class="line">                length++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            longest = Math.max(length,longest);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> longest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/" data-id="cigxzxkdp000vv8u5nipode9q" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
@@ -587,7 +598,7 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">13</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">15</span></li></ul>
     </div>
   </div>
 
@@ -605,7 +616,7 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">17</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">19</span></li></ul>
     </div>
   </div>
 
@@ -617,6 +628,14 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
       <ul>
         
           <li>
+            <a href="/2015/11/Rotate-Image/">Rotate Image </a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/Trapping-Rain-Water/">Trapping Rain Water</a>
+          </li>
+        
+          <li>
             <a href="/2015/11/Valid-Sudoku/">Valid Sudoku</a>
           </li>
         
@@ -626,14 +645,6 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
         
           <li>
             <a href="/2015/11/Next-Permutation/">Next Permutation</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/Remove-Element/">Remove Element</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/hello-world/">Hexo</a>
           </li>
         
       </ul>
