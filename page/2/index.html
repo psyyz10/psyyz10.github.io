@@ -69,6 +69,118 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Median-of-Two-Sorted-Arrays" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Median-of-Two-Sorted-Arrays/" class="article-date">
+  <time datetime="2015-11-11T05:38:25.000Z" itemprop="datePublished">2015-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Median-of-Two-Sorted-Arrays/">Median of Two Sorted Arrays</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
+<pre><code>Example
+Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>] and B=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], the median is <span class="number">3.5</span>.
+
+Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] and B=[<span class="number">4</span>,<span class="number">5</span>], the median is <span class="number">3.</span>
+</code></pre><p>Challenge<br>The overall run time complexity should be O(log (m+n)).<br><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/median-of-two-sorted-arrays/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="My_Solution:">My Solution:</h2><p>This is a classic problem, which can be viewed as another form: “Given two sorted array, how to find the k-th largest number among both arrays?”.</p>
+<p>The k in this problem is “total length / 2” for odd number. If the total length is even, we need to find  “total length / 2” and “total length / 2 + 1” number, and then get the average value.</p>
+<p>The most intuitive solution is to merge them and find the k-th number, which takes O(log (M + N));</p>
+<p>There is a better solution. Assume both amount of elements in A and B are greater than k / 2. If we compare the (k / 2)-th value in A (A[k / 2 - 1]) and the (k / 2)-th value in B (B[k / 2 - 1]), we have three possilbe cases:</p>
+<ul>
+<li>If A[k / 2 - 1] == B[k / 2 - 1], we can say the value is the k-th value we want.</li>
+<li>If A[k / 2 - 1] &lt; B[k / 2 - 1], it means integer from A[0] to A[k / 2 - 1] should be smaller than the k-th value, so we can drop these values.</li>
+<li>If A[k / 2 - 1] &gt; B[k / 2 - 1], it means integer from B[0] to B[k / 2 - 1] should be smaller than the k-th value, so we can drop these values.</li>
+</ul>
+<p>To drop the values in A and B, we can use two pointers to point to the start index of A and B respectively.<br>We can build a recursion whose stop points are:</p>
+<ul>
+<li>If the start index pointer of A or B exceed the length, return B[BStart + k - 1] or A[AStart + k - 1];</li>
+<li>If k == 1, return the minimum of A[AStart] or B[BStart]</li>
+<li>If A[AStart + k / 2 -1] == B[BStart + k / 2 -1], return the value.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: MedianOfTwoSortedArray.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Tue 10 Nov 22:01:06 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MedianOfTwoSortedArray</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = A.length + B.length;</span><br><span class="line">        <span class="keyword">if</span> (len % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span> + <span class="number">1</span>); </span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> (findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span>) + findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span> + <span class="number">1</span>)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">findKth</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> AStart,</span><br><span class="line">                                <span class="keyword">int</span>[] B, <span class="keyword">int</span> BStart, <span class="keyword">int</span> k)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (AStart &gt;= A.length)  </span><br><span class="line">            <span class="keyword">return</span> B[BStart + k - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (BStart &gt;= B.length)  </span><br><span class="line">            <span class="keyword">return</span> A[AStart + k - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> Math.min(A[AStart],B[BStart]);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> va = AStart + k / <span class="number">2</span> &lt;= A.length ? </span><br><span class="line">            A[AStart + k / <span class="number">2</span> -<span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> vb = BStart + k / <span class="number">2</span> &lt;= B.length ? </span><br><span class="line">            B[BStart + k / <span class="number">2</span> -<span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (va &lt; vb) </span><br><span class="line">            <span class="keyword">return</span> findKth(A, AStart + k / <span class="number">2</span>, B, BStart, k - k / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (va &gt; vb) </span><br><span class="line">            <span class="keyword">return</span> findKth(A, AStart, B, BStart + k / <span class="number">2</span>, k - k / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> va; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/" data-id="cigx01mi9000tquu5mazr94ah" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Search-in-Rotated-Sorted-Array-II" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Search-in-Rotated-Sorted-Array-II/" class="article-date">
+  <time datetime="2015-11-11T02:07:31.000Z" itemprop="datePublished">2015-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Search-in-Rotated-Sorted-Array-II/">Search in Rotated Sorted Array II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>Follow up for “Search in Rotated Sorted Array”:<br>What if duplicates are allowed?</p>
+<p>Would this affect the run-time complexity? How and why?</p>
+<p>Write a function to determine if a given target is in the array.</p>
+<p><a href="https://leetcode.com/problems/search-in-rotated-sorted-array-ii/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/search-in-rotated-sorted-array-ii/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="My_Solution:">My Solution:</h2><p>Compared to the “Search in Rotated Sorted Array”, the elements can be duplicate, so we can not know the start point is on the left part or right part, even if we have “nums[left] &lt;= nums[mid]”.</p>
+<p>We can only judge when “nums[left] &lt; nums[mid]”. So if “nums[left] == nums[mid]”, we can add left lie “left++” until “nums[left]” and “nums[right]” are different. Code implemented in ‘search’ method.</p>
+<p>The time complexity is O(n).</p>
+<p>Solution 1:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: SearchInRotatedArrayII.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Tue 10 Nov 18:16:29 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SearchInRotatedArrayII</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (left != right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt; nums[left])&#123;</span><br><span class="line">                <span class="keyword">if</span> (target &gt;= nums[left] &amp;&amp; target &lt; nums[mid])    </span><br><span class="line">                    right = mid - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                    left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; nums[left]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (target &gt; nums[mid] &amp;&amp; target &lt;= nums[right])</span><br><span class="line">                    left = mid + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                    right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            	left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[left] == target) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;                    </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Solution 1 is better to return an index. If we just need to return boolean, a brute force method is ok, like Solution 2.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">search2</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">   	<span class="keyword">for</span> (<span class="keyword">int</span> n : nums)&#123;</span><br><span class="line">   		<span class="keyword">if</span> (n == target) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">   	&#125;</span><br><span class="line">   	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p><em>Related Problem:</em><br><a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/">Search in Rotated Sorted Array</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/" data-id="cigx01mgj000equu5l2ub6fvi" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Search-in-Rotated-Sorted-Array" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/Search-in-Rotated-Sorted-Array/" class="article-date">
@@ -113,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="cigwv6c2w000ak9u5cpqx84mw" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="cigx01mgb000cquu560usvhbi" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -160,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="cigwv6c3i000lk9u5hdrmlmbz" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="cigx01mhd000nquu5fbu46ur0" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -211,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cigwv6c3d000jk9u5w6voh8i2" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cigx01mh7000lquu5rvx0b867" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -257,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="cigwv6c3v000tk9u5qgzx9u5y" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="cigx01mik000xquu51qxrj5vj" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -336,7 +448,7 @@ img.math {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="cigwv6c35000ek9u5nc65jrpw" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="cigx01mgr000gquu5m79kftu6" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/SDA/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -365,7 +477,7 @@ img.math {
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">11</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -383,7 +495,7 @@ img.math {
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">15</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">17</span></li></ul>
     </div>
   </div>
 
@@ -395,6 +507,14 @@ img.math {
       <ul>
         
           <li>
+            <a href="/2015/11/Valid-Sudoku/">Valid Sudoku</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/Permutation-Sequence/">Permutation Sequence</a>
+          </li>
+        
+          <li>
             <a href="/2015/11/Next-Permutation/">Next Permutation</a>
           </li>
         
@@ -404,14 +524,6 @@ img.math {
         
           <li>
             <a href="/2015/11/hello-world/">Hexo</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/4Sum/">4Sum</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/3Sum-Closest/">3Sum Closest</a>
           </li>
         
       </ul>
