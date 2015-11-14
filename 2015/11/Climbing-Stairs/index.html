@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Remove Element | YAO&#39;s BLOG</title>
+  <title>Climbing Stairs | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Problem:Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.">
+  <meta name="description" content="Problem:You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Solution:The idea behind t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Remove Element">
-<meta property="og:url" content="http://psyyz10.github.io/2015/11/Remove-Element/index.html">
+<meta property="og:title" content="Climbing Stairs">
+<meta property="og:url" content="http://psyyz10.github.io/2015/11/Climbing-Stairs/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="Problem:Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.">
-<meta property="og:updated_time" content="2015-11-12T20:48:24.000Z">
+<meta property="og:description" content="Problem:You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Solution:The idea behind t">
+<meta property="og:updated_time" content="2015-11-14T01:16:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Remove Element">
-<meta name="twitter:description" content="Problem:Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.">
+<meta name="twitter:title" content="Climbing Stairs">
+<meta name="twitter:description" content="Problem:You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Solution:The idea behind t">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -71,10 +74,10 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Remove-Element" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Climbing-Stairs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/11/Remove-Element/" class="article-date">
-  <time datetime="2015-11-12T20:09:45.000Z" itemprop="datePublished">2015-11-12</time>
+    <a href="/2015/11/Climbing-Stairs/" class="article-date">
+  <time datetime="2015-11-14T00:09:12.000Z" itemprop="datePublished">2015-11-13</time>
 </a>
     
   </div>
@@ -85,7 +88,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
         
   
     <h1 class="article-title" itemprop="name">
-      Remove Element
+      Climbing Stairs
     </h1>
   
 
@@ -93,17 +96,61 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Problem:">Problem:</h2><p>Given an array and a value, remove all instances of that value in place and return the new length.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
-<p>Subscribe to see which companies asked this question<br><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/remove-element/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="Solution:">Solution:</h2><p>Use a ponter to point to the end index of the array. Go through the array, if the current element equals to the target value, swap the current value with the value at the end index, and then move the end pointer a unit towards the start direction. Then repeat.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: RemoveElement.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Thu 12 Nov 12:15:44 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveElement</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> endIndex = nums.length - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt;= endIndex)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[index] == val)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = nums[index];</span><br><span class="line">                nums[index] = nums[endIndex];</span><br><span class="line">                nums[endIndex] = temp;</span><br><span class="line">                endIndex--;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                index++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> endIndex + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Problem:">Problem:</h2><p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<h2 id="Solution:">Solution:</h2><p>The idea behind this problem is the same as Fibonacci which is f(n) = f(n-1) + f(n-2).<br>There are two solutions making the time complexity as O(N).</p>
+<ol>
+<li>The first one is an iteration. Time complexity O(n), space complexity O(1).</li>
+<li>The second one is recurstive version. But the normal recurtion is very expensive, roughly O(2^n).<br> So we used dynamic programming by take a buffer stores the value has gone.<br> The time complexity is O(n), space complexity is O(n) too.</li>
+</ol>
+<p>There are two solutions.<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p>
+<pre><code>&gt; File Name: ClimbingStairs.java
+&gt; Author: Yao Zhang 
+&gt; Mail: psyyz10@<span class="number">163.</span>com 
+&gt; Created Time: Fri <span class="number">13</span> Nov <span class="number">16</span>:<span class="number">12</span>:<span class="number">24</span> <span class="number">2015</span>
+</code></pre><p> <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<p>public class ClimbingStairs{<br>    // Solution 1<br>    public int climbStairs(int n){<br>       if (n &lt;= 1)<br>           return n;</p>
+<pre><code>   <span class="keyword">int</span> prev = <span class="number">1</span>;
+   <span class="keyword">int</span> last = <span class="number">1</span>;
+   <span class="keyword">int</span> current = <span class="number">0</span>;
+   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++){
+       current = prev + last;
+       last = prev;
+       prev = current;
+   }
+
+   <span class="keyword">return</span> current;
+}
+
+<span class="comment">//Solution2</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span></span>{
+    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) 
+        <span class="keyword">return</span> <span class="number">0</span>;             
+
+    <span class="keyword">int</span>[] buffer = <span class="keyword">new</span> <span class="keyword">int</span>[n];
+
+    <span class="keyword">return</span> climbStairsHelper(n, buffer);
+}              
+<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairsHelper</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] buffer)</span></span>{
+    <span class="keyword">if</span> (n &lt; <span class="number">0</span>){
+        <span class="keyword">return</span> <span class="number">0</span>;
+    }<span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">0</span>){
+        <span class="keyword">return</span> <span class="number">1</span>;
+    } <span class="keyword">else</span> <span class="keyword">if</span> (buffer[n - <span class="number">1</span>] != <span class="number">0</span>){                                                                                  
+        <span class="keyword">return</span> buffer[n - <span class="number">1</span>];        
+    } <span class="keyword">else</span> {   
+        buffer[n - <span class="number">1</span>] = climbStairsHelper(n - <span class="number">1</span>, buffer) + climbStairsHelper(n - <span class="number">2</span>, buffer);
+        <span class="keyword">return</span> buffer[n - <span class="number">1</span>];     
+    }          
+}   
+</code></pre><p>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="cigyeu3z4000nldu53hmuuu58" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="cigyeu4040017ldu5ciwn1lsc" class="article-share-link">Share</a>
       
-        <a href="http://psyyz10.github.io/2015/11/Remove-Element/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://psyyz10.github.io/2015/11/Climbing-Stairs/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
@@ -114,19 +161,19 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
     
 <nav id="article-nav">
   
-    <a href="/2015/11/Next-Permutation/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/11/Gray-Code/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Next Permutation
+          Gray Code
         
       </div>
     </a>
   
   
-    <a href="/2015/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/11/Plus-One/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hexo</div>
+      <div class="article-nav-title">Plus One</div>
     </a>
   
 </nav>
@@ -232,7 +279,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2015/11/Remove-Element/';
+  var disqus_url = 'http://psyyz10.github.io/2015/11/Climbing-Stairs/';
   
   (function(){
     var dsq = document.createElement('script');

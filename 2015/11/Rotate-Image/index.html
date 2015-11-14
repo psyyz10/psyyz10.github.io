@@ -25,7 +25,7 @@ ExampleGiven a matrix
 ]
 rotate it by 90 degrees (clockwise), return
 [">
-<meta property="og:updated_time" content="2015-11-13T21:33:20.000Z">
+<meta property="og:updated_time" content="2015-11-13T22:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rotate Image ">
 <meta name="twitter:description" content="Problem:You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
@@ -123,11 +123,13 @@ rotate it by 90 degrees (clockwise), return
     [<span class="number">4</span>,<span class="number">2</span>]
 ]
 </code></pre><p><a href="https://leetcode.com/problems/rotate-image/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/rotate-image/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="Solution:">Solution:</h2><p>There are two solutions.<br>The idea of the first method is to divide the matrix into four smaller matrix, then move each sub-matrix to the rotated position<br>The idea of the second method is to rotate layer by layer, from the outmost layer to the inner most layer.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: RotatedImage.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 13 Nov 13:56:37 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RotatedImage</span></span>&#123;</span><br><span class="line">	<span class="comment">//Solution 1</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = matrix.length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length / <span class="number">2</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (length + <span class="number">1</span>) / <span class="number">2</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[length - <span class="number">1</span> - j][i];</span><br><span class="line">                matrix[length - <span class="number">1</span> - j][i] = matrix[length - <span class="number">1</span> - i][length - <span class="number">1</span> - j];</span><br><span class="line">                matrix[length - <span class="number">1</span> - i][length - <span class="number">1</span> - j] = matrix[j][length - <span class="number">1</span> - i];</span><br><span class="line">                matrix[j][length - <span class="number">1</span> - i] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Solution 2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = matrix.length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> layer = <span class="number">0</span>; layer &lt; length / <span class="number">2</span>; layer++)&#123;</span><br><span class="line">            <span class="keyword">int</span> last = length - <span class="number">1</span> - layer;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = layer; j &lt; last; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> offset = j - layer;</span><br><span class="line">                <span class="keyword">int</span> temp = matrix[layer][j];</span><br><span class="line">                matrix[layer][j] = matrix[last - offset][layer];</span><br><span class="line">                matrix[last - offset][layer] = matrix[last][last - offset];</span><br><span class="line">                matrix[last][last - offset] = matrix[j][last];</span><br><span class="line">                matrix[j][last] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="cigy6ttyt000l9uu570csw8y5" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="cigyeu3z1000lldu5l2ul9r5c" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Rotate-Image/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -139,6 +141,15 @@ rotate it by 90 degrees (clockwise), return
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/11/Plus-One/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Plus One
+        
+      </div>
+    </a>
   
   
     <a href="/2015/11/Trapping-Rain-Water/" id="article-nav-older" class="article-nav-link-wrap">
@@ -167,7 +178,7 @@ rotate it by 90 degrees (clockwise), return
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">15</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">18</span></li></ul>
     </div>
   </div>
 
@@ -185,7 +196,7 @@ rotate it by 90 degrees (clockwise), return
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">19</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">22</span></li></ul>
     </div>
   </div>
 
@@ -197,23 +208,23 @@ rotate it by 90 degrees (clockwise), return
       <ul>
         
           <li>
+            <a href="/2015/11/Gray-Code/">Gray Code</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/Climbing-Stairs/">Climbing Stairs</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/Plus-One/">Plus One</a>
+          </li>
+        
+          <li>
             <a href="/2015/11/Rotate-Image/">Rotate Image </a>
           </li>
         
           <li>
             <a href="/2015/11/Trapping-Rain-Water/">Trapping Rain Water</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/Valid-Sudoku/">Valid Sudoku</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/Permutation-Sequence/">Permutation Sequence</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/Next-Permutation/">Next Permutation</a>
           </li>
         
       </ul>
