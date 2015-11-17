@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Remove Element | YAO&#39;s BLOG</title>
+  <title>Remove Duplicates from Sorted List | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Problem:Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.">
+  <meta name="description" content="Problem:Given a sorted linked list, delete all duplicates such that each element appear only once.
+Example    Given 1-&amp;gt;1-&amp;gt;2, return 1-&amp;gt;2.    Given 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3, return 1-&amp;gt;2-&amp;g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Remove Element">
-<meta property="og:url" content="http://psyyz10.github.io/2015/11/Remove-Element/index.html">
+<meta property="og:title" content="Remove Duplicates from Sorted List">
+<meta property="og:url" content="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="Problem:Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.">
-<meta property="og:updated_time" content="2015-11-12T20:48:24.000Z">
+<meta property="og:description" content="Problem:Given a sorted linked list, delete all duplicates such that each element appear only once.
+Example    Given 1-&amp;gt;1-&amp;gt;2, return 1-&amp;gt;2.    Given 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3, return 1-&amp;gt;2-&amp;g">
+<meta property="og:updated_time" content="2015-11-17T21:30:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Remove Element">
-<meta name="twitter:description" content="Problem:Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.">
+<meta name="twitter:title" content="Remove Duplicates from Sorted List">
+<meta name="twitter:description" content="Problem:Given a sorted linked list, delete all duplicates such that each element appear only once.
+Example    Given 1-&amp;gt;1-&amp;gt;2, return 1-&amp;gt;2.    Given 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3, return 1-&amp;gt;2-&amp;g">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -71,12 +71,16 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Remove-Element" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Remove-Duplicates-from-Sorted-List" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/11/Remove-Element/" class="article-date">
-  <time datetime="2015-11-12T20:09:45.000Z" itemprop="datePublished">2015-11-12</time>
+    <a href="/2015/11/Remove-Duplicates-from-Sorted-List/" class="article-date">
+  <time datetime="2015-11-17T01:22:24.000Z" itemprop="datePublished">2015-11-16</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Leetcode-and-Lintcode/">Leetcode and Lintcode</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -85,7 +89,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
         
   
     <h1 class="article-title" itemprop="name">
-      Remove Element
+      Remove Duplicates from Sorted List
     </h1>
   
 
@@ -93,20 +97,19 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Problem:">Problem:</h2><p>Given an array and a value, remove all instances of that value in place and return the new length.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
-<p>Subscribe to see which companies asked this question<br><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/remove-element/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="Solution:">Solution:</h2><p>Use a ponter to point to the end index of the array. Go through the array, if the current element equals to the target value, swap the current value with the value at the end index, and then move the end pointer a unit towards the start direction. Then repeat.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: RemoveElement.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Thu 12 Nov 12:15:44 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveElement</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> endIndex = nums.length - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt;= endIndex)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[index] == val)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = nums[index];</span><br><span class="line">                nums[index] = nums[endIndex];</span><br><span class="line">                nums[endIndex] = temp;</span><br><span class="line">                endIndex--;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                index++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> endIndex + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h3 id="Problem:">Problem:</h3><p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
+<p>Example<br>    Given 1-&gt;1-&gt;2, return 1-&gt;2.<br>    Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
+<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list/#" target="_blank" rel="external">Lintcode link</a></p>
+<h3 id="Solution:">Solution:</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="cih3wa4up000x1hu5yx019n6m" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="cih3wa4ut000z1hu55mna9f8f" class="article-share-link">Share</a>
       
-        <a href="http://psyyz10.github.io/2015/11/Remove-Element/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="article-tag-list-count">28</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm-Linked-List/">Algorithm Linked List</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -114,19 +117,10 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
     
 <nav id="article-nav">
   
-    <a href="/2015/11/Next-Permutation/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Next Permutation
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/11/Partition-List/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hexo</div>
+      <div class="article-nav-title">Partition List</div>
     </a>
   
 </nav>
@@ -239,7 +233,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2015/11/Remove-Element/';
+  var disqus_url = 'http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/';
   
   (function(){
     var dsq = document.createElement('script');
