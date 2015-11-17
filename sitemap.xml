@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://psyyz10.github.io/2015/11/Two-Sum/</loc>
+    <lastmod>2015-11-17T23:14:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://psyyz10.github.io/2015/11/SDA/</loc>
+    <lastmod>2015-11-17T23:10:44.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/</loc>
-    <lastmod>2015-11-17T21:30:55.000Z</lastmod>
+    <lastmod>2015-11-17T21:33:03.000Z</lastmod>
   </url>
   
   <url>
@@ -97,11 +107,6 @@
   </url>
   
   <url>
-    <loc>http://psyyz10.github.io/2015/11/Two-Sum/</loc>
-    <lastmod>2015-11-12T23:29:51.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/</loc>
     <lastmod>2015-11-12T23:28:35.000Z</lastmod>
   </url>
@@ -159,11 +164,6 @@
   <url>
     <loc>http://psyyz10.github.io/2015/11/Deep-Learning-Overview/</loc>
     <lastmod>2015-11-10T06:21:45.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://psyyz10.github.io/2015/11/SDA/</loc>
-    <lastmod>2015-11-10T05:24:32.000Z</lastmod>
   </url>
   
   <url>

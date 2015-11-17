@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2015-11-17T21:30:55.000Z</updated>
+  <updated>2015-11-17T21:33:03.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/</id>
     <published>2015-11-17T01:22:24.000Z</published>
-    <updated>2015-11-17T21:30:55.000Z</updated>
+    <updated>2015-11-17T21:33:03.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Problem:">Problem:</h3><p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
 <p>Example<br>    Given 1-&gt;1-&gt;2, return 1-&gt;2.<br>    Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
 <p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list/#" target="_blank" rel="external">Lintcode link</a></p>
@@ -29,7 +29,7 @@
 <p>Example<]]>
     </summary>
     
-      <category term="Algorithm Linked List" scheme="http://psyyz10.github.io/tags/Algorithm-Linked-List/"/>
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -708,7 +708,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <link href="http://psyyz10.github.io/2015/11/Two-Sum/"/>
     <id>http://psyyz10.github.io/2015/11/Two-Sum/</id>
     <published>2015-11-12T01:12:59.000Z</published>
-    <updated>2015-11-12T23:29:51.000Z</updated>
+    <updated>2015-11-17T23:14:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
 <p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
 <p>You may assume that each input would have exactly one solution.</p>
@@ -725,7 +725,9 @@ Output: index1=<span class="number">1</span>, index2=<span class="number">2</spa
 <p>The]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -932,7 +934,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/SDA/"/>
     <id>http://psyyz10.github.io/2015/11/SDA/</id>
     <published>2015-11-09T19:36:06.000Z</published>
-    <updated>2015-11-10T05:24:32.000Z</updated>
+    <updated>2015-11-17T23:10:44.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Autoencoders">Autoencoders</h2><p>An autoencoder <a href="#Bengio09">[Bengio09]</a> is a network whose graphical structure is shown in Figure <a href="#F4_1">4.1</a>, which has the same dimension for both input and output. It takes an unlabeled training examples in set <img class="math" src="http://psyyz10.github.io/img/1.png"> where <img class="math" src="http://psyyz10.github.io/img/2.png"> is a single input and encodes it to the hidden layer <img class="math" src="http://psyyz10.github.io/img/3.png"> by linear combination with weight matrix <img class="math" style="height:18px" src="http://psyyz10.github.io/img/4.png"> and then through a non-linear activation function. It can be mathematically expressed as <img class="math" src="http://psyyz10.github.io/img/5.png">, where <img class="math" style="height:18px" src="http://psyyz10.github.io/img/6.png"> is the bias vector.</p>
 <center><br>    <img id="F4_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 4.1: An Autoencoder</p><br></center>
 
