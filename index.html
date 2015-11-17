@@ -69,6 +69,287 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Remove-Duplicates-from-Sorted-List" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Remove-Duplicates-from-Sorted-List/" class="article-date">
+  <time datetime="2015-11-17T01:22:24.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Remove-Duplicates-from-Sorted-List/">Remove Duplicates from Sorted List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Problem:">Problem:</h3><p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
+<p>Example<br>    Given 1-&gt;1-&gt;2, return 1-&gt;2.<br>    Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
+<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-list/#" target="_blank" rel="external">Lintcode link</a></p>
+<h3 id="Solution:">Solution:</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="cih2qcuzj000zfcu5htyw3u86" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Partition-List" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Partition-List/" class="article-date">
+  <time datetime="2015-11-17T00:51:59.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Partition-List/">Partition List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.</p>
+<p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
+<p><em>For example</em><br>    Given 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2 and x = 3,<br>    return 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5.</p>
+<p><a href="https://leetcode.com/problems/partition-list/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/partition-list/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="Solution:">Solution:</h2><p>It is an easy problem.<br>Just store the partition the linkedlist into to sub-linked list.<br>Finally, join them together.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: PartitionList.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Mon 16 Nov 16:55:48 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PartitionList</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">partition</span><span class="params">(ListNode head, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        ListNode current = head;</span><br><span class="line">        ListNode leftDummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        ListNode leftEnd = leftDummy;</span><br><span class="line">        ListNode rightDummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        ListNode rightEnd = rightDummy;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (current != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (current.val &lt; x)&#123;</span><br><span class="line">                leftEnd.next = current;</span><br><span class="line">                leftEnd = leftEnd.next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                rightEnd.next = current;</span><br><span class="line">                rightEnd = rightEnd.next;</span><br><span class="line">            &#125;</span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        leftEnd.next = rightDummy.next;</span><br><span class="line">        rightEnd.next = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> leftDummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Partition-List/" data-id="cih2qcuzz0019fcu5sh8d1jng" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Partition-List/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Reverse-Linked-List-II" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Reverse-Linked-List-II/" class="article-date">
+  <time datetime="2015-11-16T22:49:18.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Reverse-Linked-List-II/">Reverse Linked List II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>Reverse a linked list from position m to n.</p>
+<pre><code>*Example*
+Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>-&gt;<span class="literal">NULL</span>, m = <span class="number">2</span> and n = <span class="number">4</span>, <span class="keyword">return</span> <span class="number">1</span>-&gt;<span class="number">4</span>-&gt;<span class="number">3</span>-&gt;<span class="number">2</span>-&gt;<span class="number">5</span>-&gt;<span class="literal">NULL</span>.
+</code></pre><p>Note<br>Given m, n satisfy the following condition: 1 ≤ m ≤ n ≤ length of list.</p>
+<p>Challenge<br>Reverse it in-place and in one-pass</p>
+<p><a href="https://leetcode.com/problems/reverse-linked-list-ii/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/reverse-linked-list-ii/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="Solution:">Solution:</h2><p>This problem is complex which has many edge cases so that it is not easy to write a bug free program within a short time.<br>The idea of the solution is to go through the list, to the m, store the previous node before m, and start reversing from m to n.<br>Then link the non-reversed and reversed part together.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: ReverseLinkedListII.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Mon 16 Nov 14:48:56 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReverseLinkedListII</span></span>&#123;</span><br><span class="line">    <span class="comment">// Solution 1</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m&gt;=n) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode current = head;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        ListNode startNode = <span class="keyword">null</span>, newNode = <span class="keyword">null</span>, previousNode = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i == m - <span class="number">1</span>) previousNode = current;</span><br><span class="line">            <span class="keyword">if</span> (i == m)&#123;</span><br><span class="line">                 startNode = newNode =  <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i&gt;m)&#123;</span><br><span class="line">                ListNode temp = newNode;</span><br><span class="line">                newNode = <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">                newNode.next = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        startNode.next = current; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (previousNode == <span class="keyword">null</span>) head = newNode;</span><br><span class="line">        <span class="keyword">else</span> previousNode.next = newNode;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Solution 2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m&gt;=n) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode current = head;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        ListNode startNode = <span class="keyword">null</span>, newNode = <span class="keyword">null</span>, previousNode = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i == m - <span class="number">1</span>) previousNode = current;</span><br><span class="line">            <span class="keyword">if</span> (i == m)&#123;</span><br><span class="line">                 startNode = newNode =  <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i&gt;m)&#123;</span><br><span class="line">                ListNode temp = newNode;</span><br><span class="line">                newNode = <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">                newNode.next = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        startNode.next = current; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (previousNode == <span class="keyword">null</span>) head = newNode;</span><br><span class="line">        <span class="keyword">else</span> previousNode.next = newNode;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/" data-id="cih2qcuz3000vfcu5kyslu8hn" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Add-Two-Numbers-II" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Add-Two-Numbers-II/" class="article-date">
+  <time datetime="2015-11-16T22:22:56.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Add-Two-Numbers-II/">Add Two Numbers II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in forward order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.</p>
+<p><a href="http://www.lintcode.com/en/problem/add-two-numbers-ii/" target="_blank" rel="external">Lintcode link</a></p>
+<p><em>Example</em><br>    Given 6-&gt;1-&gt;7 + 2-&gt;9-&gt;5. That is, 617 + 295.</p>
+<pre><code>Return <span class="number">9</span>-&gt;<span class="number">1</span>-&gt;<span class="number">2.</span> That is, <span class="number">912.</span>
+</code></pre><h2 id="Solution:">Solution:</h2><p>Revese the given two linked list.<br>Then use the solution presented in the solution of “Add Two Numbers” to add then together.<br>Finally, reverse the result linked list back.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: AddTwoNumbersII.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Mon 16 Nov 14:27:38 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddTwoNumbersII</span></span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> l1: the first list</span><br><span class="line">     * <span class="doctag">@param</span> l2: the second list</span><br><span class="line">     * <span class="doctag">@return</span>: the sum list of l1 and l2 </span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addLists2</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        l1 = reverse(l1);</span><br><span class="line">        l2 = reverse(l2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> reverse(addLists1(l1,l2));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverse</span><span class="params">(ListNode l)</span></span>&#123;</span><br><span class="line">        ListNode head = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (l != <span class="keyword">null</span>)&#123;</span><br><span class="line">            ListNode temp = <span class="keyword">new</span> ListNode(l.val);</span><br><span class="line">            temp.next = head;</span><br><span class="line">            head = temp;</span><br><span class="line">            l = l.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addLists1</span><span class="params">(ListNode l1, ListNode l2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="keyword">null</span> &amp;&amp; l2 == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        ListNode head = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode current = head;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = carry;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (l1 != <span class="keyword">null</span>)&#123;</span><br><span class="line">                sum += l1.val;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (l2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">                sum += l2.val;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            current.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (carry != <span class="number">0</span>)&#123;</span><br><span class="line">            current.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/" data-id="cih2qcv0x001tfcu5go04996t" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Add-Two-Numbers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Add-Two-Numbers/" class="article-date">
+  <time datetime="2015-11-16T20:16:33.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Add-Two-Numbers/">Add Two Numbers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.</p>
+<p>Have you met this question in a real interview? Yes</p>
+<p><em>Example</em><br>    Given 7-&gt;1-&gt;6 + 5-&gt;9-&gt;2. That is, 617 + 295.</p>
+<pre><code>Return <span class="number">2</span>-&gt;<span class="number">1</span>-&gt;<span class="number">9.</span> That is <span class="number">912.</span>
+
+Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span class="number">5</span> and <span class="number">5</span>-&gt;<span class="number">9</span>-&gt;<span class="number">2</span>, <span class="keyword">return</span> <span class="number">8</span>-&gt;<span class="number">0</span>-&gt;<span class="number">8.</span>
+</code></pre><h2 id="Solution:">Solution:</h2><p>This is an easay problem. Use a carry varible to store the carray and go through the two list from right to left doing addtion.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: AddTwoNumbers.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Mon 16 Nov 12:07:30 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddTwoNumbers</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="keyword">null</span> &amp;&amp; l2 == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        ListNode head = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode current = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = carry;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (l1 != <span class="keyword">null</span>)&#123;</span><br><span class="line">                sum += l1.val;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            &#125;            </span><br><span class="line">            <span class="keyword">if</span> (l2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">                sum += l2.val;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">                </span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            current.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (carry != <span class="number">0</span>)&#123;</span><br><span class="line">            current.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers/" data-id="cih2qcv0u001rfcu5zwt5mbmx" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Single-Number-III" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/Single-Number-III/" class="article-date">
+  <time datetime="2015-11-16T19:05:08.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/Single-Number-III/">Single Number III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Problem:">Problem:</h3><p>Given 2*n + 2 numbers, every numbers occurs twice except two, find them.</p>
+<p>Have you met this question in a real interview? Yes</p>
+<pre><code>Example
+Given [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">3</span>] <span class="keyword">return</span> <span class="number">1</span> and <span class="number">5</span>
+</code></pre><p><em>Note</em>:</p>
+<ol>
+<li>The order of the result is not important. So in the above example, [5, 1] is also correct.</li>
+<li>Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?</li>
+</ol>
+<p>Challenge<br>O(n) time, O(1) extra space.</p>
+<p><a href="https://leetcode.com/problems/single-number-iii/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/single-number-iii/" target="_blank" rel="external">Lintcode link</a></p>
+<h3 id="Solution:">Solution:</h3><p>This problem is also about bit operation.<br>First we xor all the numbers in the array.<br>Then we can get the last digits which equals 1.<br>The bit represent the last different bit of the two exceptional numbers.<br>Next, we use the bit to separate the numbers in the array into two group, and use xor to link the numbers in each group.<br>After the iteration stop, each number left in each group should be the two results.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: SingleNumberIII.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Mon 16 Nov 11:04:57 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleNumberIII</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] singleNumber(<span class="keyword">int</span>[] nums)&#123;</span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            temp ^= nums[i];</span><br><span class="line">        &#125;        </span><br><span class="line">                 </span><br><span class="line">        <span class="keyword">int</span> lastBit = temp - (temp &amp; (temp - <span class="number">1</span>));</span><br><span class="line">                 </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> ((nums[i] &amp; lastBit) == <span class="number">0</span>)&#123;</span><br><span class="line">               result[<span class="number">0</span>] ^= nums[i] ; </span><br><span class="line">            &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">               result[<span class="number">1</span>] ^= nums[i] ; </span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;        </span><br><span class="line">                 </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-III/" data-id="cih2qcuya000gfcu56e9a6v8c" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2015/11/Single-Number-III/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Single-Number-II" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/Single-Number-II/" class="article-date">
@@ -92,16 +373,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Problems:">Problems:</h2><p>Given 3*n + 1 numbers, every numbers occurs triple times except one, find it.</p>
-<p>Have you met this question in a real interview? Yes</p>
 <pre><code>Example
 Given [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>] <span class="keyword">return</span> <span class="number">4</span>
 </code></pre><p>Challenge<br>One-pass, constant extra space.</p>
 <p><a href="https://leetcode.com/problems/single-number-ii/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/single-number-ii/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="Solution:">Solution:</h2><p>This problem examines the ability of applying bit operation.<br>First, we create an integer array with size of 32, each int represent a bit of an integer.<br>Then for each bit position of an integer, we go through the input numbers, and accululate the value of the correpsonding bit.<br>As we know, the sum of each bit shold be dividable by 3 except one number.<br>So we mod 3 for each bit, then the left number is the result.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">    &gt; File Name: SingleNumberII.java</span><br><span class="line">    &gt; Author: Yao Zhang   </span><br><span class="line">    &gt; Mail: psyyz10@163.com </span><br><span class="line">    &gt; Created Time: Sun 15 Nov 23:40:03 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line">                             </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleNumberII</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;   </span><br><span class="line">        <span class="keyword">int</span>[] bits = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">32</span>];</span><br><span class="line">                             </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bits.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">                bits[i] += (nums[j] &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">                bits[i] %= <span class="number">3</span>;</span><br><span class="line">            &#125;                </span><br><span class="line">                             </span><br><span class="line">            result |= bits[i] &lt;&lt; i;                                                                                                                                                  </span><br><span class="line">        &#125;                    </span><br><span class="line">                             </span><br><span class="line">        <span class="keyword">return</span> result;       </span><br><span class="line">    &#125;                        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="cih1ncliz000gmwu5qi30dxar" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="cih2qcuyf000ifcu5uzjmgibs" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -147,7 +429,7 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="cih1ncliw000emwu5t7zl4hzs" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="cih2qcuy8000efcu5te1eiavw" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -203,7 +485,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="cih1nclkz001hmwu5akxtpoob" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="cih2qcv0r001pfcu51wh8lnqj" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Candy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -251,7 +533,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="cih1nclkp001bmwu5o21a8z1o" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="cih2qcv0f001jfcu55oxu99wj" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Gas-Station/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -265,403 +547,9 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 
 
   
-    <article id="post-Set-Matrix-Zeroes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Set-Matrix-Zeroes/" class="article-date">
-  <time datetime="2015-11-16T00:08:38.000Z" itemprop="datePublished">2015-11-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Set-Matrix-Zeroes/">Set Matrix Zeroes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.</p>
-<p>Have you met this question in a real interview? Yes<br>    Example<br>    Given a matrix</p>
-<pre><code>[
-  [<span class="number">1</span>,<span class="number">2</span>],
-  [<span class="number">0</span>,<span class="number">3</span>]
-],
-<span class="keyword">return</span> [ [<span class="number">0</span>,<span class="number">2</span>], [<span class="number">0</span>,<span class="number">0</span>] ]
-</code></pre><p>Challenge<br>Did you use extra space? A straight forward solution using O(mn) space is probably a bad idea. A simple improvement uses O(m + n) space, but still not the best solution. Could you devise a constant space solution?</p>
-<h2 id="Solution:">Solution:</h2><p>The first method used two boolean arrays to store the columns or rows should be set to zero.<br>To make it use constant space, the second method use the first row and column to store the information that rows and columns should be set to zero.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: SetMatrixZeros.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Sun 15 Nov 16:11:35 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetMatrixZeros</span></span>&#123;</span><br><span class="line">    <span class="comment">// Solution 1, time complexity O(m * n), space complexity O(m + n)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rowLength = matrix.length;</span><br><span class="line">        <span class="keyword">int</span> colLength = matrix[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span>[] zeroRows = <span class="keyword">new</span> <span class="keyword">boolean</span>[rowLength];</span><br><span class="line">        <span class="keyword">boolean</span>[] zeroCols = <span class="keyword">new</span> <span class="keyword">boolean</span>[colLength];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; rowLength; row++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; colLength; col++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[row][col] == <span class="number">0</span>)&#123;</span><br><span class="line">                    zeroRows[row] = <span class="keyword">true</span>;</span><br><span class="line">                    zeroCols[col] = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; zeroRows.length; row++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (zeroRows[row])&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col&lt; colLength; col++)</span><br><span class="line">                    matrix[row][col] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; zeroCols.length; col++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (zeroCols[col])&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; rowLength; row++)</span><br><span class="line">                    matrix[row][col] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Solution 2, time complexity O(m * n), space complexity O(1)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rowLength = matrix.length;</span><br><span class="line">        <span class="keyword">int</span> colLength = matrix[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span> firstRowZero = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">boolean</span> firstColZero = <span class="keyword">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Check whether the first row contains zero</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; colLength; col ++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[<span class="number">0</span>][col] == <span class="number">0</span>)&#123;</span><br><span class="line">                firstRowZero = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Check whether the first column contains zero</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; rowLength; row++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[row][<span class="number">0</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">                firstColZero = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// set the element in the first row or column to </span></span><br><span class="line">        <span class="comment">//  be zero if the corresponding column or row contains zero</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">1</span>; row &lt; rowLength; row++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">1</span>; col &lt; colLength; col ++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[row][col] == <span class="number">0</span>)&#123;</span><br><span class="line">                    matrix[<span class="number">0</span>][col] = <span class="number">0</span>;</span><br><span class="line">                    matrix[row][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Set corresponding rows to be zeors;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">1</span>; row &lt; rowLength; row++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[row][<span class="number">0</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">1</span>; col &lt; colLength; col ++)&#123;</span><br><span class="line">                    matrix[row][col] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Set corresponding cols to be zeros</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">1</span>; col &lt; colLength; col++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[<span class="number">0</span>][col] == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">1</span>; row &lt; rowLength; row ++)&#123;</span><br><span class="line">                    matrix[row][col] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Process the first row</span></span><br><span class="line">        <span class="keyword">if</span> (firstRowZero)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; colLength; col ++)&#123;</span><br><span class="line">                matrix[<span class="number">0</span>][col] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Process the first column</span></span><br><span class="line">        <span class="keyword">if</span> (firstColZero)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; rowLength; row++)&#123;</span><br><span class="line">                matrix[row][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/" data-id="cih1nclj2000imwu5bh8a0sbu" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Gray-Code" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Gray-Code/" class="article-date">
-  <time datetime="2015-11-14T01:21:13.000Z" itemprop="datePublished">2015-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Gray-Code/">Gray Code</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
-<p>Given a non-negative integer n representing the total number of bits in the code, find the sequence of gray code. A gray code sequence must begin with 0 and with cover all 2n integers.</p>
-<p>Have you met this question in a real interview? Yes<br>    Example<br>    Given n = 2, return [0,1,3,2]. Its gray code sequence is:</p>
-<pre><code><span class="number">00</span> - <span class="number">0</span>
-<span class="number">01</span> - <span class="number">1</span>
-<span class="number">11</span> - <span class="number">3</span>
-<span class="number">10</span> - <span class="number">2</span>
-</code></pre><p>Note<br>For a given n, a gray code sequence is not uniquely defined.</p>
-<p>[0,2,3,1] is also a valid gray code sequence according to the above definition.</p>
-<p>Challenge<br>O(2n) time.</p>
-<p><a href="https://leetcode.com/problems/gray-code/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/gray-code/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="Solution:">Solution:</h2><p>Use recursion to generate a new gray code from the (n-1) as the picture shown in the Figure below.</p>
-<center><br>    <img src="http://psyyz10.github.io/img/graycode.png"><br></center>
-
-<pre><code class="java">
-<span class="comment">/*************************************************************************
-    &gt; File Name: GrayCode.java
-    &gt; Author: Yao Zhang 
-    &gt; Mail: psyyz10@163.com 
-    &gt; Created Time: Fri 13 Nov 17:22:56 2015
- ************************************************************************/</span>
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GrayCode</span></span>{
-    <span class="function">List&lt;Integer&gt; <span class="title">grayCode</span><span class="params">(<span class="keyword">int</span> n)</span></span>{
-        ArrayList&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
-        result.add(<span class="number">0</span>);
-        <span class="keyword">if</span> (n == <span class="number">0</span>)
-            <span class="keyword">return</span> result;
-        <span class="keyword">if</span> (n == <span class="number">1</span>){
-            result.add(<span class="number">1</span>);
-            <span class="keyword">return</span> result;
-        }
-        result = (ArrayList&lt;Integer&gt;) grayCode(n - <span class="number">1</span>);
-        ArrayList&lt;Integer&gt; temp = reverse(result);
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; temp.size(); i++){
-            temp.set(i,(<span class="number">1</span> &lt;&lt; (n - <span class="number">1</span>)) + temp.get(i));
-        }
-        result.addAll(temp);
-
-        <span class="keyword">return</span> result;
-    }
-
-    <span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">reverse</span><span class="params">(ArrayList&lt;Integer&gt; result)</span></span>{
-        ArrayList&lt;Integer&gt; newResult = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = result.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--){
-            newResult.add(result.get(i));
-        }
-        <span class="keyword">return</span> newResult;
-    }
-}
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gray-Code/" data-id="cih1nclkl0019mwu549vjqu1w" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Gray-Code/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Climbing-Stairs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Climbing-Stairs/" class="article-date">
-  <time datetime="2015-11-14T00:09:12.000Z" itemprop="datePublished">2015-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Climbing-Stairs/">Climbing Stairs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>You are climbing a stair case. It takes n steps to reach to the top.</p>
-<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
-<h2 id="Solution:">Solution:</h2><p>The idea behind this problem is the same as Fibonacci which is f(n) = f(n-1) + f(n-2).<br>There are two solutions making the time complexity as O(N).</p>
-<ol>
-<li>The first one is an iteration. Time complexity O(n), space complexity O(1).</li>
-<li>The second one is recurstive version. But the normal recurtion is very expensive, roughly O(2^n).<br> So we used dynamic programming by take a buffer stores the value has gone.<br> The time complexity is O(n), space complexity is O(n) too.</li>
-</ol>
-<p>There are two solutions.<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p>
-<pre><code>&gt; File Name: ClimbingStairs.java
-&gt; Author: Yao Zhang 
-&gt; Mail: psyyz10@<span class="number">163.</span>com 
-&gt; Created Time: Fri <span class="number">13</span> Nov <span class="number">16</span>:<span class="number">12</span>:<span class="number">24</span> <span class="number">2015</span>
-</code></pre><p> <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
-<p>public class ClimbingStairs{<br>    // Solution 1<br>    public int climbStairs(int n){<br>       if (n &lt;= 1)<br>           return n;</p>
-<pre><code>   <span class="keyword">int</span> prev = <span class="number">1</span>;
-   <span class="keyword">int</span> last = <span class="number">1</span>;
-   <span class="keyword">int</span> current = <span class="number">0</span>;
-   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++){
-       current = prev + last;
-       last = prev;
-       prev = current;
-   }
-
-   <span class="keyword">return</span> current;
-}
-
-<span class="comment">//Solution2</span>
-<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span></span>{
-    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) 
-        <span class="keyword">return</span> <span class="number">0</span>;             
-
-    <span class="keyword">int</span>[] buffer = <span class="keyword">new</span> <span class="keyword">int</span>[n];
-
-    <span class="keyword">return</span> climbStairsHelper(n, buffer);
-}              
-<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairsHelper</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] buffer)</span></span>{
-    <span class="keyword">if</span> (n &lt; <span class="number">0</span>){
-        <span class="keyword">return</span> <span class="number">0</span>;
-    }<span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">0</span>){
-        <span class="keyword">return</span> <span class="number">1</span>;
-    } <span class="keyword">else</span> <span class="keyword">if</span> (buffer[n - <span class="number">1</span>] != <span class="number">0</span>){                                                                                  
-        <span class="keyword">return</span> buffer[n - <span class="number">1</span>];        
-    } <span class="keyword">else</span> {   
-        buffer[n - <span class="number">1</span>] = climbStairsHelper(n - <span class="number">1</span>, buffer) + climbStairsHelper(n - <span class="number">2</span>, buffer);
-        <span class="keyword">return</span> buffer[n - <span class="number">1</span>];     
-    }          
-}   
-</code></pre><p>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="cih1nclkv001fmwu5t9l2l2zo" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Climbing-Stairs/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Plus-One" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Plus-One/" class="article-date">
-  <time datetime="2015-11-13T22:23:56.000Z" itemprop="datePublished">2015-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Plus-One/">Plus One</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
-<p>The digits are stored such that the most significant digit is at the head of the list.</p>
-<pre><code>Example
-Given [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] which represents <span class="number">123</span>, <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>].
-
-Given [<span class="number">9</span>,<span class="number">9</span>,<span class="number">9</span>] which represents <span class="number">999</span>, <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>].
-</code></pre><p><a href="https://leetcode.com/problems/plus-one/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/plus-one/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="Solution:">Solution:</h2><p>It is a essay problem, just add carry though the list, until the carry equals 0.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">    &gt; File Name: PlusOne.java               </span><br><span class="line">    &gt; Author: Yao Zhang                     </span><br><span class="line">    &gt; Mail: psyyz10@163.com                 </span><br><span class="line">    &gt; Created Time: Fri 13 Nov 14:27:19 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line">                                            </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlusOne</span></span>&#123;                       </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] plusOne(<span class="keyword">int</span>[] digits)&#123;     </span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">1</span>;                      </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = digits.length - <span class="number">1</span>; i &gt;= <span class="number">0</span> &amp;&amp; carry &gt; <span class="number">0</span>; i--)&#123;                                                                                                                   </span><br><span class="line">            <span class="keyword">int</span> sum = digits[i] + carry;    </span><br><span class="line">            carry = sum / <span class="number">10</span>;               </span><br><span class="line">            digits[i] = sum % <span class="number">10</span>;           </span><br><span class="line">        &#125;                                   </span><br><span class="line">                                            </span><br><span class="line">        <span class="keyword">if</span> (carry == <span class="number">0</span>)                     </span><br><span class="line">            <span class="keyword">return</span> digits;                  </span><br><span class="line">                                            </span><br><span class="line">        <span class="keyword">int</span>[] newDigits = <span class="keyword">new</span> <span class="keyword">int</span>[digits.length + <span class="number">1</span>];  </span><br><span class="line">        newDigits[<span class="number">0</span>] = carry;               </span><br><span class="line">                                            </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; newDigits.length; i++)&#123;    </span><br><span class="line">            newDigits[i] = digits[i - <span class="number">1</span>];   </span><br><span class="line">        &#125;                                   </span><br><span class="line">                                            </span><br><span class="line">        <span class="keyword">return</span> newDigits;                   </span><br><span class="line">    &#125;                                       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Plus-One/" data-id="cih1ncljs000zmwu535p3p7oh" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Plus-One/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Rotate-Image" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Rotate-Image/" class="article-date">
-  <time datetime="2015-11-13T20:38:28.000Z" itemprop="datePublished">2015-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Rotate-Image/">Rotate Image </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).</p>
-<p>Example<br>Given a matrix</p>
-<pre><code>[
-    [<span class="number">1</span>,<span class="number">2</span>],
-    [<span class="number">3</span>,<span class="number">4</span>]
-]
-</code></pre><p>rotate it by 90 degrees (clockwise), return</p>
-<pre><code>[
-    [<span class="number">3</span>,<span class="number">1</span>],
-    [<span class="number">4</span>,<span class="number">2</span>]
-]
-</code></pre><p><a href="https://leetcode.com/problems/rotate-image/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/rotate-image/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="Solution:">Solution:</h2><p>There are two solutions.<br>The idea of the first method is to divide the matrix into four smaller matrix, then move each sub-matrix to the rotated position<br>The idea of the second method is to rotate layer by layer, from the outmost layer to the inner most layer.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: RotatedImage.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 13 Nov 13:56:37 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RotatedImage</span></span>&#123;</span><br><span class="line">	<span class="comment">//Solution 1</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = matrix.length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length / <span class="number">2</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (length + <span class="number">1</span>) / <span class="number">2</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[length - <span class="number">1</span> - j][i];</span><br><span class="line">                matrix[length - <span class="number">1</span> - j][i] = matrix[length - <span class="number">1</span> - i][length - <span class="number">1</span> - j];</span><br><span class="line">                matrix[length - <span class="number">1</span> - i][length - <span class="number">1</span> - j] = matrix[j][length - <span class="number">1</span> - i];</span><br><span class="line">                matrix[j][length - <span class="number">1</span> - i] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Solution 2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = matrix.length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> layer = <span class="number">0</span>; layer &lt; length / <span class="number">2</span>; layer++)&#123;</span><br><span class="line">            <span class="keyword">int</span> last = length - <span class="number">1</span> - layer;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = layer; j &lt; last; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> offset = j - layer;</span><br><span class="line">                <span class="keyword">int</span> temp = matrix[layer][j];</span><br><span class="line">                matrix[layer][j] = matrix[last - offset][layer];</span><br><span class="line">                matrix[last - offset][layer] = matrix[last][last - offset];</span><br><span class="line">                matrix[last][last - offset] = matrix[j][last];</span><br><span class="line">                matrix[j][last] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="cih1ncljh000rmwu57cn2lwbf" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Rotate-Image/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Trapping-Rain-Water" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Trapping-Rain-Water/" class="article-date">
-  <time datetime="2015-11-13T18:39:18.000Z" itemprop="datePublished">2015-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/Trapping-Rain-Water/">Trapping Rain Water</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
-<pre><code>For example, 
-Given [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>], <span class="keyword">return</span> <span class="number">6.</span>
-</code></pre><center><br>    <img style="width:50%" src="http://psyyz10.github.io/img/trappingwater.png"><br></center>
-
-<p>The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!</p>
-<p><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/trapping-rain-water/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="My_solution:">My solution:</h2><p>For each bar, find the highest bars of the left side and right side respectively.<br>The trapping water for the bar is min(leftMax,rightmax) - its height.</p>
-<p>There are two solutions.</p>
-<ol>
-<li><ul>
-<li>Find the highest bar </li>
-<li>Process the left and right of the highest bar respectively</li>
-</ul>
-</li>
-<li><ul>
-<li>Go through the bars from left to right, calculate the left highest bar for each bar </li>
-<li>Go through the bars form right to left, calculate the left highest bar for each bar </li>
-<li>Calculate the min(leftMax,rightmax) - its height for each bar.</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: TrappingWater.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 13 Nov 10:45:30 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrappingWater</span></span>&#123;</span><br><span class="line">    <span class="comment">// Solution 1</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> area = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxIndex = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Find the index of the highest bar</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; height.length; i ++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; height[maxIndex])</span><br><span class="line">                maxIndex = i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Process the left side of the highest bar</span></span><br><span class="line">        <span class="keyword">int</span> leftMax = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; maxIndex; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; leftMax) </span><br><span class="line">                leftMax = height[i]; </span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                area += leftMax - height[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Process the rigtht side of the highest bar</span></span><br><span class="line">        <span class="keyword">int</span> rightMax = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = height.length - <span class="number">1</span>; i &gt; maxIndex; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; rightMax) </span><br><span class="line">                rightMax = height[i]; </span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                area += rightMax - height[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> area;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Solution 2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap2</span><span class="params">(<span class="keyword">int</span>[] height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> area = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (height.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> area;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// find the left highest bar value for each bar</span></span><br><span class="line">        <span class="keyword">int</span>[] leftMax = <span class="keyword">new</span> <span class="keyword">int</span>[height.length];</span><br><span class="line">        leftMax[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; height.length; i++)&#123;</span><br><span class="line">           leftMax[i] = Math.max(height[i-<span class="number">1</span>], leftMax[i-<span class="number">1</span>]) ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// for each bar, calculate the trapping water by </span></span><br><span class="line">        <span class="comment">// calculating min(leftMax,rightmax) - height</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = height.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">int</span> diff = Math.min(max,leftMax[i]) - height[i];</span><br><span class="line">            area += diff &gt; <span class="number">0</span> ? diff : <span class="number">0</span>;</span><br><span class="line">            max = Math.max(height[i], max);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> area;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="cih1nclis000cmwu5jd4372c8" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -674,7 +562,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">23</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode-and-Lintcode/">Leetcode and Lintcode</a><span class="tag-list-count">29</span></li></ul>
     </div>
   </div>
 
@@ -692,7 +580,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">27</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">33</span></li></ul>
     </div>
   </div>
 
@@ -704,23 +592,23 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       <ul>
         
           <li>
-            <a href="/2015/11/Single-Number-II/">Single Number II</a>
+            <a href="/2015/11/Remove-Duplicates-from-Sorted-List/">Remove Duplicates from Sorted List</a>
           </li>
         
           <li>
-            <a href="/2015/11/Single-Number/">Single Number</a>
+            <a href="/2015/11/Partition-List/">Partition List</a>
           </li>
         
           <li>
-            <a href="/2015/11/Candy/">Candy</a>
+            <a href="/2015/11/Reverse-Linked-List-II/">Reverse Linked List II</a>
           </li>
         
           <li>
-            <a href="/2015/11/Gas-Station/">Gas Station</a>
+            <a href="/2015/11/Add-Two-Numbers-II/">Add Two Numbers II</a>
           </li>
         
           <li>
-            <a href="/2015/11/Set-Matrix-Zeroes/">Set Matrix Zeroes</a>
+            <a href="/2015/11/Add-Two-Numbers/">Add Two Numbers</a>
           </li>
         
       </ul>
