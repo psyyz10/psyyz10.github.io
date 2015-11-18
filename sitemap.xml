@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://psyyz10.github.io/2015/11/3Sum-Closest/</loc>
+    <lastmod>2015-11-18T18:34:04.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://psyyz10.github.io/2015/11/SDA/</loc>
     <lastmod>2015-11-18T18:28:52.000Z</lastmod>
   </url>
@@ -109,11 +114,6 @@
   <url>
     <loc>http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/</loc>
     <lastmod>2015-11-17T23:35:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://psyyz10.github.io/2015/11/3Sum-Closest/</loc>
-    <lastmod>2015-11-17T23:33:57.000Z</lastmod>
   </url>
   
   <url>

@@ -703,7 +703,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/3Sum-Closest/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum-Closest/</id>
     <published>2015-11-12T07:04:51.000Z</published>
-    <updated>2015-11-17T23:33:57.000Z</updated>
+    <updated>2015-11-18T18:34:04.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
 <pre><code>For example, given <span class="built_in">array</span> S = {-<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> -<span class="number">4</span>}, and target = <span class="number">1.</span>
 
@@ -717,7 +717,9 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, t]]>
     </summary>
     
-      <category term="Array, Two pointers" scheme="http://psyyz10.github.io/tags/Array-Two-pointers/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Two pointers" scheme="http://psyyz10.github.io/tags/Two-pointers/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
