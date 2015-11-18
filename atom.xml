@@ -136,7 +136,7 @@ Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span 
     <link href="http://psyyz10.github.io/2015/11/Single-Number-III/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number-III/</id>
     <published>2015-11-16T19:05:08.000Z</published>
-    <updated>2015-11-17T23:26:17.000Z</updated>
+    <updated>2015-11-18T18:38:35.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Problem:">Problem:</h3><p>Given 2*n + 2 numbers, every numbers occurs twice except two, find them.</p>
 <p>Have you met this question in a real interview? Yes</p>
 <pre><code>Example
@@ -155,7 +155,9 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
 <p>Have you met this question]]>
     </summary>
     
-      <category term="Array, Bit Manipulation" scheme="http://psyyz10.github.io/tags/Array-Bit-Manipulation/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Bit Manipulation" scheme="http://psyyz10.github.io/tags/Bit-Manipulation/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -166,7 +168,7 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Single-Number-II/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number-II/</id>
     <published>2015-11-16T07:40:12.000Z</published>
-    <updated>2015-11-17T23:26:55.000Z</updated>
+    <updated>2015-11-18T18:38:25.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problems:">Problems:</h2><p>Given 3*n + 1 numbers, every numbers occurs triple times except one, find it.</p>
 <pre><code>Example
 Given [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>] <span class="keyword">return</span> <span class="number">4</span>
@@ -181,7 +183,9 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
 Giv]]>
     </summary>
     
-      <category term="Array, Bit Manipulation" scheme="http://psyyz10.github.io/tags/Array-Bit-Manipulation/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Bit Manipulation" scheme="http://psyyz10.github.io/tags/Bit-Manipulation/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -192,7 +196,7 @@ Giv]]>
     <link href="http://psyyz10.github.io/2015/11/Single-Number/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number/</id>
     <published>2015-11-16T07:22:04.000Z</published>
-    <updated>2015-11-17T23:26:40.000Z</updated>
+    <updated>2015-11-18T18:38:43.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given 2*n + 1 numbers, every numbers occurs twice except one, find it.</p>
 <p>Have you met this question in a real interview? Yes<br>Example<br>Given [1,2,2,1,3,4,3], return 4</p>
 <p>Challenge<br>One-pass, constant extra space.</p>
@@ -205,7 +209,9 @@ Giv]]>
 <p>Have you met this question i]]>
     </summary>
     
-      <category term="Array, Bit Manipulation" scheme="http://psyyz10.github.io/tags/Array-Bit-Manipulation/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Bit Manipulation" scheme="http://psyyz10.github.io/tags/Bit-Manipulation/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -373,7 +379,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <link href="http://psyyz10.github.io/2015/11/Climbing-Stairs/"/>
     <id>http://psyyz10.github.io/2015/11/Climbing-Stairs/</id>
     <published>2015-11-14T00:09:12.000Z</published>
-    <updated>2015-11-17T23:40:41.000Z</updated>
+    <updated>2015-11-18T18:36:25.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You are climbing a stair case. It takes n steps to reach to the top.</p>
 <p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
 <h2 id="Solution:">Solution:</h2><p>The idea behind this problem is the same as Fibonacci which is f(n) = f(n-1) + f(n-2).<br>There are two solutions making the time complexity as O(N).</p>
@@ -428,7 +434,9 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 <p>Each time you can either climb]]>
     </summary>
     
-      <category term="Array, DP" scheme="http://psyyz10.github.io/tags/Array-DP/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="DP" scheme="http://psyyz10.github.io/tags/DP/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -562,7 +570,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Permutation-Sequence/"/>
     <id>http://psyyz10.github.io/2015/11/Permutation-Sequence/</id>
     <published>2015-11-12T23:37:32.000Z</published>
-    <updated>2015-11-18T02:11:23.000Z</updated>
+    <updated>2015-11-18T18:37:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n and k, return the k-th permutation sequence.</p>
 <pre><code>Example
 <span class="keyword">For</span> <span class="keyword">n</span> = 3, all permutations are listed <span class="keyword">as</span> follows:
@@ -591,7 +599,9 @@ a_n = <span class="number">1</span>;
 <span class="keyword">For</spa]]>
     </summary>
     
-      <category term="Array, Math" scheme="http://psyyz10.github.io/tags/Array-Math/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Math" scheme="http://psyyz10.github.io/tags/Math/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -676,7 +686,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/4Sum/"/>
     <id>http://psyyz10.github.io/2015/11/4Sum/</id>
     <published>2015-11-12T07:49:03.000Z</published>
-    <updated>2015-11-17T23:35:15.000Z</updated>
+    <updated>2015-11-18T18:35:58.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
 <p>Note:<br>Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)<br>The solution set must not contain duplicate quadruplets.<br>    For example, given array S = {1 0 -1 0 -2 2}, and target = 0.</p>
 <pre><code>A solution <span class="built_in">set</span> is:
@@ -692,7 +702,9 @@ a_n = <span class="number">1</span>;
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? F]]>
     </summary>
     
-      <category term="Array, Two pointers" scheme="http://psyyz10.github.io/tags/Array-Two-pointers/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Two pointers" scheme="http://psyyz10.github.io/tags/Two-pointers/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -703,7 +715,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/3Sum-Closest/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum-Closest/</id>
     <published>2015-11-12T07:04:51.000Z</published>
-    <updated>2015-11-18T18:34:04.000Z</updated>
+    <updated>2015-11-18T18:35:07.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
 <pre><code>For example, given <span class="built_in">array</span> S = {-<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> -<span class="number">4</span>}, and target = <span class="number">1.</span>
 
@@ -730,7 +742,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <link href="http://psyyz10.github.io/2015/11/3Sum/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum/</id>
     <published>2015-11-12T02:16:29.000Z</published>
-    <updated>2015-11-17T23:33:47.000Z</updated>
+    <updated>2015-11-18T18:35:46.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
 <p>Note:<br>Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)<br>The solution set must not contain duplicate triplets.<br>    For example, given array S = {-1 0 1 2 -1 -4},</p>
 <pre><code>A solution <span class="built_in">set</span> is:
@@ -745,7 +757,9 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique t]]>
     </summary>
     
-      <category term="Array, Two pointers" scheme="http://psyyz10.github.io/tags/Array-Two-pointers/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Two pointers" scheme="http://psyyz10.github.io/tags/Two-pointers/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -817,7 +831,7 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
     <link href="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/"/>
     <id>http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/</id>
     <published>2015-11-11T05:38:25.000Z</published>
-    <updated>2015-11-18T00:05:15.000Z</updated>
+    <updated>2015-11-18T18:37:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
 <pre><code>Example
 Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>] and B=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], the median is <span class="number">3.5</span>.
@@ -844,7 +858,9 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorte]]>
     </summary>
     
-      <category term="Array, Binary Search" scheme="http://psyyz10.github.io/tags/Array-Binary-Search/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Binary Search" scheme="http://psyyz10.github.io/tags/Binary-Search/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -884,7 +900,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/"/>
     <id>http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/</id>
     <published>2015-11-10T09:12:12.000Z</published>
-    <updated>2015-11-17T23:35:01.000Z</updated>
+    <updated>2015-11-18T18:38:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p>
 <p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p>
 <p>You are given a target value to search. If found in the array return its index, otherwise return -1.</p>
@@ -909,7 +925,9 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
 <p>(i.e., 0 1 2 4 5 6 7 mig]]>
     </summary>
     
-      <category term="Array, Binary Search" scheme="http://psyyz10.github.io/tags/Array-Binary-Search/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Binary Search" scheme="http://psyyz10.github.io/tags/Binary-Search/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -973,7 +991,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/"/>
     <id>http://psyyz10.github.io/2015/11/Deep-Learning-Overview/</id>
     <published>2015-11-10T01:01:13.000Z</published>
-    <updated>2015-11-17T23:41:01.000Z</updated>
+    <updated>2015-11-18T18:36:56.000Z</updated>
     <content type="html"><![CDATA[<p>Nowadays, the performances of machine learning models heavily rely on the representation of data or feature selection steps rather than just the choice of machine learning algorithms. Thus much effort is applied on preprocessing pipelines such as feature selection. Even though some specific domain knowledge can be used to help design the representation of data, the motivation of Artificial Intelligence needs more powerful representations of features. Deep Learning also called unsupervised learning, is a relatively new research field of machine learning which can learn multi- ple levels of abstraction and representation of features directly from data. It aims at learning feature hierarchies with higher level features formed by the composition of lower ones. The multiple levels structures allow to build complex functions which take data as input and output the result directly without depending on features crafted by humans <a href="#Bengio09">[Bengio09]</a>.</p>
 <p>Deep learning achieved many successful results on some problems, such as im- age classification <a href="#Ciresan12">[Ciresan12]</a> <a href="#Krizhevsky12">[Krizhevsky12]</a>, semantic parsing <a href="#Bordes12">[Bordes12]</a> and speech recognition <a href="#Dahl12">[Dahl12]</a>. Deep architecture may express the complex distributions more efficiently with better per- formance on challenging tasks <a href="#Bengio07">[Bengio07]</a><a href="#Bengio09">[Bengio09]</a>. The hypothesis that the composition of addi- tional functional levels can give more powerful modeling capacity has already been proposed for a long time <a href="#Hinton90">[Hinton90]</a><a href="#Rumelhart86">[Rumelhart86]</a>. However, the training process of deep architec- ture was proven to be very difficult, until some successful approaches of <a href="#Bengio007">[Bengio007]</a><a href="#Hinton06">[Hinton06]</a><a href="#Hinton006">[Hinton006]</a> for training stacked autoencoder and DBN occurred. One key idea behind them is to train the deep architecture layer by layer by unsupervised learning, which is also called unsupervised feature learning. Each layer will generate a more abstract representation of the observed layer by doing a local optimization. Unsupervised feature learning can learn useful features automatically and directly from the data set by unsupervised learning without given specific features defined by human. The unsupervised learned features are more natural with less information lost <a href="#Bengio15">[Bengio15]</a>. Some deep learning models also have a potential powerful capacity of solving time-series problems <a href="#La14">[La14]</a>, which is another reason that makes deep learning suitable for stock trend prediction. Therefore deep learning can provide a new potential and powerful approach to improve stock prediction.</p>
 <h2 id="Building_Deep_Representations">Building Deep Representations</h2><p>Experimental results show that it is much harder to train a deep architecture than training a shallow one <a href="#Bengio07">[Bengio07]</a><a href="#Erhan09">[Erhan09]</a>. The rapid recent growth and success of deep learning owe to a breakthrough initiated by Geoff Hinton in 2006 and quickly followed up by some papers <a href="#Hinton006">[Hinton006]</a><a href="#Bengio94">[Bengio94]</a><a href="#Poultney06">[Poultney06]</a>. Greedy layer wise unsupervised pre-training as a central idea was proposed. It means just one layer of the hierarchy is trained at one time by unsupervised feature learning to learn a new transformation of data with the previous layer output. Finally, the set of pre-trained layers is combined with a stan- dard supervised classifier such as Support Vector Machine, Logistic Regression or as initialization for a deep learning model such as a Stacked Denoising Auto-encoder or Deep Belief Network. Experiments show that the layer-wise stacking can attain a better feature representation in most time <a href="#Larochelle09">[Larochelle09]</a>. Although it is not difficult to combine single layers pretrained by unsupervised learning into a supervised model, it is not very clear how the single layers should combine to form a better unsuper- vised model <a href="#Bengio15">[Bengio15]</a>. One approach is to stack pre-trained RBMs (section 4.2.1) into DBN (section 4.2.2).</p>
@@ -987,7 +1005,9 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     
       <category term="Deep Learning" scheme="http://psyyz10.github.io/tags/Deep-Learning/"/>
     
-      <category term="Deep Learning Theory" scheme="http://psyyz10.github.io/categories/Deep-Learning-Theory/"/>
+      <category term="Deep Learning" scheme="http://psyyz10.github.io/categories/Deep-Learning/"/>
+    
+      <category term="Machine Learning" scheme="http://psyyz10.github.io/categories/Deep-Learning/Machine-Learning/"/>
     
   </entry>
   
@@ -996,7 +1016,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/SDA/"/>
     <id>http://psyyz10.github.io/2015/11/SDA/</id>
     <published>2015-11-09T19:36:06.000Z</published>
-    <updated>2015-11-18T18:28:52.000Z</updated>
+    <updated>2015-11-18T18:38:01.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Autoencoders">Autoencoders</h2><p>An autoencoder <a href="#Bengio09">[Bengio09]</a> is a network whose graphical structure is shown in Figure <a href="#F4_1">4.1</a>, which has the same dimension for both input and output. It takes an unlabeled training examples in set <img class="math" src="http://psyyz10.github.io/img/1.png"> where <img class="math" src="http://psyyz10.github.io/img/2.png"> is a single input and encodes it to the hidden layer <img class="math" src="http://psyyz10.github.io/img/3.png"> by linear combination with weight matrix <img class="math" style="height:18px" src="http://psyyz10.github.io/img/4.png"> and then through a non-linear activation function. It can be mathematically expressed as <img class="math" src="http://psyyz10.github.io/img/5.png">, where <img class="math" style="height:18px" src="http://psyyz10.github.io/img/6.png"> is the bias vector.</p>
 <center><br>    <img id="F4_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 4.1: An Autoencoder</p><br></center>
 
@@ -1041,7 +1061,9 @@ img.math {
     <![CDATA[<h2 id="Autoencoders">Autoencoders</h2><p>An autoencoder <a href="#Bengio09">[Bengio09]</a> is a network whose graphical structure is shown ]]>
     </summary>
     
-      <category term="Deep Learning Theory" scheme="http://psyyz10.github.io/tags/Deep-Learning-Theory/"/>
+      <category term="Deep Learning" scheme="http://psyyz10.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Machine Learning" scheme="http://psyyz10.github.io/tags/Machine-Learning/"/>
     
   </entry>
   
