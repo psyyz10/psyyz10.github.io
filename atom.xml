@@ -40,7 +40,7 @@
     <link href="http://psyyz10.github.io/2015/11/Partition-List/"/>
     <id>http://psyyz10.github.io/2015/11/Partition-List/</id>
     <published>2015-11-17T00:51:59.000Z</published>
-    <updated>2015-11-17T01:18:46.000Z</updated>
+    <updated>2015-11-18T02:11:41.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.</p>
 <p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
 <p><em>For example</em><br>    Given 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2 and x = 3,<br>    return 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5.</p>
@@ -51,7 +51,9 @@
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater ]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -60,23 +62,25 @@
     <link href="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/"/>
     <id>http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/</id>
     <published>2015-11-16T22:49:18.000Z</published>
-    <updated>2015-11-17T00:51:32.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Reverse a linked list from position m to n.</p>
+    <updated>2015-11-18T18:24:04.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Problem:s">Problem:s</h2><p>Reverse a linked list from position m to n.</p>
 <pre><code>*Example*
 Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>-&gt;<span class="literal">NULL</span>, m = <span class="number">2</span> and n = <span class="number">4</span>, <span class="keyword">return</span> <span class="number">1</span>-&gt;<span class="number">4</span>-&gt;<span class="number">3</span>-&gt;<span class="number">2</span>-&gt;<span class="number">5</span>-&gt;<span class="literal">NULL</span>.
 </code></pre><p>Note<br>Given m, n satisfy the following condition: 1 ≤ m ≤ n ≤ length of list.</p>
 <p>Challenge<br>Reverse it in-place and in one-pass</p>
 <p><a href="https://leetcode.com/problems/reverse-linked-list-ii/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/reverse-linked-list-ii/" target="_blank" rel="external">Lintcode link</a></p>
 <h2 id="Solution:">Solution:</h2><p>This problem is complex which has many edge cases so that it is not easy to write a bug free program within a short time.<br>The idea of the solution is to go through the list, to the m, store the previous node before m, and start reversing from m to n.<br>Then link the non-reversed and reversed part together.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: ReverseLinkedListII.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Mon 16 Nov 14:48:56 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReverseLinkedListII</span></span>&#123;</span><br><span class="line">    <span class="comment">// Solution 1</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m&gt;=n) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode current = head;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        ListNode startNode = <span class="keyword">null</span>, newNode = <span class="keyword">null</span>, previousNode = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i == m - <span class="number">1</span>) previousNode = current;</span><br><span class="line">            <span class="keyword">if</span> (i == m)&#123;</span><br><span class="line">                 startNode = newNode =  <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i&gt;m)&#123;</span><br><span class="line">                ListNode temp = newNode;</span><br><span class="line">                newNode = <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">                newNode.next = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        startNode.next = current; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (previousNode == <span class="keyword">null</span>) head = newNode;</span><br><span class="line">        <span class="keyword">else</span> previousNode.next = newNode;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Solution 2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m&gt;=n) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode current = head;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        ListNode startNode = <span class="keyword">null</span>, newNode = <span class="keyword">null</span>, previousNode = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i == m - <span class="number">1</span>) previousNode = current;</span><br><span class="line">            <span class="keyword">if</span> (i == m)&#123;</span><br><span class="line">                 startNode = newNode =  <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i&gt;m)&#123;</span><br><span class="line">                ListNode temp = newNode;</span><br><span class="line">                newNode = <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">                newNode.next = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        startNode.next = current; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (previousNode == <span class="keyword">null</span>) head = newNode;</span><br><span class="line">        <span class="keyword">else</span> previousNode.next = newNode;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: ReverseLinkedListII.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Mon 16 Nov 14:48:56 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReverseLinkedListII</span></span>&#123;</span><br><span class="line">    <span class="comment">// Solution 1</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m&gt;=n) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode current = head;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        ListNode startNode = <span class="keyword">null</span>, newNode = <span class="keyword">null</span>, previousNode = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i == m - <span class="number">1</span>) previousNode = current;</span><br><span class="line">            <span class="keyword">if</span> (i == m)&#123;</span><br><span class="line">                 startNode = newNode =  <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i&gt;m)&#123;</span><br><span class="line">                ListNode temp = newNode;</span><br><span class="line">                newNode = <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">                newNode.next = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        startNode.next = current; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (previousNode == <span class="keyword">null</span>) head = newNode;</span><br><span class="line">        <span class="keyword">else</span> previousNode.next = newNode;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Solution 2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m &gt;= n || head == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">            </span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        ListNode prev = dummy;</span><br><span class="line">                                </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m - <span class="number">1</span> ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (prev == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> dummy.next;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = prev.next;  </span><br><span class="line">        &#125;                       </span><br><span class="line">        </span><br><span class="line">        ListNode mPrev = prev;</span><br><span class="line">        ListNode current = prev.next;</span><br><span class="line">        ListNode last = <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">        ListNode first = last;            </span><br><span class="line">        current = current.next;</span><br><span class="line">                                </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - m ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (current == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> dummy.next;</span><br><span class="line">            &#125;</span><br><span class="line">            ListNode temp = <span class="keyword">new</span> ListNode(current.val);</span><br><span class="line">            temp.next = first;</span><br><span class="line">            first = temp;       </span><br><span class="line">            current = current.next;</span><br><span class="line">        &#125;                       </span><br><span class="line">                                </span><br><span class="line">        mPrev.next = first;</span><br><span class="line">                                </span><br><span class="line">        last.next = current; </span><br><span class="line">                                </span><br><span class="line">        <span class="keyword">return</span> dummy.next;            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="Problem:">Problem:</h2><p>Reverse a linked list from position m to n.</p>
+    <![CDATA[<h2 id="Problem:s">Problem:s</h2><p>Reverse a linked list from position m to n.</p>
 <pre><code>*Example*
-Given <span class="number">1</span>-&]]>
+Given <span class="number">1</span>]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -85,7 +89,7 @@ Given <span class="number">1</span>-&]]>
     <link href="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/"/>
     <id>http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/</id>
     <published>2015-11-16T22:22:56.000Z</published>
-    <updated>2015-11-16T22:51:30.000Z</updated>
+    <updated>2015-11-17T23:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in forward order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.</p>
 <p><a href="http://www.lintcode.com/en/problem/add-two-numbers-ii/" target="_blank" rel="external">Lintcode link</a></p>
 <p><em>Example</em><br>    Given 6-&gt;1-&gt;7 + 2-&gt;9-&gt;5. That is, 617 + 295.</p>
@@ -97,7 +101,9 @@ Given <span class="number">1</span>-&]]>
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -106,7 +112,7 @@ Given <span class="number">1</span>-&]]>
     <link href="http://psyyz10.github.io/2015/11/Add-Two-Numbers/"/>
     <id>http://psyyz10.github.io/2015/11/Add-Two-Numbers/</id>
     <published>2015-11-16T20:16:33.000Z</published>
-    <updated>2015-11-16T20:54:32.000Z</updated>
+    <updated>2015-11-17T23:37:13.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.</p>
 <p>Have you met this question in a real interview? Yes</p>
 <p><em>Example</em><br>    Given 7-&gt;1-&gt;6 + 5-&gt;9-&gt;2. That is, 617 + 295.</p>
@@ -119,7 +125,9 @@ Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span 
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -128,7 +136,7 @@ Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span 
     <link href="http://psyyz10.github.io/2015/11/Single-Number-III/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number-III/</id>
     <published>2015-11-16T19:05:08.000Z</published>
-    <updated>2015-11-16T20:08:22.000Z</updated>
+    <updated>2015-11-17T23:26:17.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Problem:">Problem:</h3><p>Given 2*n + 2 numbers, every numbers occurs twice except two, find them.</p>
 <p>Have you met this question in a real interview? Yes</p>
 <pre><code>Example
@@ -147,7 +155,9 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
 <p>Have you met this question]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Bit Manipulation" scheme="http://psyyz10.github.io/tags/Array-Bit-Manipulation/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -156,7 +166,7 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Single-Number-II/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number-II/</id>
     <published>2015-11-16T07:40:12.000Z</published>
-    <updated>2015-11-16T19:02:44.000Z</updated>
+    <updated>2015-11-17T23:26:55.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problems:">Problems:</h2><p>Given 3*n + 1 numbers, every numbers occurs triple times except one, find it.</p>
 <pre><code>Example
 Given [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>] <span class="keyword">return</span> <span class="number">4</span>
@@ -171,7 +181,9 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
 Giv]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Bit Manipulation" scheme="http://psyyz10.github.io/tags/Array-Bit-Manipulation/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -180,7 +192,7 @@ Giv]]>
     <link href="http://psyyz10.github.io/2015/11/Single-Number/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number/</id>
     <published>2015-11-16T07:22:04.000Z</published>
-    <updated>2015-11-17T06:47:32.000Z</updated>
+    <updated>2015-11-17T23:26:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given 2*n + 1 numbers, every numbers occurs twice except one, find it.</p>
 <p>Have you met this question in a real interview? Yes<br>Example<br>Given [1,2,2,1,3,4,3], return 4</p>
 <p>Challenge<br>One-pass, constant extra space.</p>
@@ -193,7 +205,9 @@ Giv]]>
 <p>Have you met this question i]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Bit Manipulation" scheme="http://psyyz10.github.io/tags/Array-Bit-Manipulation/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -202,7 +216,7 @@ Giv]]>
     <link href="http://psyyz10.github.io/2015/11/Candy/"/>
     <id>http://psyyz10.github.io/2015/11/Candy/</id>
     <published>2015-11-16T06:04:01.000Z</published>
-    <updated>2015-11-16T07:43:20.000Z</updated>
+    <updated>2015-11-17T23:39:20.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>There are N children standing in a line. Each child is assigned a rating value.</p>
 <p>You are giving candies to these children subjected to the following requirements:</p>
 <p>Each child must have at least one candy.</p>
@@ -225,7 +239,9 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 <p>You are giving cand]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -234,7 +250,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <link href="http://psyyz10.github.io/2015/11/Gas-Station/"/>
     <id>http://psyyz10.github.io/2015/11/Gas-Station/</id>
     <published>2015-11-16T03:33:35.000Z</published>
-    <updated>2015-11-16T06:00:37.000Z</updated>
+    <updated>2015-11-17T23:42:24.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
 <p>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.</p>
 <p>Return the starting gas station’s index if you can travel around the circuit once, otherwise return -1.</p>
@@ -249,7 +265,9 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 <p>Yo]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -258,7 +276,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <link href="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/"/>
     <id>http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/</id>
     <published>2015-11-16T00:08:38.000Z</published>
-    <updated>2015-11-16T06:05:00.000Z</updated>
+    <updated>2015-11-17T23:27:09.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.</p>
 <p>Have you met this question in a real interview? Yes<br>    Example<br>    Given a matrix</p>
 <pre><code>[
@@ -275,7 +293,9 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 <p>Have ]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -284,7 +304,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <link href="http://psyyz10.github.io/2015/11/Gray-Code/"/>
     <id>http://psyyz10.github.io/2015/11/Gray-Code/</id>
     <published>2015-11-14T01:21:13.000Z</published>
-    <updated>2015-11-16T00:10:02.000Z</updated>
+    <updated>2015-11-17T23:43:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
 <p>Given a non-negative integer n representing the total number of bits in the code, find the sequence of gray code. A gray code sequence must begin with 0 and with cover all 2n integers.</p>
 <p>Have you met this question in a real interview? Yes<br>    Example<br>    Given n = 2, return [0,1,3,2]. Its gray code sequence is:</p>
@@ -342,7 +362,9 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 <p>Given ]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -351,7 +373,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <link href="http://psyyz10.github.io/2015/11/Climbing-Stairs/"/>
     <id>http://psyyz10.github.io/2015/11/Climbing-Stairs/</id>
     <published>2015-11-14T00:09:12.000Z</published>
-    <updated>2015-11-14T01:16:45.000Z</updated>
+    <updated>2015-11-17T23:40:41.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You are climbing a stair case. It takes n steps to reach to the top.</p>
 <p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
 <h2 id="Solution:">Solution:</h2><p>The idea behind this problem is the same as Fibonacci which is f(n) = f(n-1) + f(n-2).<br>There are two solutions making the time complexity as O(N).</p>
@@ -406,7 +428,9 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 <p>Each time you can either climb]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, DP" scheme="http://psyyz10.github.io/tags/Array-DP/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -415,7 +439,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <link href="http://psyyz10.github.io/2015/11/Plus-One/"/>
     <id>http://psyyz10.github.io/2015/11/Plus-One/</id>
     <published>2015-11-13T22:23:56.000Z</published>
-    <updated>2015-11-13T22:50:54.000Z</updated>
+    <updated>2015-11-18T02:12:18.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
 <p>The digits are stored such that the most significant digit is at the head of the list.</p>
 <pre><code>Example
@@ -431,7 +455,9 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
 <p>The digits a]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -440,7 +466,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Rotate-Image/"/>
     <id>http://psyyz10.github.io/2015/11/Rotate-Image/</id>
     <published>2015-11-13T20:38:28.000Z</published>
-    <updated>2015-11-13T22:21:50.000Z</updated>
+    <updated>2015-11-18T18:24:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).</p>
 <p>Example<br>Given a matrix</p>
 <pre><code>[
@@ -461,7 +487,9 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
 <p]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -470,7 +498,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/"/>
     <id>http://psyyz10.github.io/2015/11/Trapping-Rain-Water/</id>
     <published>2015-11-13T18:39:18.000Z</published>
-    <updated>2015-11-13T21:39:41.000Z</updated>
+    <updated>2015-11-17T23:23:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
 <pre><code>For example, 
 Given [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>], <span class="keyword">return</span> <span class="number">6.</span>
@@ -498,7 +526,9 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how ]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -507,7 +537,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Valid-Sudoku/"/>
     <id>http://psyyz10.github.io/2015/11/Valid-Sudoku/</id>
     <published>2015-11-13T01:35:32.000Z</published>
-    <updated>2015-11-13T07:39:32.000Z</updated>
+    <updated>2015-11-17T23:20:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank" rel="external">Sudoku Puzzles - The Rules</a>.</p>
 <p>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.</p>
 <p><img style="width:40%" src="http://psyyz10.github.io/img/sudoku.png"><br>A partially filled sudoku which is valid.</p>
@@ -521,7 +551,9 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank"]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -530,7 +562,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Permutation-Sequence/"/>
     <id>http://psyyz10.github.io/2015/11/Permutation-Sequence/</id>
     <published>2015-11-12T23:37:32.000Z</published>
-    <updated>2015-11-13T01:30:07.000Z</updated>
+    <updated>2015-11-18T02:11:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n and k, return the k-th permutation sequence.</p>
 <pre><code>Example
 <span class="keyword">For</span> <span class="keyword">n</span> = 3, all permutations are listed <span class="keyword">as</span> follows:
@@ -559,7 +591,9 @@ a_n = <span class="number">1</span>;
 <span class="keyword">For</spa]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Math" scheme="http://psyyz10.github.io/tags/Array-Math/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -568,7 +602,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/Next-Permutation/"/>
     <id>http://psyyz10.github.io/2015/11/Next-Permutation/</id>
     <published>2015-11-12T20:48:57.000Z</published>
-    <updated>2015-11-13T22:22:19.000Z</updated>
+    <updated>2015-11-18T01:52:54.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.</p>
 <p>If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).</p>
 <p>The replacement must be in-place, do not allocate extra memory.</p>
@@ -585,7 +619,9 @@ a_n = <span class="number">1</span>;
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation o]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -594,7 +630,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/Remove-Element/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Element/</id>
     <published>2015-11-12T20:09:45.000Z</published>
-    <updated>2015-11-12T20:48:24.000Z</updated>
+    <updated>2015-11-18T02:32:54.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array and a value, remove all instances of that value in place and return the new length.</p>
 <p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
 <p>Subscribe to see which companies asked this question<br><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/remove-element/" target="_blank" rel="external">Lintcode link</a></p>
@@ -605,7 +641,9 @@ a_n = <span class="number">1</span>;
 <p>]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -638,7 +676,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/4Sum/"/>
     <id>http://psyyz10.github.io/2015/11/4Sum/</id>
     <published>2015-11-12T07:49:03.000Z</published>
-    <updated>2015-11-12T20:05:14.000Z</updated>
+    <updated>2015-11-17T23:35:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
 <p>Note:<br>Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)<br>The solution set must not contain duplicate quadruplets.<br>    For example, given array S = {1 0 -1 0 -2 2}, and target = 0.</p>
 <pre><code>A solution <span class="built_in">set</span> is:
@@ -654,6 +692,10 @@ a_n = <span class="number">1</span>;
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? F]]>
     </summary>
     
+      <category term="Array, Two pointers" scheme="http://psyyz10.github.io/tags/Array-Two-pointers/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
+    
   </entry>
   
   <entry>
@@ -661,7 +703,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/3Sum-Closest/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum-Closest/</id>
     <published>2015-11-12T07:04:51.000Z</published>
-    <updated>2015-11-12T07:39:47.000Z</updated>
+    <updated>2015-11-17T23:33:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
 <pre><code>For example, given <span class="built_in">array</span> S = {-<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> -<span class="number">4</span>}, and target = <span class="number">1.</span>
 
@@ -675,7 +717,9 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, t]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Two pointers" scheme="http://psyyz10.github.io/tags/Array-Two-pointers/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -684,7 +728,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <link href="http://psyyz10.github.io/2015/11/3Sum/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum/</id>
     <published>2015-11-12T02:16:29.000Z</published>
-    <updated>2015-11-12T20:06:23.000Z</updated>
+    <updated>2015-11-17T23:33:47.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
 <p>Note:<br>Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)<br>The solution set must not contain duplicate triplets.<br>    For example, given array S = {-1 0 1 2 -1 -4},</p>
 <pre><code>A solution <span class="built_in">set</span> is:
@@ -699,7 +743,9 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique t]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Two pointers" scheme="http://psyyz10.github.io/tags/Array-Two-pointers/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -708,7 +754,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <link href="http://psyyz10.github.io/2015/11/Two-Sum/"/>
     <id>http://psyyz10.github.io/2015/11/Two-Sum/</id>
     <published>2015-11-12T01:12:59.000Z</published>
-    <updated>2015-11-17T23:14:26.000Z</updated>
+    <updated>2015-11-17T23:15:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
 <p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
 <p>You may assume that each input would have exactly one solution.</p>
@@ -736,7 +782,7 @@ Output: index1=<span class="number">1</span>, index2=<span class="number">2</spa
     <link href="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/"/>
     <id>http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/</id>
     <published>2015-11-12T00:09:38.000Z</published>
-    <updated>2015-11-12T23:28:35.000Z</updated>
+    <updated>2015-11-17T23:47:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
 <pre><code>Example
 Given [<span class="number">100</span>, <span class="number">4</span>, <span class="number">200</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],
@@ -758,7 +804,9 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
 <pr]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -767,7 +815,7 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
     <link href="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/"/>
     <id>http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/</id>
     <published>2015-11-11T05:38:25.000Z</published>
-    <updated>2015-11-12T23:28:23.000Z</updated>
+    <updated>2015-11-18T00:05:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
 <pre><code>Example
 Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>] and B=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], the median is <span class="number">3.5</span>.
@@ -776,7 +824,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
 </code></pre><p>Challenge<br>The overall run time complexity should be O(log (m+n)).<br><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/median-of-two-sorted-arrays/" target="_blank" rel="external">Lintcode link</a></p>
 <h2 id="My_Solution:">My Solution:</h2><p>This is a classic problem, which can be viewed as another form: “Given two sorted array, how to find the k-th largest number among both arrays?”.</p>
 <p>The k in this problem is “total length / 2” for odd number. If the total length is even, we need to find  “total length / 2” and “total length / 2 + 1” number, and then get the average value.</p>
-<p>The most intuitive solution is to merge them and find the k-th number, which takes O(log (M + N));</p>
+<p>The most intuitive solution is to merge them and find the k-th number, which takes O(M + N);</p>
 <p>There is a better solution. Assume both amount of elements in A and B are greater than k / 2. If we compare the (k / 2)-th value in A (A[k / 2 - 1]) and the (k / 2)-th value in B (B[k / 2 - 1]), we have three possilbe cases:</p>
 <ul>
 <li>If A[k / 2 - 1] == B[k / 2 - 1], we can say the value is the k-th value we want.</li>
@@ -789,12 +837,14 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
 <li>If k == 1, return the minimum of A[AStart] or B[BStart]</li>
 <li>If A[AStart + k / 2 -1] == B[BStart + k / 2 -1], return the value.</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: MedianOfTwoSortedArray.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Tue 10 Nov 22:01:06 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MedianOfTwoSortedArray</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = A.length + B.length;</span><br><span class="line">        <span class="keyword">if</span> (len % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span> + <span class="number">1</span>); </span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> (findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span>) + findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span> + <span class="number">1</span>)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">findKth</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> AStart,</span><br><span class="line">                                <span class="keyword">int</span>[] B, <span class="keyword">int</span> BStart, <span class="keyword">int</span> k)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (AStart &gt;= A.length)  </span><br><span class="line">            <span class="keyword">return</span> B[BStart + k - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (BStart &gt;= B.length)  </span><br><span class="line">            <span class="keyword">return</span> A[AStart + k - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> Math.min(A[AStart],B[BStart]);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> va = AStart + k / <span class="number">2</span> &lt;= A.length ? </span><br><span class="line">            A[AStart + k / <span class="number">2</span> -<span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> vb = BStart + k / <span class="number">2</span> &lt;= B.length ? </span><br><span class="line">            B[BStart + k / <span class="number">2</span> -<span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (va &lt; vb) </span><br><span class="line">            <span class="keyword">return</span> findKth(A, AStart + k / <span class="number">2</span>, B, BStart, k - k / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (va &gt; vb) </span><br><span class="line">            <span class="keyword">return</span> findKth(A, AStart, B, BStart + k / <span class="number">2</span>, k - k / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> va; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: MedianOfTwoSortedArray.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Tue 10 Nov 22:01:06 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MedianOfTwoSortedArray</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = A.length + B.length;</span><br><span class="line">        <span class="keyword">if</span> (len % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span> + <span class="number">1</span>); </span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> (findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span>) + findKth(A,<span class="number">0</span>,B,<span class="number">0</span>,len / <span class="number">2</span> + <span class="number">1</span>)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">findKth</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> AStart,</span><br><span class="line">                                <span class="keyword">int</span>[] B, <span class="keyword">int</span> BStart, <span class="keyword">int</span> k)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (AStart &gt;= A.length)  </span><br><span class="line">            <span class="keyword">return</span> B[BStart + k - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (BStart &gt;= B.length)  </span><br><span class="line">            <span class="keyword">return</span> A[AStart + k - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> Math.min(A[AStart],B[BStart]);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> va = AStart + k / <span class="number">2</span> &lt;= A.length ? </span><br><span class="line">            A[AStart + k / <span class="number">2</span> -<span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> vb = BStart + k / <span class="number">2</span> &lt;= B.length ? </span><br><span class="line">            B[BStart + k / <span class="number">2</span> -<span class="number">1</span>] : Integer.MAX_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (va &lt; vb) </span><br><span class="line">            <span class="keyword">return</span> findKth(A, AStart + k / <span class="number">2</span>, B, BStart, k - k / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (va &gt; vb) </span><br><span class="line">            <span class="keyword">return</span> findKth(A, AStart, B, BStart + k / <span class="number">2</span>, k - k / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> va; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorte]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Binary Search" scheme="http://psyyz10.github.io/tags/Array-Binary-Search/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -803,7 +853,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/"/>
     <id>http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/</id>
     <published>2015-11-11T02:07:31.000Z</published>
-    <updated>2015-11-12T00:06:40.000Z</updated>
+    <updated>2015-11-18T18:19:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Follow up for “Search in Rotated Sorted Array”:<br>What if duplicates are allowed?</p>
 <p>Would this affect the run-time complexity? How and why?</p>
 <p>Write a function to determine if a given target is in the array.</p>
@@ -821,7 +871,9 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
 <p>Would this affec]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -830,7 +882,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/"/>
     <id>http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/</id>
     <published>2015-11-10T09:12:12.000Z</published>
-    <updated>2015-11-12T00:05:51.000Z</updated>
+    <updated>2015-11-17T23:35:01.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p>
 <p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p>
 <p>You are given a target value to search. If found in the array return its index, otherwise return -1.</p>
@@ -855,7 +907,9 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
 <p>(i.e., 0 1 2 4 5 6 7 mig]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array, Binary Search" scheme="http://psyyz10.github.io/tags/Array-Binary-Search/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -864,7 +918,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/</id>
     <published>2015-11-10T09:09:39.000Z</published>
-    <updated>2015-11-12T00:07:10.000Z</updated>
+    <updated>2015-11-18T02:29:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Follow up for “Remove Duplicates”:<br>What if duplicates are allowed at most twice?</p>
 <p>For example,<br>Given sorted array nums = [1,1,1,2,2,3],</p>
 <p>Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn’t matter what you leave beyond the new length.</p>
@@ -878,7 +932,9 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
 <p>For example,<br]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -887,7 +943,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/</id>
     <published>2015-11-10T08:52:47.000Z</published>
-    <updated>2015-11-12T00:07:27.000Z</updated>
+    <updated>2015-11-18T02:18:55.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p>
 <p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
 <p>Example<br>Given input array A = [1,1,2],</p>
@@ -904,7 +960,9 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a sorted array, remove the duplicates in place such that each element appear only once and return th]]>
     </summary>
     
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/tags/Leetcode-and-Lintcode/"/>
+      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -913,7 +971,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/"/>
     <id>http://psyyz10.github.io/2015/11/Deep-Learning-Overview/</id>
     <published>2015-11-10T01:01:13.000Z</published>
-    <updated>2015-11-10T06:21:45.000Z</updated>
+    <updated>2015-11-17T23:41:01.000Z</updated>
     <content type="html"><![CDATA[<p>Nowadays, the performances of machine learning models heavily rely on the representation of data or feature selection steps rather than just the choice of machine learning algorithms. Thus much effort is applied on preprocessing pipelines such as feature selection. Even though some specific domain knowledge can be used to help design the representation of data, the motivation of Artificial Intelligence needs more powerful representations of features. Deep Learning also called unsupervised learning, is a relatively new research field of machine learning which can learn multi- ple levels of abstraction and representation of features directly from data. It aims at learning feature hierarchies with higher level features formed by the composition of lower ones. The multiple levels structures allow to build complex functions which take data as input and output the result directly without depending on features crafted by humans <a href="#Bengio09">[Bengio09]</a>.</p>
 <p>Deep learning achieved many successful results on some problems, such as im- age classification <a href="#Ciresan12">[Ciresan12]</a> <a href="#Krizhevsky12">[Krizhevsky12]</a>, semantic parsing <a href="#Bordes12">[Bordes12]</a> and speech recognition <a href="#Dahl12">[Dahl12]</a>. Deep architecture may express the complex distributions more efficiently with better per- formance on challenging tasks <a href="#Bengio07">[Bengio07]</a><a href="#Bengio09">[Bengio09]</a>. The hypothesis that the composition of addi- tional functional levels can give more powerful modeling capacity has already been proposed for a long time <a href="#Hinton90">[Hinton90]</a><a href="#Rumelhart86">[Rumelhart86]</a>. However, the training process of deep architec- ture was proven to be very difficult, until some successful approaches of <a href="#Bengio007">[Bengio007]</a><a href="#Hinton06">[Hinton06]</a><a href="#Hinton006">[Hinton006]</a> for training stacked autoencoder and DBN occurred. One key idea behind them is to train the deep architecture layer by layer by unsupervised learning, which is also called unsupervised feature learning. Each layer will generate a more abstract representation of the observed layer by doing a local optimization. Unsupervised feature learning can learn useful features automatically and directly from the data set by unsupervised learning without given specific features defined by human. The unsupervised learned features are more natural with less information lost <a href="#Bengio15">[Bengio15]</a>. Some deep learning models also have a potential powerful capacity of solving time-series problems <a href="#La14">[La14]</a>, which is another reason that makes deep learning suitable for stock trend prediction. Therefore deep learning can provide a new potential and powerful approach to improve stock prediction.</p>
 <h2 id="Building_Deep_Representations">Building Deep Representations</h2><p>Experimental results show that it is much harder to train a deep architecture than training a shallow one <a href="#Bengio07">[Bengio07]</a><a href="#Erhan09">[Erhan09]</a>. The rapid recent growth and success of deep learning owe to a breakthrough initiated by Geoff Hinton in 2006 and quickly followed up by some papers <a href="#Hinton006">[Hinton006]</a><a href="#Bengio94">[Bengio94]</a><a href="#Poultney06">[Poultney06]</a>. Greedy layer wise unsupervised pre-training as a central idea was proposed. It means just one layer of the hierarchy is trained at one time by unsupervised feature learning to learn a new transformation of data with the previous layer output. Finally, the set of pre-trained layers is combined with a stan- dard supervised classifier such as Support Vector Machine, Logistic Regression or as initialization for a deep learning model such as a Stacked Denoising Auto-encoder or Deep Belief Network. Experiments show that the layer-wise stacking can attain a better feature representation in most time <a href="#Larochelle09">[Larochelle09]</a>. Although it is not difficult to combine single layers pretrained by unsupervised learning into a supervised model, it is not very clear how the single layers should combine to form a better unsuper- vised model <a href="#Bengio15">[Bengio15]</a>. One approach is to stack pre-trained RBMs (section 4.2.1) into DBN (section 4.2.2).</p>
@@ -927,6 +985,8 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     
       <category term="Deep Learning" scheme="http://psyyz10.github.io/tags/Deep-Learning/"/>
     
+      <category term="Deep Learning Theory" scheme="http://psyyz10.github.io/categories/Deep-Learning-Theory/"/>
+    
   </entry>
   
   <entry>
@@ -934,7 +994,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/SDA/"/>
     <id>http://psyyz10.github.io/2015/11/SDA/</id>
     <published>2015-11-09T19:36:06.000Z</published>
-    <updated>2015-11-17T23:10:44.000Z</updated>
+    <updated>2015-11-18T18:28:52.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Autoencoders">Autoencoders</h2><p>An autoencoder <a href="#Bengio09">[Bengio09]</a> is a network whose graphical structure is shown in Figure <a href="#F4_1">4.1</a>, which has the same dimension for both input and output. It takes an unlabeled training examples in set <img class="math" src="http://psyyz10.github.io/img/1.png"> where <img class="math" src="http://psyyz10.github.io/img/2.png"> is a single input and encodes it to the hidden layer <img class="math" src="http://psyyz10.github.io/img/3.png"> by linear combination with weight matrix <img class="math" style="height:18px" src="http://psyyz10.github.io/img/4.png"> and then through a non-linear activation function. It can be mathematically expressed as <img class="math" src="http://psyyz10.github.io/img/5.png">, where <img class="math" style="height:18px" src="http://psyyz10.github.io/img/6.png"> is the bias vector.</p>
 <center><br>    <img id="F4_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 4.1: An Autoencoder</p><br></center>
 
@@ -979,7 +1039,7 @@ img.math {
     <![CDATA[<h2 id="Autoencoders">Autoencoders</h2><p>An autoencoder <a href="#Bengio09">[Bengio09]</a> is a network whose graphical structure is shown ]]>
     </summary>
     
-      <category term="Deep Learning" scheme="http://psyyz10.github.io/tags/Deep-Learning/"/>
+      <category term="Deep Learning Theory" scheme="http://psyyz10.github.io/tags/Deep-Learning-Theory/"/>
     
   </entry>
   
