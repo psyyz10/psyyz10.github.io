@@ -1165,7 +1165,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <link href="http://psyyz10.github.io/2015/11/SDA/"/>
     <id>http://psyyz10.github.io/2015/11/SDA/</id>
     <published>2015-11-09T19:36:06.000Z</published>
-    <updated>2015-11-18T18:38:01.000Z</updated>
+    <updated>2015-11-20T19:10:05.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Autoencoders">Autoencoders</h2><p>An autoencoder <a href="#Bengio09">[Bengio09]</a> is a network whose graphical structure is shown in Figure <a href="#F4_1">4.1</a>, which has the same dimension for both input and output. It takes an unlabeled training examples in set <img class="math" src="http://psyyz10.github.io/img/1.png"> where <img class="math" src="http://psyyz10.github.io/img/2.png"> is a single input and encodes it to the hidden layer <img class="math" src="http://psyyz10.github.io/img/3.png"> by linear combination with weight matrix <img class="math" style="height:18px" src="http://psyyz10.github.io/img/4.png"> and then through a non-linear activation function. It can be mathematically expressed as <img class="math" src="http://psyyz10.github.io/img/5.png">, where <img class="math" style="height:18px" src="http://psyyz10.github.io/img/6.png"> is the bias vector.</p>
 <center><br>    <img id="F4_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 4.1: An Autoencoder</p><br></center>
 
@@ -1213,6 +1213,8 @@ img.math {
       <category term="Deep Learning" scheme="http://psyyz10.github.io/tags/Deep-Learning/"/>
     
       <category term="Machine Learning" scheme="http://psyyz10.github.io/tags/Machine-Learning/"/>
+    
+      <category term="Deep Learning" scheme="http://psyyz10.github.io/categories/Deep-Learning/"/>
     
   </entry>
   
