@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2015-11-20T06:59:36.000Z</updated>
+  <updated>2015-11-25T06:37:18.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -15,15 +15,160 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Interview Review Link]]></title>
+    <link href="http://psyyz10.github.io/2015/11/Interview-Review-Link/"/>
+    <id>http://psyyz10.github.io/2015/11/Interview-Review-Link/</id>
+    <published>2015-11-20T13:31:21.000Z</published>
+    <updated>2015-11-25T06:37:18.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://github.com/julycoding/The-Art-Of-Programming-By-July/tree/master/ebook/zh" target="_blank" rel="external">The-Art-Of-Programming-By-July ebook</a></p>
+<p><a href="http://psyyz10.github.io/pdf/BAT100.pdf">freewater 面试题集锦</a></p>
+<p><a href="http://psyyz10.github.io/pdf/腾讯2016校园招聘求职大礼包.pdf">腾讯2016校园招聘求职大礼包</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://github.com/julycoding/The-Art-Of-Programming-By-July/tree/master/ebook/zh" target="_blank" rel="external">The-Art-Of-Pro]]>
+    </summary>
+    
+      <category term="Interview" scheme="http://psyyz10.github.io/tags/Interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Valid Palindrome]]></title>
+    <link href="http://psyyz10.github.io/2015/11/Valid-Palindrome/"/>
+    <id>http://psyyz10.github.io/2015/11/Valid-Palindrome/</id>
+    <published>2015-11-20T08:28:59.000Z</published>
+    <updated>2015-11-21T03:30:15.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><]]>
+    </summary>
+    
+      <category term="String" scheme="http://psyyz10.github.io/tags/String/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LRU Cache]]></title>
+    <link href="http://psyyz10.github.io/2015/11/LRU-Cache/"/>
+    <id>http://psyyz10.github.io/2015/11/LRU-Cache/</id>
+    <published>2015-11-20T05:32:14.000Z</published>
+    <updated>2015-11-21T00:28:42.000Z</updated>
+    <content type="html"><![CDATA[<p>Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and set.</p>
+<p>get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.<br>set(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.</p>
+<p><a href="https://leetcode.com/problems/lru-cache/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/lru-cache/" target="_blank" rel="external">Lintcode likn</a></p>
+<h2 id="Solution:">Solution:</h2><p>To increase the efficiency, use a hash map to record each key to the corresponding node.<br>Use a double linked the list to store the key value pair, because it is quick for inserting and deleting nodes.<br>For each get operation, move node which contains the key to the head of the list.<br>For each set operation, if it is a new key, and the size will be greater than the capacity,<br>then delete the last node, and insert the new node to the head.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: LRUCache.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 20 Nov 13:34:31 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> key;</span><br><span class="line">        <span class="keyword">int</span> value;</span><br><span class="line">        ListNode prev;</span><br><span class="line">        ListNode next;</span><br><span class="line">        </span><br><span class="line">        ListNode(<span class="keyword">int</span> key, <span class="keyword">int</span> value)&#123;</span><br><span class="line">            <span class="keyword">this</span>.key = key;</span><br><span class="line">            <span class="keyword">this</span>.value = value;</span><br><span class="line">            <span class="keyword">this</span>.prev = prev;</span><br><span class="line">            <span class="keyword">this</span>.next = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    HashMap&lt;Integer, ListNode&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, ListNode&gt;();</span><br><span class="line">    ListNode head;</span><br><span class="line">    ListNode tail;</span><br><span class="line">    <span class="keyword">int</span> capacity;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">        head = <span class="keyword">new</span> ListNode(-<span class="number">1</span>,-<span class="number">1</span>);</span><br><span class="line">        tail = <span class="keyword">new</span> ListNode(-<span class="number">1</span>,-<span class="number">1</span>);</span><br><span class="line">        head.next = tail;</span><br><span class="line">        tail.prev = head;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!map.containsKey(key))</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        ListNode node = map.get(key);</span><br><span class="line">        node.prev.next = node.next;</span><br><span class="line">        node.next.prev = node.prev;</span><br><span class="line">        moveToHead(node);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> node.value;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        ListNode node = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (get(key) != -<span class="number">1</span>)&#123; <span class="comment">// Note this, use get key to update the node order</span></span><br><span class="line">            map.get(key).value = value;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (map.size() == capacity)&#123;</span><br><span class="line">            map.remove(tail.prev.key); <span class="comment">//</span></span><br><span class="line">            tail.prev.prev.next = tail;</span><br><span class="line">            tail.prev = tail.prev.prev;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">       </span><br><span class="line">        node = <span class="keyword">new</span> ListNode(key,value);</span><br><span class="line">        map.put(key, node);</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        moveToHead(node);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveToHead</span><span class="params">(ListNode node)</span></span>&#123;</span><br><span class="line">        node.next = head.next;</span><br><span class="line">        node.next.prev = node;</span><br><span class="line">        node.prev = head;</span><br><span class="line">        head.next = node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and set.</p>
+<]]>
+    </summary>
+    
+      <category term="Hash map" scheme="http://psyyz10.github.io/tags/Hash-map/"/>
+    
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Reorder List]]></title>
+    <link href="http://psyyz10.github.io/2015/11/Reorder-List/"/>
+    <id>http://psyyz10.github.io/2015/11/Reorder-List/</id>
+    <published>2015-11-20T04:30:16.000Z</published>
+    <updated>2015-11-20T21:30:55.000Z</updated>
+    <content type="html"><![CDATA[<p>Given a singly linked list L: L0→L1→…→Ln-1→Ln,<br>reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…</p>
+<p>You must do this in-place without altering the nodes’ values.</p>
+<pre><code>For example,
+Given {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>}, reorder it to {<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>}.
+</code></pre><p><a href="https://leetcode.com/problems/reorder-list/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/reorder-list/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="Solution:">Solution:</h2><p>First, we can find the middle point of the list.<br>Then reverse the list behind the middle point.<br>Finally merge them together.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: ReorderList.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 20 Nov 13:21:59 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReorderList</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reorderList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">            </span><br><span class="line">        ListNode mid = findMiddle(head);</span><br><span class="line">        ListNode tail = reverse(mid.next);</span><br><span class="line">        mid.next = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        merge(head, tail);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(ListNode node1, ListNode node2)</span></span>&#123;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">while</span> (node1 != <span class="keyword">null</span> &amp;&amp; node2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">            dummy.next = node1;</span><br><span class="line">            node1 = node1.next;</span><br><span class="line">            dummy.next.next = node2;</span><br><span class="line">            node2 = node2.next;</span><br><span class="line">            dummy = dummy.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (node1 != <span class="keyword">null</span>)</span><br><span class="line">            dummy.next = node1;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (node2 != <span class="keyword">null</span>)</span><br><span class="line">            dummy.next = node2;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverse</span><span class="params">(ListNode head)</span></span>&#123;</span><br><span class="line">        ListNode prev = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>)&#123;</span><br><span class="line">            ListNode temp = head.next;</span><br><span class="line">            head.next = prev;</span><br><span class="line">            prev = head;</span><br><span class="line">            head = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> prev;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">findMiddle</span><span class="params">(ListNode head)</span></span>&#123;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Given a singly linked list L: L0→L1→…→Ln-1→Ln,<br>reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…</p>
+<p>You must do this in-place without alterin]]>
+    </summary>
+    
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Linked List Cycle II]]></title>
+    <link href="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/"/>
+    <id>http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/</id>
+    <published>2015-11-20T03:52:35.000Z</published>
+    <updated>2015-11-20T20:31:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Given a linked list, return the node where the cycle begins. If there is no cycle, return null.</p>
+<p>Note: Do not modify the linked list.</p>
+<p>Follow up:<br>Can you solve it without using extra space?</p>
+<p><a href="https://leetcode.com/problems/linked-list-cycle-ii/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/linked-list-cycle-ii/" target="_blank" rel="external">Lintcode link</a></p>
+<h2 id="Solution:">Solution:</h2><p>We can use two pointers to go through the list.<br>The fast pointer has the twice speed as the slow pointer.<br>If their is a circle, they will meet eventrually.<br>Assume the length of the head to the loop start point is k, and the loop size is n.<br>When the slow pointer get the beginning loop node, it has gone k nodes, and the fast pointer go 2k nodes.<br>The distance between the two pointers is k % n, in other sise is (n - k % n).<br>When the fisrt meet on the circle, they will meet at the point which is (n - k % n) nodes far from the beginning loop point.<br>Then let the slow pointer go back to the head, and they start to move with the same speed.<br>When the slow pointer goes k nodes distance, it get to the beginning loop point.<br>The fast pointer goes further (k % n) distance, which is (n - k % n ＋ k % n) = n, so it is also the beginning loop point, and also they meet up.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: LinkedListCycleII.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 20 Nov 11:52:45 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedListCycleII</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> ListNode <span class="title">detectCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (fast == slow)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (fast == <span class="keyword">null</span> || fast.next == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        slow = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (fast != slow)&#123;</span><br><span class="line">            fast = fast.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> fast;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Given a linked list, return the node where the cycle begins. If there is no cycle, return null.</p>
+<p>Note: Do not modify the linked lis]]>
+    </summary>
+    
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Math" scheme="http://psyyz10.github.io/tags/Math/"/>
+    
+      <category term="Two Pointer" scheme="http://psyyz10.github.io/tags/Two-Pointer/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Linked List Cycle]]></title>
+    <link href="http://psyyz10.github.io/2015/11/Linked-List-Cycle/"/>
+    <id>http://psyyz10.github.io/2015/11/Linked-List-Cycle/</id>
+    <published>2015-11-20T03:41:49.000Z</published>
+    <updated>2015-11-20T19:51:55.000Z</updated>
+    <content type="html"><![CDATA[<p>Given a linked list, determine if it has a cycle in it.<br>    Example<br>    Given -21-&gt;10-&gt;4-&gt;5, tail connects to node index 1, return true</p>
+<p>Challenge<br>Follow up:<br>Can you solve it without using extra space?</p>
+<h2 id="Solution:">Solution:</h2><p>This is an easy problem. Just use two pointers to point to head.<br>One pointer go twice speed of the second pointer.<br>If they meet before the fast touch the end of the list, return true;<br>Else return false;</p>
+<p><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/linked-list-cycle/" target="_blank" rel="external">Lintcode link</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: LinkedListCycle.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Fri 20 Nov 11:42:04 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedListCycle</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            </span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (slow == fast)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Given a linked list, determine if it has a cycle in it.<br>    Example<br>    Given -21-&gt;10-&gt;4-&gt;5, tail connects to node index 1]]>
+    </summary>
+    
+      <category term="LinkedList" scheme="http://psyyz10.github.io/tags/LinkedList/"/>
+    
+      <category term="Two Pointers" scheme="http://psyyz10.github.io/tags/Two-Pointers/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Copy List with Random Pointer]]></title>
     <link href="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/"/>
     <id>http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/</id>
-    <published>2015-11-20T06:59:36.000Z</published>
-    <updated>2015-11-20T06:59:36.000Z</updated>
-    <content type="html"></content>
+    <published>2015-11-19T14:59:36.000Z</published>
+    <updated>2015-11-20T19:41:01.000Z</updated>
+    <content type="html"><![CDATA[<p>A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.</p>
+<p>Return a deep copy of the list.</p>
+<h2 id="Solution:">Solution:</h2><p>Use a hash to record each node in the origin list as a key<br>The value is the deep copy of corresponding node.<br>Go through the list, for each node and random reference, check the map,<br>if the key was included in the map, get the value, or create a new node with the same label, and put it into the map.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: CopyListwithRandomPointer.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Thu 19 Nov 23:02:20 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CopyListwithRandomPointer</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> RandomListNode <span class="title">copyRandomList</span><span class="params">(RandomListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            </span><br><span class="line">        HashMap&lt;RandomListNode, RandomListNode&gt; map = <span class="keyword">new</span> HashMap&lt;RandomListNode, RandomListNode&gt;();</span><br><span class="line">        RandomListNode dummy = <span class="keyword">new</span> RandomListNode(-<span class="number">1</span>);</span><br><span class="line">        RandomListNode prev = dummy, newNode;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(head))</span><br><span class="line">                newNode = map.get(head);</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                newNode = <span class="keyword">new</span> RandomListNode(head.label);</span><br><span class="line">                map.put(head,newNode);</span><br><span class="line">            &#125;</span><br><span class="line">            prev.next = newNode;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (head.random != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(head.random))</span><br><span class="line">                    newNode.random = map.get(head.random);</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    newNode.random = <span class="keyword">new</span> RandomListNode(head.random.label);</span><br><span class="line">                    map.put(head.random, newNode.random);</span><br><span class="line">                &#125;</span><br><span class="line">                    </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            prev = prev.next;</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
-    
+    <![CDATA[<p>A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.</p>
+<]]>
     </summary>
+    
+      <category term="Hash Map" scheme="http://psyyz10.github.io/tags/Hash-Map/"/>
+    
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
   </entry>
   
@@ -31,7 +176,7 @@
     <title><![CDATA[Reverse Nodes in k-Group]]></title>
     <link href="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/"/>
     <id>http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/</id>
-    <published>2015-11-19T07:46:58.000Z</published>
+    <published>2015-11-18T15:46:58.000Z</published>
     <updated>2015-11-20T06:35:49.000Z</updated>
     <content type="html"><![CDATA[<p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.</p>
 <p>If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.</p>
@@ -59,8 +204,8 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
     <title><![CDATA[Swap Nodes in Pairs]]></title>
     <link href="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/"/>
     <id>http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/</id>
-    <published>2015-11-19T06:40:48.000Z</published>
-    <updated>2015-11-19T07:48:37.000Z</updated>
+    <published>2015-11-18T14:40:48.000Z</published>
+    <updated>2015-11-20T20:01:00.000Z</updated>
     <content type="html"><![CDATA[<p>Given a linked list, swap every two adjacent nodes and return its head.</p>
 <p>Example<br>    Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
 <p>Challenge<br>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.</p>
@@ -83,7 +228,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
     <title><![CDATA[Rotate List]]></title>
     <link href="http://psyyz10.github.io/2015/11/Rotate-List/"/>
     <id>http://psyyz10.github.io/2015/11/Rotate-List/</id>
-    <published>2015-11-19T00:32:33.000Z</published>
+    <published>2015-11-18T08:32:33.000Z</published>
     <updated>2015-11-19T06:41:30.000Z</updated>
     <content type="html"><![CDATA[<p>Given a list, rotate the list to the right by k places, where k is non-negative.</p>
 <p>Have you met this question in a real interview? Yes</p>
@@ -107,7 +252,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
     <title><![CDATA[Remove Duplicates from Sorted List II]]></title>
     <link href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/</id>
-    <published>2015-11-18T23:26:47.000Z</published>
+    <published>2015-11-18T07:26:47.000Z</published>
     <updated>2015-11-19T00:31:18.000Z</updated>
     <content type="html"><![CDATA[<p>Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.</p>
 <p>Have you met this question in a real interview? Yes<br>    Example<br>    Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.<br>    Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</p>
@@ -130,7 +275,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
     <title><![CDATA[String to Integer(atoi)]]></title>
     <link href="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/"/>
     <id>http://psyyz10.github.io/2015/11/String-to-Integer-atoi/</id>
-    <published>2015-11-18T18:43:18.000Z</published>
+    <published>2015-11-18T02:43:18.000Z</published>
     <updated>2015-11-18T23:06:46.000Z</updated>
     <content type="html"><![CDATA[<p>Implement function atoi to convert a string to an integer.</p>
 <p>If no valid conversion could be performed, a zero value is returned.</p>
@@ -165,7 +310,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
     <title><![CDATA[Remove Duplicates from Sorted List]]></title>
     <link href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/</id>
-    <published>2015-11-17T01:22:24.000Z</published>
+    <published>2015-11-16T09:22:24.000Z</published>
     <updated>2015-11-18T23:25:56.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Problem:">Problem:</h3><p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
 <p>Example<br>    Given 1-&gt;1-&gt;2, return 1-&gt;2.<br>    Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
@@ -188,7 +333,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
     <title><![CDATA[Partition List]]></title>
     <link href="http://psyyz10.github.io/2015/11/Partition-List/"/>
     <id>http://psyyz10.github.io/2015/11/Partition-List/</id>
-    <published>2015-11-17T00:51:59.000Z</published>
+    <published>2015-11-16T08:51:59.000Z</published>
     <updated>2015-11-18T02:11:41.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.</p>
 <p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
@@ -210,7 +355,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
     <title><![CDATA[Reverse Linked List II]]></title>
     <link href="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/"/>
     <id>http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/</id>
-    <published>2015-11-16T22:49:18.000Z</published>
+    <published>2015-11-16T06:49:18.000Z</published>
     <updated>2015-11-20T06:49:08.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:s">Problem:s</h2><p>Reverse a linked list from position m to n.</p>
 <pre><code>*Example*
@@ -237,7 +382,7 @@ Given <span class="number">1</span>]]>
     <title><![CDATA[Add Two Numbers II]]></title>
     <link href="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/"/>
     <id>http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/</id>
-    <published>2015-11-16T22:22:56.000Z</published>
+    <published>2015-11-16T06:22:56.000Z</published>
     <updated>2015-11-20T06:53:27.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in forward order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.</p>
 <p><a href="http://www.lintcode.com/en/problem/add-two-numbers-ii/" target="_blank" rel="external">Lintcode link</a></p>
@@ -260,7 +405,7 @@ Given <span class="number">1</span>]]>
     <title><![CDATA[Add Two Numbers]]></title>
     <link href="http://psyyz10.github.io/2015/11/Add-Two-Numbers/"/>
     <id>http://psyyz10.github.io/2015/11/Add-Two-Numbers/</id>
-    <published>2015-11-16T20:16:33.000Z</published>
+    <published>2015-11-16T04:16:33.000Z</published>
     <updated>2015-11-17T23:37:13.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.</p>
 <p>Have you met this question in a real interview? Yes</p>
@@ -284,7 +429,7 @@ Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span 
     <title><![CDATA[Single Number III]]></title>
     <link href="http://psyyz10.github.io/2015/11/Single-Number-III/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number-III/</id>
-    <published>2015-11-16T19:05:08.000Z</published>
+    <published>2015-11-16T03:05:08.000Z</published>
     <updated>2015-11-18T18:38:35.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Problem:">Problem:</h3><p>Given 2*n + 2 numbers, every numbers occurs twice except two, find them.</p>
 <p>Have you met this question in a real interview? Yes</p>
@@ -316,7 +461,7 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
     <title><![CDATA[Single Number II]]></title>
     <link href="http://psyyz10.github.io/2015/11/Single-Number-II/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number-II/</id>
-    <published>2015-11-16T07:40:12.000Z</published>
+    <published>2015-11-15T15:40:12.000Z</published>
     <updated>2015-11-18T18:38:25.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problems:">Problems:</h2><p>Given 3*n + 1 numbers, every numbers occurs triple times except one, find it.</p>
 <pre><code>Example
@@ -344,7 +489,7 @@ Giv]]>
     <title><![CDATA[Single Number]]></title>
     <link href="http://psyyz10.github.io/2015/11/Single-Number/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number/</id>
-    <published>2015-11-16T07:22:04.000Z</published>
+    <published>2015-11-15T15:22:04.000Z</published>
     <updated>2015-11-18T21:10:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given 2*n + 1 numbers, every numbers occurs twice except one, find it.</p>
 <p>Have you met this question in a real interview? Yes<br>Example<br>Given [1,2,2,1,3,4,3], return 4</p>
@@ -370,7 +515,7 @@ Giv]]>
     <title><![CDATA[Candy]]></title>
     <link href="http://psyyz10.github.io/2015/11/Candy/"/>
     <id>http://psyyz10.github.io/2015/11/Candy/</id>
-    <published>2015-11-16T06:04:01.000Z</published>
+    <published>2015-11-15T14:04:01.000Z</published>
     <updated>2015-11-17T23:39:20.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>There are N children standing in a line. Each child is assigned a rating value.</p>
 <p>You are giving candies to these children subjected to the following requirements:</p>
@@ -404,7 +549,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <title><![CDATA[Gas Station]]></title>
     <link href="http://psyyz10.github.io/2015/11/Gas-Station/"/>
     <id>http://psyyz10.github.io/2015/11/Gas-Station/</id>
-    <published>2015-11-16T03:33:35.000Z</published>
+    <published>2015-11-15T11:33:35.000Z</published>
     <updated>2015-11-17T23:42:24.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
 <p>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.</p>
@@ -430,7 +575,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <title><![CDATA[Set Matrix Zeroes]]></title>
     <link href="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/"/>
     <id>http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/</id>
-    <published>2015-11-16T00:08:38.000Z</published>
+    <published>2015-11-15T08:08:38.000Z</published>
     <updated>2015-11-17T23:27:09.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.</p>
 <p>Have you met this question in a real interview? Yes<br>    Example<br>    Given a matrix</p>
@@ -458,7 +603,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <title><![CDATA[Gray Code]]></title>
     <link href="http://psyyz10.github.io/2015/11/Gray-Code/"/>
     <id>http://psyyz10.github.io/2015/11/Gray-Code/</id>
-    <published>2015-11-14T01:21:13.000Z</published>
+    <published>2015-11-13T09:21:13.000Z</published>
     <updated>2015-11-17T23:43:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
 <p>Given a non-negative integer n representing the total number of bits in the code, find the sequence of gray code. A gray code sequence must begin with 0 and with cover all 2n integers.</p>
@@ -527,7 +672,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <title><![CDATA[Climbing Stairs]]></title>
     <link href="http://psyyz10.github.io/2015/11/Climbing-Stairs/"/>
     <id>http://psyyz10.github.io/2015/11/Climbing-Stairs/</id>
-    <published>2015-11-14T00:09:12.000Z</published>
+    <published>2015-11-13T08:09:12.000Z</published>
     <updated>2015-11-18T18:36:25.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You are climbing a stair case. It takes n steps to reach to the top.</p>
 <p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
@@ -595,7 +740,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     <title><![CDATA[Plus One]]></title>
     <link href="http://psyyz10.github.io/2015/11/Plus-One/"/>
     <id>http://psyyz10.github.io/2015/11/Plus-One/</id>
-    <published>2015-11-13T22:23:56.000Z</published>
+    <published>2015-11-13T06:23:56.000Z</published>
     <updated>2015-11-18T02:12:18.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
 <p>The digits are stored such that the most significant digit is at the head of the list.</p>
@@ -622,7 +767,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
     <title><![CDATA[Rotate Image ]]></title>
     <link href="http://psyyz10.github.io/2015/11/Rotate-Image/"/>
     <id>http://psyyz10.github.io/2015/11/Rotate-Image/</id>
-    <published>2015-11-13T20:38:28.000Z</published>
+    <published>2015-11-13T04:38:28.000Z</published>
     <updated>2015-11-18T18:24:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).</p>
 <p>Example<br>Given a matrix</p>
@@ -654,7 +799,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
     <title><![CDATA[Trapping Rain Water]]></title>
     <link href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/"/>
     <id>http://psyyz10.github.io/2015/11/Trapping-Rain-Water/</id>
-    <published>2015-11-13T18:39:18.000Z</published>
+    <published>2015-11-13T02:39:18.000Z</published>
     <updated>2015-11-17T23:23:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
 <pre><code>For example, 
@@ -690,10 +835,34 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
   </entry>
   
   <entry>
+    <title><![CDATA[Hexo]]></title>
+    <link href="http://psyyz10.github.io/2015/11/hello-world/"/>
+    <id>http://psyyz10.github.io/2015/11/hello-world/</id>
+    <published>2015-11-12T18:48:13.000Z</published>
+    <updated>2015-11-12T18:48:13.000Z</updated>
+    <content type="html"><![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask questions on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using ]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://psyyz10.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Valid Sudoku]]></title>
     <link href="http://psyyz10.github.io/2015/11/Valid-Sudoku/"/>
     <id>http://psyyz10.github.io/2015/11/Valid-Sudoku/</id>
-    <published>2015-11-13T01:35:32.000Z</published>
+    <published>2015-11-12T09:35:32.000Z</published>
     <updated>2015-11-17T23:20:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank" rel="external">Sudoku Puzzles - The Rules</a>.</p>
 <p>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.</p>
@@ -718,7 +887,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
     <title><![CDATA[Permutation Sequence]]></title>
     <link href="http://psyyz10.github.io/2015/11/Permutation-Sequence/"/>
     <id>http://psyyz10.github.io/2015/11/Permutation-Sequence/</id>
-    <published>2015-11-12T23:37:32.000Z</published>
+    <published>2015-11-12T07:37:32.000Z</published>
     <updated>2015-11-18T18:37:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n and k, return the k-th permutation sequence.</p>
 <pre><code>Example
@@ -760,7 +929,7 @@ a_n = <span class="number">1</span>;
     <title><![CDATA[Next Permutation]]></title>
     <link href="http://psyyz10.github.io/2015/11/Next-Permutation/"/>
     <id>http://psyyz10.github.io/2015/11/Next-Permutation/</id>
-    <published>2015-11-12T20:48:57.000Z</published>
+    <published>2015-11-12T04:48:57.000Z</published>
     <updated>2015-11-18T01:52:54.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.</p>
 <p>If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).</p>
@@ -788,7 +957,7 @@ a_n = <span class="number">1</span>;
     <title><![CDATA[Remove Element]]></title>
     <link href="http://psyyz10.github.io/2015/11/Remove-Element/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Element/</id>
-    <published>2015-11-12T20:09:45.000Z</published>
+    <published>2015-11-12T04:09:45.000Z</published>
     <updated>2015-11-18T02:32:54.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array and a value, remove all instances of that value in place and return the new length.</p>
 <p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
@@ -807,34 +976,10 @@ a_n = <span class="number">1</span>;
   </entry>
   
   <entry>
-    <title><![CDATA[Hexo]]></title>
-    <link href="http://psyyz10.github.io/2015/11/hello-world/"/>
-    <id>http://psyyz10.github.io/2015/11/hello-world/</id>
-    <published>2015-11-12T18:48:13.000Z</published>
-    <updated>2015-11-12T18:48:13.000Z</updated>
-    <content type="html"><![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask questions on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using ]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://psyyz10.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[4Sum]]></title>
     <link href="http://psyyz10.github.io/2015/11/4Sum/"/>
     <id>http://psyyz10.github.io/2015/11/4Sum/</id>
-    <published>2015-11-12T07:49:03.000Z</published>
+    <published>2015-11-11T15:49:03.000Z</published>
     <updated>2015-11-18T18:35:58.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
 <p>Note:<br>Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)<br>The solution set must not contain duplicate quadruplets.<br>    For example, given array S = {1 0 -1 0 -2 2}, and target = 0.</p>
@@ -863,7 +1008,7 @@ a_n = <span class="number">1</span>;
     <title><![CDATA[3Sum Closest]]></title>
     <link href="http://psyyz10.github.io/2015/11/3Sum-Closest/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum-Closest/</id>
-    <published>2015-11-12T07:04:51.000Z</published>
+    <published>2015-11-11T15:04:51.000Z</published>
     <updated>2015-11-18T18:35:07.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
 <pre><code>For example, given <span class="built_in">array</span> S = {-<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> -<span class="number">4</span>}, and target = <span class="number">1.</span>
@@ -890,7 +1035,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <title><![CDATA[3Sum]]></title>
     <link href="http://psyyz10.github.io/2015/11/3Sum/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum/</id>
-    <published>2015-11-12T02:16:29.000Z</published>
+    <published>2015-11-11T10:16:29.000Z</published>
     <updated>2015-11-18T18:35:46.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
 <p>Note:<br>Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)<br>The solution set must not contain duplicate triplets.<br>    For example, given array S = {-1 0 1 2 -1 -4},</p>
@@ -918,7 +1063,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <title><![CDATA[Two Sum]]></title>
     <link href="http://psyyz10.github.io/2015/11/Two-Sum/"/>
     <id>http://psyyz10.github.io/2015/11/Two-Sum/</id>
-    <published>2015-11-12T01:12:59.000Z</published>
+    <published>2015-11-11T09:12:59.000Z</published>
     <updated>2015-11-17T23:15:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
 <p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
@@ -946,7 +1091,7 @@ Output: index1=<span class="number">1</span>, index2=<span class="number">2</spa
     <title><![CDATA[Longest Consecutive Sequence]]></title>
     <link href="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/"/>
     <id>http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/</id>
-    <published>2015-11-12T00:09:38.000Z</published>
+    <published>2015-11-11T08:09:38.000Z</published>
     <updated>2015-11-17T23:47:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
 <pre><code>Example
@@ -979,7 +1124,7 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
     <title><![CDATA[Median of Two Sorted Arrays]]></title>
     <link href="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/"/>
     <id>http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/</id>
-    <published>2015-11-11T05:38:25.000Z</published>
+    <published>2015-11-10T13:38:25.000Z</published>
     <updated>2015-11-18T18:37:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
 <pre><code>Example
@@ -1019,7 +1164,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <title><![CDATA[Search in Rotated Sorted Array II]]></title>
     <link href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/"/>
     <id>http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/</id>
-    <published>2015-11-11T02:07:31.000Z</published>
+    <published>2015-11-10T10:07:31.000Z</published>
     <updated>2015-11-18T18:19:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Follow up for “Search in Rotated Sorted Array”:<br>What if duplicates are allowed?</p>
 <p>Would this affect the run-time complexity? How and why?</p>
@@ -1048,7 +1193,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <title><![CDATA[Search in Rotated Sorted Array]]></title>
     <link href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/"/>
     <id>http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/</id>
-    <published>2015-11-10T09:12:12.000Z</published>
+    <published>2015-11-09T17:12:12.000Z</published>
     <updated>2015-11-18T18:38:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p>
 <p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p>
@@ -1086,7 +1231,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <title><![CDATA[Remove Duplicates from Sorted Array II]]></title>
     <link href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/</id>
-    <published>2015-11-10T09:09:39.000Z</published>
+    <published>2015-11-09T17:09:39.000Z</published>
     <updated>2015-11-18T02:29:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Follow up for “Remove Duplicates”:<br>What if duplicates are allowed at most twice?</p>
 <p>For example,<br>Given sorted array nums = [1,1,1,2,2,3],</p>
@@ -1111,7 +1256,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <title><![CDATA[Remove Duplicates from Sorted Array]]></title>
     <link href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/"/>
     <id>http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/</id>
-    <published>2015-11-10T08:52:47.000Z</published>
+    <published>2015-11-09T16:52:47.000Z</published>
     <updated>2015-11-18T02:18:55.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p>
 <p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
@@ -1139,7 +1284,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <title><![CDATA[Deep Learning Overview]]></title>
     <link href="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/"/>
     <id>http://psyyz10.github.io/2015/11/Deep-Learning-Overview/</id>
-    <published>2015-11-10T01:01:13.000Z</published>
+    <published>2015-11-09T09:01:13.000Z</published>
     <updated>2015-11-18T18:41:53.000Z</updated>
     <content type="html"><![CDATA[<p>Nowadays, the performances of machine learning models heavily rely on the representation of data or feature selection steps rather than just the choice of machine learning algorithms. Thus much effort is applied on preprocessing pipelines such as feature selection. Even though some specific domain knowledge can be used to help design the representation of data, the motivation of Artificial Intelligence needs more powerful representations of features. Deep Learning also called unsupervised learning, is a relatively new research field of machine learning which can learn multi- ple levels of abstraction and representation of features directly from data. It aims at learning feature hierarchies with higher level features formed by the composition of lower ones. The multiple levels structures allow to build complex functions which take data as input and output the result directly without depending on features crafted by humans <a href="#Bengio09">[Bengio09]</a>.</p>
 <p>Deep learning achieved many successful results on some problems, such as im- age classification <a href="#Ciresan12">[Ciresan12]</a> <a href="#Krizhevsky12">[Krizhevsky12]</a>, semantic parsing <a href="#Bordes12">[Bordes12]</a> and speech recognition <a href="#Dahl12">[Dahl12]</a>. Deep architecture may express the complex distributions more efficiently with better per- formance on challenging tasks <a href="#Bengio07">[Bengio07]</a><a href="#Bengio09">[Bengio09]</a>. The hypothesis that the composition of addi- tional functional levels can give more powerful modeling capacity has already been proposed for a long time <a href="#Hinton90">[Hinton90]</a><a href="#Rumelhart86">[Rumelhart86]</a>. However, the training process of deep architec- ture was proven to be very difficult, until some successful approaches of <a href="#Bengio007">[Bengio007]</a><a href="#Hinton06">[Hinton06]</a><a href="#Hinton006">[Hinton006]</a> for training stacked autoencoder and DBN occurred. One key idea behind them is to train the deep architecture layer by layer by unsupervised learning, which is also called unsupervised feature learning. Each layer will generate a more abstract representation of the observed layer by doing a local optimization. Unsupervised feature learning can learn useful features automatically and directly from the data set by unsupervised learning without given specific features defined by human. The unsupervised learned features are more natural with less information lost <a href="#Bengio15">[Bengio15]</a>. Some deep learning models also have a potential powerful capacity of solving time-series problems <a href="#La14">[La14]</a>, which is another reason that makes deep learning suitable for stock trend prediction. Therefore deep learning can provide a new potential and powerful approach to improve stock prediction.</p>
@@ -1164,7 +1309,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
     <title><![CDATA[Stacked Denoising Autoencoders]]></title>
     <link href="http://psyyz10.github.io/2015/11/SDA/"/>
     <id>http://psyyz10.github.io/2015/11/SDA/</id>
-    <published>2015-11-09T19:36:06.000Z</published>
+    <published>2015-11-09T03:36:06.000Z</published>
     <updated>2015-11-20T19:10:05.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Autoencoders">Autoencoders</h2><p>An autoencoder <a href="#Bengio09">[Bengio09]</a> is a network whose graphical structure is shown in Figure <a href="#F4_1">4.1</a>, which has the same dimension for both input and output. It takes an unlabeled training examples in set <img class="math" src="http://psyyz10.github.io/img/1.png"> where <img class="math" src="http://psyyz10.github.io/img/2.png"> is a single input and encodes it to the hidden layer <img class="math" src="http://psyyz10.github.io/img/3.png"> by linear combination with weight matrix <img class="math" style="height:18px" src="http://psyyz10.github.io/img/4.png"> and then through a non-linear activation function. It can be mathematically expressed as <img class="math" src="http://psyyz10.github.io/img/5.png">, where <img class="math" style="height:18px" src="http://psyyz10.github.io/img/6.png"> is the bias vector.</p>
 <center><br>    <img id="F4_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 4.1: An Autoencoder</p><br></center>
