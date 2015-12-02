@@ -54,7 +54,7 @@
     <link href="http://psyyz10.github.io/2015/11/LRU-Cache/"/>
     <id>http://psyyz10.github.io/2015/11/LRU-Cache/</id>
     <published>2015-11-20T05:32:14.000Z</published>
-    <updated>2015-11-21T00:28:42.000Z</updated>
+    <updated>2015-12-02T05:06:25.000Z</updated>
     <content type="html"><![CDATA[<p>Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and set.</p>
 <p>get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.<br>set(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.</p>
 <p><a href="https://leetcode.com/problems/lru-cache/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/lru-cache/" target="_blank" rel="external">Lintcode likn</a></p>
@@ -65,7 +65,7 @@
 <]]>
     </summary>
     
-      <category term="Hash map" scheme="http://psyyz10.github.io/tags/Hash-map/"/>
+      <category term="Hash Map" scheme="http://psyyz10.github.io/tags/Hash-Map/"/>
     
       <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
     
@@ -103,7 +103,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/"/>
     <id>http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/</id>
     <published>2015-11-20T03:52:35.000Z</published>
-    <updated>2015-11-20T20:31:30.000Z</updated>
+    <updated>2015-12-02T05:05:56.000Z</updated>
     <content type="html"><![CDATA[<p>Given a linked list, return the node where the cycle begins. If there is no cycle, return null.</p>
 <p>Note: Do not modify the linked list.</p>
 <p>Follow up:<br>Can you solve it without using extra space?</p>
@@ -120,7 +120,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
     
       <category term="Math" scheme="http://psyyz10.github.io/tags/Math/"/>
     
-      <category term="Two Pointer" scheme="http://psyyz10.github.io/tags/Two-Pointer/"/>
+      <category term="Two Pointers" scheme="http://psyyz10.github.io/tags/Two-Pointers/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -131,7 +131,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Linked-List-Cycle/"/>
     <id>http://psyyz10.github.io/2015/11/Linked-List-Cycle/</id>
     <published>2015-11-20T03:41:49.000Z</published>
-    <updated>2015-11-20T19:51:55.000Z</updated>
+    <updated>2015-12-02T05:06:02.000Z</updated>
     <content type="html"><![CDATA[<p>Given a linked list, determine if it has a cycle in it.<br>    Example<br>    Given -21-&gt;10-&gt;4-&gt;5, tail connects to node index 1, return true</p>
 <p>Challenge<br>Follow up:<br>Can you solve it without using extra space?</p>
 <h2 id="Solution:">Solution:</h2><p>This is an easy problem. Just use two pointers to point to head.<br>One pointer go twice speed of the second pointer.<br>If they meet before the fast touch the end of the list, return true;<br>Else return false;</p>
@@ -141,7 +141,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
     <![CDATA[<p>Given a linked list, determine if it has a cycle in it.<br>    Example<br>    Given -21-&gt;10-&gt;4-&gt;5, tail connects to node index 1]]>
     </summary>
     
-      <category term="LinkedList" scheme="http://psyyz10.github.io/tags/LinkedList/"/>
+      <category term="Linked List" scheme="http://psyyz10.github.io/tags/Linked-List/"/>
     
       <category term="Two Pointers" scheme="http://psyyz10.github.io/tags/Two-Pointers/"/>
     
@@ -486,11 +486,11 @@ Giv]]>
   </entry>
   
   <entry>
-    <title><![CDATA[Single Number]]></title>
+    <title><![CDATA[Single number]]></title>
     <link href="http://psyyz10.github.io/2015/11/Single-Number/"/>
     <id>http://psyyz10.github.io/2015/11/Single-Number/</id>
     <published>2015-11-15T15:22:04.000Z</published>
-    <updated>2015-11-18T21:10:34.000Z</updated>
+    <updated>2015-12-02T05:07:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given 2*n + 1 numbers, every numbers occurs twice except one, find it.</p>
 <p>Have you met this question in a real interview? Yes<br>Example<br>Given [1,2,2,1,3,4,3], return 4</p>
 <p>Challenge<br>One-pass, constant extra space.</p>
@@ -980,7 +980,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/4Sum/"/>
     <id>http://psyyz10.github.io/2015/11/4Sum/</id>
     <published>2015-11-11T15:49:03.000Z</published>
-    <updated>2015-11-18T18:35:58.000Z</updated>
+    <updated>2015-12-02T05:05:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
 <p>Note:<br>Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)<br>The solution set must not contain duplicate quadruplets.<br>    For example, given array S = {1 0 -1 0 -2 2}, and target = 0.</p>
 <pre><code>A solution <span class="built_in">set</span> is:
@@ -998,7 +998,7 @@ a_n = <span class="number">1</span>;
     
       <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
     
-      <category term="Two pointers" scheme="http://psyyz10.github.io/tags/Two-pointers/"/>
+      <category term="Two Pointers" scheme="http://psyyz10.github.io/tags/Two-Pointers/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -1009,7 +1009,7 @@ a_n = <span class="number">1</span>;
     <link href="http://psyyz10.github.io/2015/11/3Sum-Closest/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum-Closest/</id>
     <published>2015-11-11T15:04:51.000Z</published>
-    <updated>2015-11-18T18:35:07.000Z</updated>
+    <updated>2015-12-02T05:05:13.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
 <pre><code>For example, given <span class="built_in">array</span> S = {-<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> -<span class="number">4</span>}, and target = <span class="number">1.</span>
 
@@ -1025,7 +1025,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     
       <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
     
-      <category term="Two pointers" scheme="http://psyyz10.github.io/tags/Two-pointers/"/>
+      <category term="Two Pointers" scheme="http://psyyz10.github.io/tags/Two-Pointers/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
@@ -1036,7 +1036,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     <link href="http://psyyz10.github.io/2015/11/3Sum/"/>
     <id>http://psyyz10.github.io/2015/11/3Sum/</id>
     <published>2015-11-11T10:16:29.000Z</published>
-    <updated>2015-11-18T18:35:46.000Z</updated>
+    <updated>2015-12-02T05:05:19.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
 <p>Note:<br>Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)<br>The solution set must not contain duplicate triplets.<br>    For example, given array S = {-1 0 1 2 -1 -4},</p>
 <pre><code>A solution <span class="built_in">set</span> is:
@@ -1053,7 +1053,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
     
       <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
     
-      <category term="Two pointers" scheme="http://psyyz10.github.io/tags/Two-pointers/"/>
+      <category term="Two Pointers" scheme="http://psyyz10.github.io/tags/Two-Pointers/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
     
