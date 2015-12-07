@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2015-11-25T06:37:18.000Z</updated>
+  <updated>2015-12-07T03:33:13.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,10 +19,15 @@
     <link href="http://psyyz10.github.io/2015/11/Interview-Review-Link/"/>
     <id>http://psyyz10.github.io/2015/11/Interview-Review-Link/</id>
     <published>2015-11-20T13:31:21.000Z</published>
-    <updated>2015-11-25T06:37:18.000Z</updated>
+    <updated>2015-12-07T03:33:13.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://github.com/julycoding/The-Art-Of-Programming-By-July/tree/master/ebook/zh" target="_blank" rel="external">The-Art-Of-Programming-By-July ebook</a></p>
 <p><a href="http://psyyz10.github.io/pdf/BAT100.pdf">freewater 面试题集锦</a></p>
 <p><a href="http://psyyz10.github.io/pdf/腾讯2016校园招聘求职大礼包.pdf">腾讯2016校园招聘求职大礼包</a></p>
+<p><a href="http://blog.csdn.net/zhangerqing/article/details/8214365" target="_blank" rel="external">编程之美 JVM 内存管理机制</a></p>
+<p><a href="https://www.hackerrank.com/feed" target="_blank" rel="external">Telephone Interview Hackerrank</a></p>
+<p><a href="https://web.stanford.edu/class/cs109/syllabus" target="_blank" rel="external">Standford CS109 Probability</a></p>
+<p><a href="http://www.cs.princeton.edu/courses/archive/fall15/cos226/lectures.php" target="_blank" rel="external">Princeton Algorithm</a></p>
+<p><a href="http://www.cnblogs.com/tornadomeet/p/3395593.html" target="_blank" rel="external">机器学习&amp;数据挖掘笔记_16（常见面试之机器学习算法思想简单梳理)</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><a href="https://github.com/julycoding/The-Art-Of-Programming-By-July/tree/master/ebook/zh" target="_blank" rel="external">The-Art-Of-Pro]]>
