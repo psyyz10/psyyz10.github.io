@@ -40,12 +40,21 @@
     <link href="http://psyyz10.github.io/2015/12/CPP-Review-note/"/>
     <id>http://psyyz10.github.io/2015/12/CPP-Review-note/</id>
     <published>2015-12-31T09:35:32.000Z</published>
-    <updated>2016-01-02T05:48:53.000Z</updated>
-    <content type="html"><![CDATA[<p>** The “Hello World” Program<br>C version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+    <updated>2016-01-02T05:58:39.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="The_“Hello_World”_Program">The “Hello World” Program</h2><p>C version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>C++ version:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="￼Sizes_of_types">￼Sizes of types</h2><ul>
+<li>The size of types (in bits/bytes) can vary in C/C++<br>  – For different compilers/operating systems<ul>
+<li>In Java, sizes are standardised, across O/Ss</li>
+</ul>
+</li>
+<li>Some guarantees are given:<br>  – A minimum size (bits): char 8, short 16, long 32<br>  – Relativesizes:char≤short≤int≤long</li>
+<li>An int changes size more than other types!<br>  – Used for speed (not portability), but VERY popular! (fast) – Uses the most efficient size for the platform<br>  – 16bitoperatingsystemsusuallyuse16bitint<br>  – 32bitoperatingsystemsusuallyuse32bitint<br>  – 64bitoperatingsystemsusuallyuse64bitint</li>
+<li>sizeof() operator exists to tell us the size (later lecture)</li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>** The “Hello World” Program<br>C version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><]]>
+    <![CDATA[<h2 id="The_“Hello_World”_Program">The “Hello World” Program</h2><p>C version:<br><figure class="highlight c"><table><tr><td class="gutter">]]>
     </summary>
     
       <category term="C++" scheme="http://psyyz10.github.io/tags/C/"/>
@@ -59,7 +68,7 @@
     <link href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/"/>
     <id>http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/</id>
     <published>2015-12-26T04:50:06.000Z</published>
-    <updated>2015-12-31T10:38:04.000Z</updated>
+    <updated>2016-01-02T05:51:13.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Java_基础：">Java 基础：</h2><ol>
 <li>equals 与 == 的区别</li>
 <li>HashMap, HashTable, ConcurrentHashMap 三者的区别<ul>
@@ -82,13 +91,19 @@
 </li>
 <li>解释和比较 override and overload</li>
 <li>Interface 和 absctract class 的区别<ul>
-<li>(Difference between abstract class and interface)[<a href="http://www.javatpoint.com/difference-between-abstract-class-and-interface" target="_blank" rel="external">http://www.javatpoint.com/difference-between-abstract-class-and-interface</a>]</li>
+<li><a href="http://www.javatpoint.com/difference-between-abstract-class-and-interface" target="_blank" rel="external">Difference between abstract class and interface</a></li>
 </ul>
 </li>
-<li>java 多态的实现原理</li>
+<li>java 多态的实现原理<ul>
+<li><a href=""></a></li>
+</ul>
+</li>
 <li>锁的等级： 方法锁， 对象锁， 类锁</li>
-<li>wait（）和 sleep（） 的区别</li>
-<li>java 反射的作用和原理</li>
+<li>wait（）和 sleep（） 的区别<ul>
+<li><a href="http://blog.csdn.net/shineflowers/article/details/40047479" target="_blank" rel="external"></a></li>
+</ul>
+</li>
+<li>java 反射 (reflection) 的作用和原理<br>* </li>
 <li>Concurrent 包里</li>
 <li>写出生产者消费者模型</li>
 <li>写出单例线程安全的懒汉模式</li>
@@ -99,6 +114,10 @@
 <li>Synchronize 的 机制</li>
 <li>什么情况下一个object不会被回收</li>
 <li>写一个服务器log程序</li>
+<li>内存溢出(out of memory)和内存泄漏(memory leak):<ul>
+<li><a href="http://blog.csdn.net/seelye/article/details/8269705" target="_blank" rel="external">Java内存泄露原因详解</a></li>
+</ul>
+</li>
 </ol>
 <h2 id="操作系统">操作系统</h2><ol>
 <li>线程与进程的区别</li>
