@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2015-12-07T03:33:13.000Z</updated>
+  <updated>2015-12-31T10:21:46.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -13,6 +13,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Java 8 new properties]]></title>
+    <link href="http://psyyz10.github.io/2015/12/Java-8-new-properties/"/>
+    <id>http://psyyz10.github.io/2015/12/Java-8-new-properties/</id>
+    <published>2015-12-31T10:11:23.000Z</published>
+    <updated>2015-12-31T10:21:46.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Java" scheme="http://psyyz10.github.io/tags/Java/"/>
+    
+      <category term="Java 8" scheme="http://psyyz10.github.io/tags/Java-8/"/>
+    
+      <category term="Programming Language" scheme="http://psyyz10.github.io/tags/Programming-Language/"/>
+    
+      <category term="Java" scheme="http://psyyz10.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CPP Review note]]></title>
+    <link href="http://psyyz10.github.io/2015/12/CPP-Review-note/"/>
+    <id>http://psyyz10.github.io/2015/12/CPP-Review-note/</id>
+    <published>2015-12-31T09:35:32.000Z</published>
+    <updated>2016-01-02T05:48:53.000Z</updated>
+    <content type="html"><![CDATA[<p>** The “Hello World” Program<br>C version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>C++ version:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>** The “Hello World” Program<br>C version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><]]>
+    </summary>
+    
+      <category term="C++" scheme="http://psyyz10.github.io/tags/C/"/>
+    
+      <category term="Learning Note" scheme="http://psyyz10.github.io/categories/Learning-Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Chinese interview questions about technical basic knowledge]]></title>
+    <link href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/"/>
+    <id>http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/</id>
+    <published>2015-12-26T04:50:06.000Z</published>
+    <updated>2015-12-31T10:38:04.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Java_基础：">Java 基础：</h2><ol>
+<li>equals 与 == 的区别</li>
+<li>HashMap, HashTable, ConcurrentHashMap 三者的区别<ul>
+<li><a href="http://blog.csdn.net/xuefeng0707/article/details/40834595" target="_blank" rel="external">HashMap与ConcurrentHashMap的区别</a></li>
+<li><a href="http://alex09.iteye.com/blog/539545" target="_blank" rel="external">java中HashMap详解</a></li>
+</ul>
+</li>
+<li>TreeMap, HashMap, LinkedHashMap 的区别<ul>
+<li><a href="http://www.javamadesoeasy.com/2015/04/hashmap-vs-hashtable-vs-linkedhashmap.html" target="_blank" rel="external">Differences between HashMap, Hashtable, LinkedHashMap and TreeMap in java</a></li>
+</ul>
+</li>
+<li>Collection 包结构与 Collections 的区别<ul>
+<li>java.util.Collection 是一个集合接口。它提供了对集合对象进行基本操作的通用接口方法。Collection接口在Java 类库中有很多具体的实现。Collection接口的意义是为各种具体的集合提供了最大化的统一操作方式。</li>
+<li>java.util.Collections 是一个包装类。它包含有各种有关集合操作的静态多态方法。此类不能实例化，就像一个工具类，服务于Java的Collection框架。</li>
+</ul>
+</li>
+<li>Java 面向对象的三个特征及其含义<ul>
+<li><a href="http://m.blog.csdn.net/blog/u014307616/24847535" target="_blank" rel="external">Java:面向对象设计的三个特征</a></li>
+</ul>
+</li>
+<li>解释和比较 override and overload</li>
+<li>Interface 和 absctract class 的区别<ul>
+<li>(Difference between abstract class and interface)[<a href="http://www.javatpoint.com/difference-between-abstract-class-and-interface" target="_blank" rel="external">http://www.javatpoint.com/difference-between-abstract-class-and-interface</a>]</li>
+</ul>
+</li>
+<li>java 多态的实现原理</li>
+<li>锁的等级： 方法锁， 对象锁， 类锁</li>
+<li>wait（）和 sleep（） 的区别</li>
+<li>java 反射的作用和原理</li>
+<li>Concurrent 包里</li>
+<li>写出生产者消费者模型</li>
+<li>写出单例线程安全的懒汉模式</li>
+<li>for each 和 for 循环的效率比较</li>
+<li>设计模式：单例， 工厂， 适配器， 责任链， 观察者等</li>
+<li>ThreadPool 的用法与优势</li>
+<li>ThreadLocal 的设计理念与作用</li>
+<li>Synchronize 的 机制</li>
+<li>什么情况下一个object不会被回收</li>
+<li>写一个服务器log程序</li>
+</ol>
+<h2 id="操作系统">操作系统</h2><ol>
+<li>线程与进程的区别</li>
+<li>线程之间的通讯方式</li>
+</ol>
+<h2 id="网络协议：">网络协议：</h2><ol>
+<li>三次握手<br><a href="http://baike.baidu.com/link?url=aRAJTJY3t3oolqouJtyyp08wbUvacypDytnUgvXx_C-fDnBF-IXBLLALKgZdzU85pWuxmq13EyGrcBxEGcHJsK" target="_blank" rel="external">参考</a></li>
+<li>从客户端发送信息到服务器端的过程模拟</li>
+<li>get, put, post 的区别</li>
+<li></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Java_基础：">Java 基础：</h2><ol>
+<li>equals 与 == 的区别</li>
+<li>HashMap, HashTable, ConcurrentHashMap 三者的区别<ul>
+<li><a href="http://blog.cs]]>
+    </summary>
+    
+      <category term="Interview" scheme="http://psyyz10.github.io/tags/Interview/"/>
+    
+      <category term="Interview" scheme="http://psyyz10.github.io/categories/Interview/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Interview Review Link]]></title>
