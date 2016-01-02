@@ -40,12 +40,12 @@
     <link href="http://psyyz10.github.io/2015/12/CPP-Review-note/"/>
     <id>http://psyyz10.github.io/2015/12/CPP-Review-note/</id>
     <published>2015-12-31T09:35:32.000Z</published>
-    <updated>2016-01-02T06:07:11.000Z</updated>
+    <updated>2016-01-02T06:11:55.000Z</updated>
     <content type="html"><![CDATA[<h2 id="The_“Hello_World”_Program">The “Hello World” Program</h2><p>C version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>C++ version:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="￼Sizes_of_types">￼Sizes of types</h2><ul>
 <li><strong>The size of types (in bits/bytes) can vary in C/C++ </strong><br>  – For different compilers/operating systems<ul>
-<li><p style="color:red">In Java, sizes are standardised, across O/Ss</p></li>
+<li><div style="color:red">In Java, sizes are standardised, across O/Ss</div></li>
 </ul>
 </li>
 <li>Some guarantees are given:<br>  – A minimum size (bits): char 8, short 16, long 32<br>  – Relativesizes:char≤short≤int≤long</li>
