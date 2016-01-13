@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-01-13T11:30:13.000Z</updated>
+  <updated>2016-01-13T11:31:46.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/"/>
     <id>http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/</id>
     <published>2016-01-13T08:29:46.000Z</published>
-    <updated>2016-01-13T11:30:13.000Z</updated>
+    <updated>2016-01-13T11:31:46.000Z</updated>
     <content type="html"><![CDATA[<ul>
-<li><a href="http://jupyter.org" target="_blank" rel="external"><em>Jupyter Notebook</em></a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</li>
+<li><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</li>
 <li><a href="https://sites.google.com/a/everstring.com/es-intranet/" target="_blank" rel="external">Everstring Beijing Intranet</a></li>
 <li><a href="https://sites.google.com/a/everstring.com/internal-wiki/home" target="_blank" rel="external">Everstring Global Intranet</a></li>
 <li><a href="https://google.github.io/styleguide/javaguide.html#s4.6-whitespace" target="_blank" rel="external">Google Java Style</a></li>
@@ -37,7 +37,7 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<ul>
-<li><a href="http://jupyter.org" target="_blank" rel="external"><em>Jupyter Notebook</em></a><br>The Jupyter Notebook is a web applicat]]>
+<li><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web ]]>
     </summary>
     
       <category term="Work, Everstring, Link, Note" scheme="http://psyyz10.github.io/tags/Work-Everstring-Link-Note/"/>
