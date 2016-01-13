@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2015-12-31T10:21:46.000Z</updated>
+  <updated>2016-01-13T11:24:49.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -13,6 +13,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Everstring Frequent Used Links]]></title>
+    <link href="http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/"/>
+    <id>http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/</id>
+    <published>2016-01-13T08:29:46.000Z</published>
+    <updated>2016-01-13T11:24:49.000Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://jupyter.org" target="_blank" rel="external">Jupyter Notebook</a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</li>
+<li><a href="https://sites.google.com/a/everstring.com/es-intranet/" target="_blank" rel="external">Everstring Beijing Intranet</a></li>
+<li><a href="https://sites.google.com/a/everstring.com/internal-wiki/home" target="_blank" rel="external">Everstring Global Intranet</a></li>
+<li><a href="https://google.github.io/styleguide/javaguide.html#s4.6-whitespace" target="_blank" rel="external">Google Java Style</a></li>
+<li><a href="https://everstring.atlassian.net/secure/Dashboard.jspa" target="_blank" rel="external">JIRA</a><br>  Project management plateform.</li>
+<li><a href="https://everstring.atlassian.net/wiki/spacedirectory/view.action" target="_blank" rel="external">Confluence</a><br>  Wiki pages</li>
+<li><a href="https://sites.google.com/a/everstring.com/engedu/" target="_blank" rel="external">Eng Edu</a><br>  Eng Edu will have tech talks, tutorial, blog and writeup about various different technology EverString deploy.</li>
+<li><a href="http://etl02.prod.everstring.com:10008/#/" target="_blank" rel="external">Zeppelin</a><br>Zeppelin is web-based notebook that enables interactive data analytics.<br>We use this tool to access database</li>
+<li><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/contactsv1.0/queryContact" target="_blank" rel="external">swagger</a></li>
+<li><a href="http://www.restapitutorial.com" target="_blank" rel="external">Learn REST: A RESTful Tutorial</a></li>
+<li><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/companiesv1.0/queryCompany" target="_blank" rel="external">swagger</a><br> Swagger is a simple yet powerful representation of your RESTful API. </li>
+<li><a href=""></a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<ul>
+<li><a href="http://jupyter.org" target="_blank" rel="external">Jupyter Notebook</a><br>The Jupyter Notebook is a web application that ]]>
+    </summary>
+    
+      <category term="Work, Everstring, Link, Note" scheme="http://psyyz10.github.io/tags/Work-Everstring-Link-Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mac Configurationd]]></title>
+    <link href="http://psyyz10.github.io/2016/01/Mac-Configurationd/"/>
+    <id>http://psyyz10.github.io/2016/01/Mac-Configurationd/</id>
+    <published>2016-01-13T03:06:05.000Z</published>
+    <updated>2016-01-13T03:06:05.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hexo]]></title>
+    <link href="http://psyyz10.github.io/2016/01/hello-world/"/>
+    <id>http://psyyz10.github.io/2016/01/hello-world/</id>
+    <published>2016-01-12T08:34:36.000Z</published>
+    <updated>2015-11-12T18:48:13.000Z</updated>
+    <content type="html"><![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask questions on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using ]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://psyyz10.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Functional Programming]]></title>
+    <link href="http://psyyz10.github.io/2016/01/Functional-Programming/"/>
+    <id>http://psyyz10.github.io/2016/01/Functional-Programming/</id>
+    <published>2016-01-06T09:48:36.000Z</published>
+    <updated>2016-01-06T09:48:36.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Java 8 new properties]]></title>
@@ -40,7 +120,7 @@
     <link href="http://psyyz10.github.io/2015/12/CPP-Review-note/"/>
     <id>http://psyyz10.github.io/2015/12/CPP-Review-note/</id>
     <published>2015-12-31T09:35:32.000Z</published>
-    <updated>2016-01-02T06:49:46.000Z</updated>
+    <updated>2016-01-02T06:56:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="The_“Hello_World”_Program">The “Hello World” Program</h2><p>C version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>C++ version:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello world!\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="￼Sizes_of_types">￼Sizes of types</h2><ul>
@@ -49,8 +129,7 @@
 <li><div style="color:red">In Java, sizes are standardised, across O/Ss</div></li>
 </ul>
 </li>
-<li>Some guarantees are given:<br>  – A minimum size (bits): char 8, short 16, long 32<br>  – Relativesizes:char≤short≤int≤long</li>
-<li>An int changes size more than other types!<br>  – Used for speed (not portability), but VERY popular! (fast) – Uses the most efficient size for the platform<br>  – 16bitoperatingsystemsusuallyuse16bitint<br>  – 32bitoperatingsystemsusuallyuse32bitint<br>  – 64bitoperatingsystemsusuallyuse64bitint</li>
+<li>An <strong>int</strong> changes size more than other types!<br>  – Used for speed (not portability), but VERY popular! (fast) – Uses the most efficient size for the platform<br>  – 16 bit operating systems usually use 16 bit int<br>  – 32 bit operating systems usually use 32 bit int<br>  – 64 bit operating systems usually use 64 bit int</li>
 <li><strong>sizeof()</strong> operator exists to tell us the size </li>
 </ul>
 ]]></content>
@@ -69,8 +148,17 @@
     <link href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/"/>
     <id>http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/</id>
     <published>2015-12-26T04:50:06.000Z</published>
-    <updated>2016-01-02T05:51:13.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Java_基础：">Java 基础：</h2><ol>
+    <updated>2016-01-06T13:52:44.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Offer_选择：">Offer 选择：</h2><ul>
+<li><a href="http://kedebug.com/blog/campus-offer-2015/" target="_blank" rel="external">2015 校招总结</a></li>
+<li><a href="http://www.muzhibus.com/Htmls/Sykx/2015/0703/4990.shtml" target="_blank" rel="external">2015年互联网行业薪酬报告</a></li>
+<li><a href="http://daily.zhihu.com/story/4264615" target="_blank" rel="external">硅谷创业公司</a></li>
+<li><a href="http://www.honglingjin.co.uk/85439.html" target="_blank" rel="external">留学生如何在北京就业落户</a></li>
+<li><a href="http://goabroad.xdf.cn/201311/9803919.html" target="_blank" rel="external">海外学历认证办理指南</a></li>
+<li><a href="http://goabroad.xdf.cn/201509/10351661.html" target="_blank" rel="external">留学生回国就业与落户手续申请详解</a></li>
+<li><a href=""></a></li>
+</ul>
+<h2 id="Java_基础：">Java 基础：</h2><ol>
 <li>equals 与 == 的区别</li>
 <li>HashMap, HashTable, ConcurrentHashMap 三者的区别<ul>
 <li><a href="http://blog.csdn.net/xuefeng0707/article/details/40834595" target="_blank" rel="external">HashMap与ConcurrentHashMap的区别</a></li>
@@ -123,6 +211,10 @@
 <h2 id="操作系统">操作系统</h2><ol>
 <li>线程与进程的区别</li>
 <li>线程之间的通讯方式</li>
+<li>函数调用过程栈帧变化<ul>
+<li><a href="http://www.cnblogs.com/fxplove/articles/2574451.html" target="_blank" rel="external">函数调用过程栈帧变化详解</a></li>
+</ul>
+</li>
 </ol>
 <h2 id="网络协议：">网络协议：</h2><ol>
 <li>三次握手<br><a href="http://baike.baidu.com/link?url=aRAJTJY3t3oolqouJtyyp08wbUvacypDytnUgvXx_C-fDnBF-IXBLLALKgZdzU85pWuxmq13EyGrcBxEGcHJsK" target="_blank" rel="external">参考</a></li>
@@ -132,10 +224,8 @@
 </ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="Java_基础：">Java 基础：</h2><ol>
-<li>equals 与 == 的区别</li>
-<li>HashMap, HashTable, ConcurrentHashMap 三者的区别<ul>
-<li><a href="http://blog.cs]]>
+    <![CDATA[<h2 id="Offer_选择：">Offer 选择：</h2><ul>
+<li><a href="http://kedebug.com/blog/campus-offer-2015/" target="_blank" rel="external">2015 校招总结</a><]]>
     </summary>
     
       <category term="Interview" scheme="http://psyyz10.github.io/tags/Interview/"/>
@@ -966,30 +1056,6 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
     
       <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo]]></title>
-    <link href="http://psyyz10.github.io/2015/11/hello-world/"/>
-    <id>http://psyyz10.github.io/2015/11/hello-world/</id>
-    <published>2015-11-12T18:48:13.000Z</published>
-    <updated>2015-11-12T18:48:13.000Z</updated>
-    <content type="html"><![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask questions on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using ]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://psyyz10.github.io/tags/Hexo/"/>
     
   </entry>
   
