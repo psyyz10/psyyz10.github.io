@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-01-13T11:34:37.000Z</updated>
+  <updated>2016-01-14T03:25:06.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -15,29 +15,58 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Markdown Tutorial]]></title>
+    <link href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/"/>
+    <id>http://psyyz10.github.io/2016/01/Markdown-Tutorial/</id>
+    <published>2016-01-14T03:11:18.000Z</published>
+    <updated>2016-01-14T03:25:06.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">Welcome to md</span><br><span class="line">============</span></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><spa]]>
+    </summary>
+    
+      <category term="Markdown" scheme="http://psyyz10.github.io/tags/Markdown/"/>
+    
+      <category term="Learning Note" scheme="http://psyyz10.github.io/categories/Learning-Note/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Everstring Frequent Used Links]]></title>
     <link href="http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/"/>
     <id>http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/</id>
     <published>2016-01-13T08:29:46.000Z</published>
-    <updated>2016-01-13T11:34:37.000Z</updated>
+    <updated>2016-01-14T03:20:19.000Z</updated>
     <content type="html"><![CDATA[<ul>
-<li><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</li>
-<li><a href="https://sites.google.com/a/everstring.com/es-intranet/" target="_blank" rel="external"><strong>Everstring Beijing Intranet</strong></a></li>
-<li><a href="https://sites.google.com/a/everstring.com/internal-wiki/home" target="_blank" rel="external"><strong>Everstring Global Intranet</strong></a></li>
-<li><a href="https://google.github.io/styleguide/javaguide.html#s4.6-whitespace" target="_blank" rel="external"><strong>Google Java Style</strong></a></li>
-<li><a href="https://everstring.atlassian.net/secure/Dashboard.jspa" target="_blank" rel="external"><strong>JIRA</strong></a><br>  Project management plateform.</li>
-<li><a href="https://everstring.atlassian.net/wiki/spacedirectory/view.action" target="_blank" rel="external"><strong>Confluence</strong></a><br>  Wiki pages</li>
-<li><a href="https://sites.google.com/a/everstring.com/engedu/" target="_blank" rel="external"><strong>Eng Edu</strong></a><br>  Eng Edu will have tech talks, tutorial, blog and writeup about various different technology EverString deploy.</li>
-<li><a href="http://etl02.prod.everstring.com:10008/#/" target="_blank" rel="external"><strong>Zeppelin</strong></a><br>Zeppelin is web-based notebook that enables interactive data analytics.<br>We use this tool to access database</li>
-<li><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/contactsv1.0/queryContact" target="_blank" rel="external"><strong>swagger</strong></a></li>
-<li><a href="http://www.restapitutorial.com" target="_blank" rel="external"><strong>Learn REST: A RESTful Tutorial</strong></a></li>
-<li><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/companiesv1.0/queryCompany" target="_blank" rel="external"><strong>swagger</strong></a><br> Swagger is a simple yet powerful representation of your RESTful API. </li>
-<li><a href=""></a></li>
+<li><p><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</p>
+</li>
+<li><p><a href="https://sites.google.com/a/everstring.com/es-intranet/" target="_blank" rel="external"><strong>Everstring Beijing Intranet</strong></a></p>
+</li>
+<li><p><a href="https://sites.google.com/a/everstring.com/internal-wiki/home" target="_blank" rel="external"><strong>Everstring Global Intranet</strong></a></p>
+</li>
+<li><p><a href="https://slack.com" target="_blank" rel="external">Slack</a><br>  A messaging app for teams</p>
+</li>
+<li><p><a href="https://google.github.io/styleguide/javaguide.html#s4.6-whitespace" target="_blank" rel="external"><strong>Google Java Style</strong></a></p>
+</li>
+<li><p><a href="https://everstring.atlassian.net/secure/Dashboard.jspa" target="_blank" rel="external"><strong>JIRA</strong></a><br>  Project management plateform.</p>
+</li>
+<li><p><a href="https://everstring.atlassian.net/wiki/spacedirectory/view.action" target="_blank" rel="external"><strong>Confluence</strong></a><br>  Wiki pages</p>
+</li>
+<li><p><a href="https://sites.google.com/a/everstring.com/engedu/" target="_blank" rel="external"><strong>Eng Edu</strong></a><br>  Eng Edu will have tech talks, tutorial, blog and writeup about various different technology EverString deploy.</p>
+</li>
+<li><p><a href="http://etl02.prod.everstring.com:10008/#/" target="_blank" rel="external"><strong>Zeppelin</strong></a><br>Zeppelin is web-based notebook that enables interactive data analytics.<br>We use this tool to access database</p>
+</li>
+<li><p><a href="http://www.restapitutorial.com" target="_blank" rel="external"><strong>Learn REST: A RESTful Tutorial</strong></a></p>
+</li>
+<li><p><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/companiesv1.0/queryCompany" target="_blank" rel="external"><strong>swagger</strong></a><br> Swagger is a simple yet powerful representation of your RESTful API. </p>
+</li>
+<li><p><a href=""></a></p>
+</li>
 </ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<ul>
-<li><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web ]]>
+<li><p><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a w]]>
     </summary>
     
       <category term="Work, Everstring, Link, Note" scheme="http://psyyz10.github.io/tags/Work-Everstring-Link-Note/"/>
@@ -49,11 +78,32 @@
     <link href="http://psyyz10.github.io/2016/01/Mac-Configurationd/"/>
     <id>http://psyyz10.github.io/2016/01/Mac-Configurationd/</id>
     <published>2016-01-13T03:06:05.000Z</published>
-    <updated>2016-01-13T03:06:05.000Z</updated>
-    <content type="html"></content>
+    <updated>2016-01-14T03:16:08.000Z</updated>
+    <content type="html"><![CDATA[<p>When we use a new Mac OS, we need to do the following configuration:</p>
+<ul>
+<li><p><a href="http://brew.sh" target="_blank" rel="external">Homebrew</a></p>
+</li>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="external">NodeJS</a></p>
+</li>
+<li><p><a href="http://git-scm.com" target="_blank" rel="external">Git</a></p>
+</li>
+<li><p><a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo</a></p>
+</li>
+<li><p><a href="https://github.com/ma6174/vim" target="_blank" rel="external">Vimrc</a></p>
+</li>
+<li><p><a href="https://www.continuum.io/downloads#_macosx" target="_blank" rel="external">ANACONDA</a><br>  Anaconda is a completely free Python distribution (including for commercial use and redistribution). It includes more than 300 of the most popular Python packages for science, math, engineering, and data analysis. See the packages included with Anaconda and the Anaconda changelog.</p>
+</li>
+<li><p><a href=""></a></p>
+</li>
+</ul>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<p>When we use a new Mac OS, we need to do the following configuration:</p>
+<ul>
+<li><p><a href="http://brew.sh" target="_blank" rel="extern]]>
     </summary>
+    
+      <category term="Configuration" scheme="http://psyyz10.github.io/tags/Configuration/"/>
     
   </entry>
   
