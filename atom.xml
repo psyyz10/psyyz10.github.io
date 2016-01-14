@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-01-14T03:56:19.000Z</updated>
+  <updated>2016-01-14T04:03:18.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,8 +19,9 @@
     <link href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/"/>
     <id>http://psyyz10.github.io/2016/01/Markdown-Tutorial/</id>
     <published>2016-01-14T03:11:18.000Z</published>
-    <updated>2016-01-14T03:56:19.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">Welcome to md</span><br><span class="line">============</span></span><br></pre></td></tr></table></figure>
+    <updated>2016-01-14T04:03:18.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><p>$a_1$</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">Welcome to md</span><br><span class="line">============</span></span><br></pre></td></tr></table></figure>
 <center><br>    <img src="https://psyyz10.github.io/projects/BC.png" width="800"><br></center>
 
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">md logo</span>](<span class="link_url">http://psyyz10.github.io/projects/BC.png "Battle City!"</span>)</span><br></pre></td></tr></table></figure>
@@ -106,7 +107,8 @@
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">And note that you can backslash-escape any punctuation characters</span><br><span class="line">which you wish to be displayed literally, ex.: \<span class="code">`foo\`</span>, \<span class="emphasis">*bar\*</span>, etc.</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><spa]]>
+    <![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><p>$a_1$</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</]]>
     </summary>
     
       <category term="Markdown" scheme="http://psyyz10.github.io/tags/Markdown/"/>
