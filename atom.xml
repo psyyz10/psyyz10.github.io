@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-01-14T05:21:01.000Z</updated>
+  <updated>2016-01-14T13:22:40.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,12 +19,8 @@
     <link href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/"/>
     <id>http://psyyz10.github.io/2016/01/Markdown-Tutorial/</id>
     <published>2016-01-14T03:11:18.000Z</published>
-    <updated>2016-01-14T05:21:01.000Z</updated>
-    <content type="html"><![CDATA[<blockquote>
-<p>This is a quote block<br>and is amazing.</p>
-<p>A new line can be created with a empty line like the one above</p>
-</blockquote>
-<script type="text/x-mathjax-config">
+    <updated>2016-01-14T13:22:40.000Z</updated>
+    <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -78,10 +74,6 @@
 <p>You can always link stuff like <a href="http://google.com" target="_blank" rel="external">google.com</a>, or a <a href="#this-is-a-subtitle">section heading in the current<br>doc</a>.</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You can always link stuff like [<span class="link_label">google.com</span>](<span class="link_url">http://google.com</span>), or a [section heading in the current</span><br><span class="line">doc](#this-is-a-subtitle).</span><br></pre></td></tr></table></figure>
 <p>Let’s check tables:</p>
-<p>size    material        color</p>
-<hr>
-<p>9         leather           brown<br>10        hemp canvas       natural<br>11        glass             transparent</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Let's check tables:</span><br><span class="line"></span><br><span class="line">size	material    	color</span><br><span class="line"><span class="horizontal_rule">----  	------------  	------------</span></span><br><span class="line">9     	leather       	brown</span><br><span class="line">10    	hemp canvas   	natural</span><br><span class="line">11    	glass         	transparent</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -114,13 +106,15 @@
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A horizontal rule</span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span></span><br></pre></td></tr></table></figure>
 <p>And note that you can backslash-escape any punctuation characters<br>which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">And note that you can backslash-escape any punctuation characters</span><br><span class="line">which you wish to be displayed literally, ex.: \<span class="code">`foo\`</span>, \<span class="emphasis">*bar\*</span>, etc.</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.mathjax.org" target="_blank" rel="external">mathjax</a></p>
+<p><strong>Latex plugin</strong>:<br><a href="https://www.mathjax.org" target="_blank" rel="external">mathjax</a></p>
+<p>$$ a_1 + a_2 = a_3 + a_4$$<br>$a_1$</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$ a<span class="emphasis">_1 + a_</span>2 = a<span class="emphasis">_3 + a_</span>4$$</span><br><span class="line">$a_1$</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<blockquote>
-<p>This is a quote block<br>and is amazing.</p>
-<p>A new line can be created with a empty line like the one above</p>
-</blockqu]]>
+    <![CDATA[<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="tex]]>
     </summary>
     
       <category term="Markdown" scheme="http://psyyz10.github.io/tags/Markdown/"/>
@@ -134,7 +128,7 @@
     <link href="http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/"/>
     <id>http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/</id>
     <published>2016-01-13T08:29:46.000Z</published>
-    <updated>2016-01-14T03:20:19.000Z</updated>
+    <updated>2016-01-14T13:16:45.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><p><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</p>
 </li>
@@ -157,6 +151,12 @@
 <li><p><a href="http://www.restapitutorial.com" target="_blank" rel="external"><strong>Learn REST: A RESTful Tutorial</strong></a></p>
 </li>
 <li><p><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/companiesv1.0/queryCompany" target="_blank" rel="external"><strong>swagger</strong></a><br> Swagger is a simple yet powerful representation of your RESTful API. </p>
+</li>
+<li><p><a href="http://getkickstart.com" target="_blank" rel="external"><strong>kickstart</strong></a><br>The lightweight CSS Library that Loves to Be Extended</p>
+</li>
+<li><p><a href="https://projects.spring.io/spring-framework/#quick-start" target="_blank" rel="external"><strong>Spring</strong></a><br>The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform. A key element of Spring is infrastructural support at the application level: Spring focuses on the “plumbing” of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.</p>
+</li>
+<li><p><a href="https://projects.invisionapp.com/" target="_blank" rel="external">invisionapp</a><br>Design an application</p>
 </li>
 <li><p><a href=""></a></p>
 </li>
