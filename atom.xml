@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-01-14T03:25:06.000Z</updated>
+  <updated>2016-01-14T03:39:43.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,8 +19,87 @@
     <link href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/"/>
     <id>http://psyyz10.github.io/2016/01/Markdown-Tutorial/</id>
     <published>2016-01-14T03:11:18.000Z</published>
-    <updated>2016-01-14T03:25:06.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">Welcome to md</span><br><span class="line">============</span></span><br></pre></td></tr></table></figure>]]></content>
+    <updated>2016-01-14T03:39:43.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">Welcome to md</span><br><span class="line">============</span></span><br></pre></td></tr></table></figure>
+<p><center><br>    <img src="https://psyyz10.github.io/projects/BC.png" width="800"><br></center><br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">md logo</span>](<span class="link_url">http://psyyz10.github.io/projects/BC.png "Battle City!"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>This is a overview of how and what you can do with the markdown language.</p>
+<p>After every blank line there will be a paragraph</p>
+<p>Another paragraph.<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">This is a overview of how and what you can do with the markdown language.</span><br><span class="line"></span><br><span class="line">After every blank line there will be a paragraph</span><br><span class="line"></span><br><span class="line">Another paragraph.</span><br></pre></td></tr></table></figure></p>
+<p><em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>.<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*Italic*</span>, <span class="strong">**bold**</span>, and <span class="code">`monospace`</span>.</span><br></pre></td></tr></table></figure></p>
+<p>Basic lists:</p>
+<ul>
+<li>first item</li>
+<li>second item</li>
+<li>…<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Basic lists:</span><br><span class="line"></span><br><span class="line">  * first item</span><br><span class="line">  * second item</span><br><span class="line">  * ...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>This is a quote block<br>and is amazing.</p>
+<p>A new line can be created with a empty line like the one above<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="blockquote">&gt; This is a quote block</span></span><br><span class="line"><span class="blockquote">&gt; and is amazing.</span></span><br><span class="line"><span class="blockquote">&gt;</span><br><span class="line">&gt; A new line can be created with a empty line like the one above</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>Unicode is amazing. ☺😄😎😙<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unicode is amazing. ☺😄😎😙</span><br></pre></td></tr></table></figure></p>
+<h2 id="This_is_a_subtitle">This is a subtitle</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">This is a subtitle</span><br><span class="line">------------</span></span><br></pre></td></tr></table></figure>
+<p>Let’s create a ordered list:</p>
+<ol>
+<li>first item</li>
+<li>second item</li>
+<li>third item</li>
+<li>…<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Let's create a ordered list:</span><br><span class="line"></span><br><span class="line"> 1. first item</span><br><span class="line"> 2. second item</span><br><span class="line"> 3. third item</span><br><span class="line"> 4. ...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Do you need to write some code?</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logSomething</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(str);</span><br><span class="line">&#125;</span><br><span class="line">logSomething ( <span class="string">"This is just awesome!"</span> );</span><br></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Do you need to write some code?</span><br><span class="line"></span><br><span class="line">//<span class="code">```</span> javascript</span><br><span class="line">function logSomething(str)&#123;</span><br><span class="line"><span class="code">	console.log(str);</span></span><br><span class="line">&#125;</span><br><span class="line">logSomething ( "This is just awesome!" );</span><br><span class="line">//</span><br></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Let's do some python:</span><br><span class="line">~~~ python</span><br><span class="line">import time</span><br><span class="line"># count to 10</span><br><span class="line">for i in range(10):</span><br><span class="line"><span class="code">    time.sleep(1)</span></span><br><span class="line"><span class="header">    print i</span><br><span class="line">~~~</span></span><br><span class="line"><span class="code">```</span>md</span><br><span class="line">Let's do some python:</span><br><span class="line">~~~ python</span><br><span class="line">import time</span><br><span class="line"># count to 10</span><br><span class="line">for i in range(10):</span><br><span class="line"><span class="code">    time.sleep(1)</span></span><br><span class="line"><span class="header">    print i</span><br><span class="line">~~~</span></span><br></pre></td></tr></table></figure>
+<h3 id="This_is_a_slighter_smaller_title">This is a slighter smaller title</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">### This is a slighter smaller title</span></span><br></pre></td></tr></table></figure>
+<p>Nested lists? Of course!</p>
+<ol>
+<li><p>Some recipe ingredients:</p>
+<ul>
+<li>carrots</li>
+<li>celery</li>
+<li>lentils<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Nested lists? Of course!</span><br><span class="line"></span><br><span class="line"> 1. Some recipe ingredients:</span><br><span class="line"></span><br><span class="line"><span class="code">      * carrots</span></span><br><span class="line"><span class="code">      * celery</span></span><br><span class="line"><span class="code">      * lentils</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>You can always link stuff like <a href="http://google.com" target="_blank" rel="external">google.com</a>, or a <a href="#this-is-a-subtitle">section heading in the current<br>doc</a>.<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You can always link stuff like [<span class="link_label">google.com</span>](<span class="link_url">http://google.com</span>), or a [section heading in the current</span><br><span class="line">doc](#this-is-a-subtitle).</span><br></pre></td></tr></table></figure></p>
+<p>Let’s check tables:</p>
+<p>size    material        color</p>
+<hr>
+<p>9         leather           brown<br>10        hemp canvas       natural<br>11        glass             transparent<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Let's check tables:</span><br><span class="line"></span><br><span class="line">size	material    	color</span><br><span class="line"><span class="horizontal_rule">----  	------------  	------------</span></span><br><span class="line">9     	leather       	brown</span><br><span class="line">10    	hemp canvas   	natural</span><br><span class="line">11    	glass         	transparent</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>size</th>
+<th>material</th>
+<th>color </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>leather</td>
+<td>brown</td>
+</tr>
+<tr>
+<td>10</td>
+<td>hemp canvas</td>
+<td>natural</td>
+</tr>
+<tr>
+<td>11</td>
+<td>glass</td>
+<td>transparent</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| size | material  | color </span><br><span class="line">|------|-----------|-----</span><br><span class="line">|9     |leather    |brown</span><br><span class="line">|10    |hemp canvas|natural</span><br><span class="line">|11    |glass      |transparent</span><br></pre></td></tr></table></figure>
+<p>A horizontal rule</p>
+<hr>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A horizontal rule</span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span></span><br></pre></td></tr></table></figure>
+<p>And note that you can backslash-escape any punctuation characters<br>which you wish to be displayed literally, ex.: `foo`, *bar*, etc.<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">And note that you can backslash-escape any punctuation characters</span><br><span class="line">which you wish to be displayed literally, ex.: \<span class="code">`foo\`</span>, \<span class="emphasis">*bar\*</span>, etc.</span><br></pre></td></tr></table></figure></p>
+]]></content>
     <summary type="html">
     <![CDATA[<h1 id="Welcome_to_md">Welcome to md</h1><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><spa]]>
     </summary>
