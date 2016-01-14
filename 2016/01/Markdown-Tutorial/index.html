@@ -18,7 +18,7 @@ After every">
 This is a overview of how and what you can do with the markdown language.
 After every">
 <meta property="og:image" content="https://psyyz10.github.io/projects/BC.png">
-<meta property="og:updated_time" content="2016-01-14T03:39:43.000Z">
+<meta property="og:updated_time" content="2016-01-14T03:52:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown Tutorial">
 <meta name="twitter:description" content="Welcome to md12Welcome to md============
@@ -119,8 +119,9 @@ After every">
 </ul>
 <blockquote>
 <p>This is a quote block<br>and is amazing.</p>
-<p>A new line can be created with a empty line like the one above<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="blockquote">&gt; This is a quote block</span></span><br><span class="line"><span class="blockquote">&gt; and is amazing.</span></span><br><span class="line"><span class="blockquote">&gt;</span><br><span class="line">&gt; A new line can be created with a empty line like the one above</span></span><br></pre></td></tr></table></figure></p>
+<p>A new line can be created with a empty line like the one above</p>
 </blockquote>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="blockquote">&gt; This is a quote block</span></span><br><span class="line"><span class="blockquote">&gt; and is amazing.</span></span><br><span class="line"><span class="blockquote">&gt;</span><br><span class="line">&gt; A new line can be created with a empty line like the one above</span></span><br></pre></td></tr></table></figure>
 <p>Unicode is amazing. ☺😄😎😙<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unicode is amazing. ☺😄😎😙</span><br></pre></td></tr></table></figure></p>
 <h2 id="This_is_a_subtitle">This is a subtitle</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">This is a subtitle</span><br><span class="line">------------</span></span><br></pre></td></tr></table></figure>
 <p>Let’s create a ordered list:</p>
@@ -131,10 +132,6 @@ After every">
 <li>…<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Let's create a ordered list:</span><br><span class="line"></span><br><span class="line"> 1. first item</span><br><span class="line"> 2. second item</span><br><span class="line"> 3. third item</span><br><span class="line"> 4. ...</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>Do you need to write some code?</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logSomething</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(str);</span><br><span class="line">&#125;</span><br><span class="line">logSomething ( <span class="string">"This is just awesome!"</span> );</span><br></pre></td></tr></table></figure>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Do you need to write some code?</span><br><span class="line"></span><br><span class="line">//<span class="code">```</span> javascript</span><br><span class="line">function logSomething(str)&#123;</span><br><span class="line"><span class="code">	console.log(str);</span></span><br><span class="line">&#125;</span><br><span class="line">logSomething ( "This is just awesome!" );</span><br><span class="line">//</span><br></pre></td></tr></table></figure>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Let's do some python:</span><br><span class="line">~~~ python</span><br><span class="line">import time</span><br><span class="line"># count to 10</span><br><span class="line">for i in range(10):</span><br><span class="line"><span class="code">    time.sleep(1)</span></span><br><span class="line"><span class="header">    print i</span><br><span class="line">~~~</span></span><br><span class="line"><span class="code">```</span>md</span><br><span class="line">Let's do some python:</span><br><span class="line">~~~ python</span><br><span class="line">import time</span><br><span class="line"># count to 10</span><br><span class="line">for i in range(10):</span><br><span class="line"><span class="code">    time.sleep(1)</span></span><br><span class="line"><span class="header">    print i</span><br><span class="line">~~~</span></span><br></pre></td></tr></table></figure>
 <h3 id="This_is_a_slighter_smaller_title">This is a slighter smaller title</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">### This is a slighter smaller title</span></span><br></pre></td></tr></table></figure>
 <p>Nested lists? Of course!</p>
 <ol>
@@ -187,7 +184,7 @@ After every">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="cijdpjv0n00336mmegzjwpyaj" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="cijdpzvcc00337jme5hedb2i1" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/#disqus_thread" class="article-comment-link">Comments</a>
       
