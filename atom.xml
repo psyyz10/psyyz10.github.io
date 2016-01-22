@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-01-18T07:04:17.000Z</updated>
+  <updated>2016-01-19T09:50:21.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Bash Note]]></title>
+    <link href="http://psyyz10.github.io/2016/01/Bash-Note/"/>
+    <id>http://psyyz10.github.io/2016/01/Bash-Note/</id>
+    <published>2016-01-19T09:50:21.000Z</published>
+    <updated>2016-01-19T09:50:21.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Git Note]]></title>
+    <link href="http://psyyz10.github.io/2016/01/Git-Note/"/>
+    <id>http://psyyz10.github.io/2016/01/Git-Note/</id>
+    <published>2016-01-18T08:07:12.000Z</published>
+    <updated>2016-01-18T08:42:17.000Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://www.oschina.net/translate/git-fetch-and-merge" target="_blank" rel="external">Git 少用 Pull 多用 Fetch 和 Merge</a></li>
+<li><a href="http://www.ihref.com/read-16369.html#4.1" target="_blank" rel="external">Git版本控制软件结合GitHub从入门到精通常用命令学习手册</a>    </li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<ul>
+<li><a href="http://www.oschina.net/translate/git-fetch-and-merge" target="_blank" rel="external">Git 少用 Pull 多用 Fetch 和 Merge</a></li>]]>
+    </summary>
+    
+      <category term="Git" scheme="http://psyyz10.github.io/tags/Git/"/>
+    
+      <category term="Learning Note" scheme="http://psyyz10.github.io/categories/Learning-Note/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Test]]></title>
@@ -158,7 +193,7 @@
     <link href="http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/"/>
     <id>http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/</id>
     <published>2016-01-13T08:29:46.000Z</published>
-    <updated>2016-01-18T06:22:04.000Z</updated>
+    <updated>2016-01-21T08:20:33.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><p><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</p>
 <ul>
@@ -183,11 +218,16 @@
 </li>
 <li><p><a href="http://www.restapitutorial.com" target="_blank" rel="external"><strong>Learn REST: A RESTful Tutorial</strong></a></p>
 </li>
+<li><p><a href="http://www.drdobbs.com/web-development/restful-web-services-a-tutorial/240169069?pgno=1" target="_blank" rel="external">RESTful Web Services: A Tutorial</a></p>
+</li>
 <li><p><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/companiesv1.0/queryCompany" target="_blank" rel="external"><strong>swagger</strong></a><br> Swagger is a simple yet powerful representation of your RESTful API. </p>
 </li>
 <li><p><a href="http://getkickstart.com" target="_blank" rel="external"><strong>kickstart</strong></a><br>The lightweight CSS Library that Loves to Be Extended</p>
 </li>
 <li><p><a href="https://projects.spring.io/spring-framework/#quick-start" target="_blank" rel="external"><strong>Spring Framework</strong></a><br>The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform. A key element of Spring is infrastructural support at the application level: Spring focuses on the “plumbing” of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.</p>
+<ul>
+<li><a href="https://spring.io/guides#gs" target="_blank" rel="external">Spring Guides</a></li>
+</ul>
 </li>
 <li><p><a href="https://projects.invisionapp.com/" target="_blank" rel="external">invisionapp</a><br>Design an application</p>
 </li>
@@ -211,6 +251,29 @@
 <li><a href="http://conda.pydata.org/docs/test-drive.html" target="_blank" rel="external">Using Conda to manage python</a></li>
 </ul>
 </li>
+<li><p><a href="">ETL</a></p>
+</li>
+<li><p><a href="http://shiro.apache.org/index.html" target="_blank" rel="external">Apache Shiro</a><br>Apache Shiro focuses on ease-of-use, so you can rely on secure, stable authentication, authorization, cryptography, and session management</p>
+</li>
+<li><p>Spring-Shiro</p>
+<ul>
+<li><a href="http://shiro.apache.org/spring.html" target="_blank" rel="external">Integrating Apache Shiro into Spring-based Applications</a></li>
+<li><a href="http://my.oschina.net/miger/blog/283526" target="_blank" rel="external">SpringMVC整合Shiro</a></li>
+</ul>
+</li>
+<li><p><a href="https://maven.apache.org/index.html" target="_blank" rel="external">Maven</a><br>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project’s build, reporting and documentation from a central piece of information.</p>
+<ul>
+<li><a href="https://maven.apache.org/guides/getting-started/" target="_blank" rel="external">Maven Guide</a></li>
+<li><a href="https://maven.apache.org/guides/introduction/introduction-to-the-pom.html" target="_blank" rel="external">Introduction to the POM</a><br>pom.xml contains the Project Object Model (POM) for this project. The POM is the basic unit of work in Maven. Understanding the POM is important.</li>
+<li><p><a href="https://maven.apache.org/settings.html" target="_blank" rel="external">Settings Reference</a></p>
+</li>
+<li><p><a href="https://everstring.atlassian.net/wiki/display/CP/Google+Java+code+style+formatter+for+Eclipse" target="_blank" rel="external">Google Java code style formatter for Eclipse</a></p>
+</li>
+<li><p><a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/" target="_blank" rel="external">Install MongoDB Community Edition on OS X</a></p>
+</li>
+<li><a href="https://docs.mongodb.org/getting-started/shell/" target="_blank" rel="external">Getting Started with MongoDB (MongoDB Shell Edition)</a></li>
+</ul>
+</li>
 </ul>
 ]]></content>
     <summary type="html">
@@ -227,7 +290,7 @@
     <link href="http://psyyz10.github.io/2016/01/Mac-Configurationd/"/>
     <id>http://psyyz10.github.io/2016/01/Mac-Configurationd/</id>
     <published>2016-01-13T03:06:05.000Z</published>
-    <updated>2016-01-18T05:51:51.000Z</updated>
+    <updated>2016-01-20T03:23:07.000Z</updated>
     <content type="html"><![CDATA[<p>When we use a new Mac OS, we need to do the following configuration:</p>
 <ul>
 <li><p><a href="http://brew.sh" target="_blank" rel="external">Homebrew</a><br>  A package manager for OS X</p>
@@ -242,7 +305,11 @@
 </li>
 <li><p><a href="https://www.continuum.io/downloads#_macosx" target="_blank" rel="external">ANACONDA</a><br>  Anaconda is a completely free Python distribution (including for commercial use and redistribution). It includes more than 300 of the most popular Python packages for science, math, engineering, and data analysis. See the packages included with Anaconda and the Anaconda changelog.</p>
 </li>
-<li><p><a href="https://www.mongodb.org" target="_blank" rel="external">MongoDB</a><br>  MongoDB 3.2 is a giant leap forward that helps organizations standardize on a single, modern database for their new, mission-critical applications.</p>
+<li><p><a href="https://www.mongodb.org" target="_blank" rel="external">MongoDB</a><br>  MongoDB 3.2 is a giant leap forward that helps organizations standardize on a single, modern database for their new, mission-critical applications.    </p>
+</li>
+<li><p><a href="http://www.mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/" target="_blank" rel="external">How to Set $JAVA_HOME environment variable on Mac OS X</a></p>
+</li>
+<li><p><a href="https://maven.apache.org/install.html" target="_blank" rel="external">Installing Apache Maven</a></p>
 </li>
 </ul>
 ]]></content>
