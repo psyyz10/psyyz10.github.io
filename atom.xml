@@ -50,36 +50,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Test]]></title>
-    <link href="http://psyyz10.github.io/2016/01/Test/"/>
-    <id>http://psyyz10.github.io/2016/01/Test/</id>
-    <published>2016-01-18T07:04:10.000Z</published>
-    <updated>2016-01-18T07:04:17.000Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = a + a</span><br><span class="line"><span class="keyword">print</span> b</span><br></pre></td></tr></table></figure>
-<pre><code><span class="number">2</span>
-</code></pre><ul>
-<li>I do not know what is the best problem of you <ul>
-<li>You are right</li>
-<li>Hello <ul>
-<li>Do you know what the best case you should give<ul>
-<li>Best $a = a + 1$</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>$$a = a + 1$$</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span clas]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Markdown Tutorial]]></title>
     <link href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/"/>
     <id>http://psyyz10.github.io/2016/01/Markdown-Tutorial/</id>
