@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-01-19T09:50:21.000Z</updated>
+  <updated>2016-03-06T06:09:42.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Longest Palindromic Substring]]></title>
+    <link href="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/"/>
+    <id>http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/</id>
+    <published>2016-03-06T06:09:42.000Z</published>
+    <updated>2016-03-06T06:09:42.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Longest Substring Without Repeating Characters]]></title>
+    <link href="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/"/>
+    <id>http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/</id>
+    <published>2016-03-02T10:56:13.000Z</published>
+    <updated>2016-03-06T06:15:02.000Z</updated>
+    <content type="html"><![CDATA[<p>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For “bbbbb” the longest substring is “b”, with the length of 1.</p>
+<p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">Leetcode link</a></p>
+<h2 id="Solution:">Solution:</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>]; <span class="comment">//Map the character to the first occurence index</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> slow = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        Arrays.fill(map,-<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> fast = <span class="number">0</span>; fast &lt; s.length(); fast++)&#123;</span><br><span class="line">            <span class="keyword">char</span> current = s.charAt(fast);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (slow &lt;= map[current])&#123;</span><br><span class="line">                max = Math.max(max, fast - slow);</span><br><span class="line">                slow = map[current] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            map[current] = fast;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        max = Math.max(max, s.length() - slow);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeati]]>
+    </summary>
+    
+      <category term="String" scheme="http://psyyz10.github.io/tags/String/"/>
+    
+      <category term="Two Pointers" scheme="http://psyyz10.github.io/tags/Two-Pointers/"/>
+    
+      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Bash Note]]></title>
@@ -54,7 +88,7 @@
     <link href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/"/>
     <id>http://psyyz10.github.io/2016/01/Markdown-Tutorial/</id>
     <published>2016-01-14T03:11:18.000Z</published>
-    <updated>2016-01-14T13:24:04.000Z</updated>
+    <updated>2016-01-14T13:23:59.000Z</updated>
     <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
@@ -159,108 +193,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Everstring Frequent Used Links]]></title>
-    <link href="http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/"/>
-    <id>http://psyyz10.github.io/2016/01/Everstring-Frequent-Used-Links/</id>
-    <published>2016-01-13T08:29:46.000Z</published>
-    <updated>2016-01-21T08:20:33.000Z</updated>
-    <content type="html"><![CDATA[<ul>
-<li><p><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</p>
-<ul>
-<li><a href="http://jupyter.readthedocs.org/en/latest/tryjupyter.html" target="_blank" rel="external">Jupyter Documentation</a></li>
-</ul>
-</li>
-<li><p><a href="https://sites.google.com/a/everstring.com/es-intranet/" target="_blank" rel="external"><strong>Everstring Beijing Intranet</strong></a></p>
-</li>
-<li><p><a href="https://sites.google.com/a/everstring.com/internal-wiki/home" target="_blank" rel="external"><strong>Everstring Global Intranet</strong></a></p>
-</li>
-<li><p><a href="https://slack.com" target="_blank" rel="external"><strong>Slack</strong></a><br>  A messaging app for teams</p>
-</li>
-<li><p><a href="https://google.github.io/styleguide/javaguide.html#s4.6-whitespace" target="_blank" rel="external"><strong>Google Java Style</strong></a></p>
-</li>
-<li><p><a href="https://everstring.atlassian.net/secure/Dashboard.jspa" target="_blank" rel="external"><strong>JIRA</strong></a><br>  Project management plateform.</p>
-</li>
-<li><p><a href="https://everstring.atlassian.net/wiki/spacedirectory/view.action" target="_blank" rel="external"><strong>Confluence</strong></a><br>  Wiki pages</p>
-</li>
-<li><p><a href="https://sites.google.com/a/everstring.com/engedu/" target="_blank" rel="external"><strong>Eng Edu</strong></a><br>  Eng Edu will have tech talks, tutorial, blog and writeup about various different technology EverString deploy.</p>
-</li>
-<li><p><a href="http://etl02.prod.everstring.com:10008/#/" target="_blank" rel="external"><strong>Zeppelin</strong></a><br>Zeppelin is web-based notebook that enables interactive data analytics.<br>We use this tool to access database</p>
-</li>
-<li><p><a href="http://www.restapitutorial.com" target="_blank" rel="external"><strong>Learn REST: A RESTful Tutorial</strong></a></p>
-</li>
-<li><p><a href="http://www.drdobbs.com/web-development/restful-web-services-a-tutorial/240169069?pgno=1" target="_blank" rel="external">RESTful Web Services: A Tutorial</a></p>
-</li>
-<li><p><a href="http://service.uat.everstring.com/swagger/?url=http://service.uat.everstring.com/contacts/api-docs.json#!/companiesv1.0/queryCompany" target="_blank" rel="external"><strong>swagger</strong></a><br> Swagger is a simple yet powerful representation of your RESTful API. </p>
-</li>
-<li><p><a href="http://getkickstart.com" target="_blank" rel="external"><strong>kickstart</strong></a><br>The lightweight CSS Library that Loves to Be Extended</p>
-</li>
-<li><p><a href="https://projects.spring.io/spring-framework/#quick-start" target="_blank" rel="external"><strong>Spring Framework</strong></a><br>The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform. A key element of Spring is infrastructural support at the application level: Spring focuses on the “plumbing” of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.</p>
-<ul>
-<li><a href="https://spring.io/guides#gs" target="_blank" rel="external">Spring Guides</a></li>
-</ul>
-</li>
-<li><p><a href="https://projects.invisionapp.com/" target="_blank" rel="external">invisionapp</a><br>Design an application</p>
-</li>
-<li><p><a href="https://www.rabbitmq.com" target="_blank" rel="external">Rabbit MQ</a></p>
-<ul>
-<li>Robust messaging for applications</li>
-<li>Easy to use</li>
-<li>Runs on all major operating systems</li>
-<li>Supports a huge number of developer platforms</li>
-<li>Open source and commercially supported</li>
-</ul>
-</li>
-<li><p><a href="https://www.mongodb.org" target="_blank" rel="external">MongoDB</a><br>MongoDB 3.2 is a giant leap forward that helps organizations standardize on a single, modern database for their new, mission-critical applications.</p>
-</li>
-<li><p><a href="http://docs.scala-lang.org/tutorials/?_ga=1.5922419.1949421979.1452735254" target="_blank" rel="external">Scala Tutorial</a></p>
-</li>
-<li><p><a href="https://bitbucket.org/everstring_tech/es-decision-platform" target="_blank" rel="external">Bitbucket</a><br>Bitbucket is a Git and Mercurial based source code management and collaboration solution in the cloud. Bitbucket is simple and powerful, enables code collaboration for teams, works with the tools that matter, and is easy to use even for teams new to Git and Mercurial</p>
-</li>
-<li><p><a href="https://www.continuum.io/downloads#_macosx" target="_blank" rel="external">ANACONDA</a><br>Anaconda is a completely free Python distribution (including for commercial use and redistribution). It includes more than 300 of the most popular Python packages for science, math, engineering, and data analysis. See the packages included with Anaconda and the Anaconda changelog.</p>
-<ul>
-<li><a href="http://conda.pydata.org/docs/test-drive.html" target="_blank" rel="external">Using Conda to manage python</a></li>
-</ul>
-</li>
-<li><p><a href="">ETL</a></p>
-</li>
-<li><p><a href="http://shiro.apache.org/index.html" target="_blank" rel="external">Apache Shiro</a><br>Apache Shiro focuses on ease-of-use, so you can rely on secure, stable authentication, authorization, cryptography, and session management</p>
-</li>
-<li><p>Spring-Shiro</p>
-<ul>
-<li><a href="http://shiro.apache.org/spring.html" target="_blank" rel="external">Integrating Apache Shiro into Spring-based Applications</a></li>
-<li><a href="http://my.oschina.net/miger/blog/283526" target="_blank" rel="external">SpringMVC整合Shiro</a></li>
-</ul>
-</li>
-<li><p><a href="https://maven.apache.org/index.html" target="_blank" rel="external">Maven</a><br>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project’s build, reporting and documentation from a central piece of information.</p>
-<ul>
-<li><a href="https://maven.apache.org/guides/getting-started/" target="_blank" rel="external">Maven Guide</a></li>
-<li><a href="https://maven.apache.org/guides/introduction/introduction-to-the-pom.html" target="_blank" rel="external">Introduction to the POM</a><br>pom.xml contains the Project Object Model (POM) for this project. The POM is the basic unit of work in Maven. Understanding the POM is important.</li>
-<li><p><a href="https://maven.apache.org/settings.html" target="_blank" rel="external">Settings Reference</a></p>
-</li>
-<li><p><a href="https://everstring.atlassian.net/wiki/display/CP/Google+Java+code+style+formatter+for+Eclipse" target="_blank" rel="external">Google Java code style formatter for Eclipse</a></p>
-</li>
-<li><p><a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/" target="_blank" rel="external">Install MongoDB Community Edition on OS X</a></p>
-</li>
-<li><a href="https://docs.mongodb.org/getting-started/shell/" target="_blank" rel="external">Getting Started with MongoDB (MongoDB Shell Edition)</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<ul>
-<li><p><a href="http://jupyter.org" target="_blank" rel="external"><strong>Jupyter Notebook</strong></a><br>The Jupyter Notebook is a w]]>
-    </summary>
-    
-      <category term="Work, Everstring, Link, Note" scheme="http://psyyz10.github.io/tags/Work-Everstring-Link-Note/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Mac Configurationd]]></title>
     <link href="http://psyyz10.github.io/2016/01/Mac-Configurationd/"/>
     <id>http://psyyz10.github.io/2016/01/Mac-Configurationd/</id>
     <published>2016-01-13T03:06:05.000Z</published>
-    <updated>2016-01-20T03:23:07.000Z</updated>
+    <updated>2016-01-28T07:57:59.000Z</updated>
     <content type="html"><![CDATA[<p>When we use a new Mac OS, we need to do the following configuration:</p>
 <ul>
 <li><p><a href="http://brew.sh" target="_blank" rel="external">Homebrew</a><br>  A package manager for OS X</p>
@@ -275,11 +212,19 @@
 </li>
 <li><p><a href="https://www.continuum.io/downloads#_macosx" target="_blank" rel="external">ANACONDA</a><br>  Anaconda is a completely free Python distribution (including for commercial use and redistribution). It includes more than 300 of the most popular Python packages for science, math, engineering, and data analysis. See the packages included with Anaconda and the Anaconda changelog.</p>
 </li>
-<li><p><a href="https://www.mongodb.org" target="_blank" rel="external">MongoDB</a><br>  MongoDB 3.2 is a giant leap forward that helps organizations standardize on a single, modern database for their new, mission-critical applications.    </p>
+<li><p><a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/" target="_blank" rel="external">MongoDB</a><br>  MongoDB 3.2 is a giant leap forward that helps organizations standardize on a single, modern database for their new, mission-critical applications.    </p>
 </li>
 <li><p><a href="http://www.mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/" target="_blank" rel="external">How to Set $JAVA_HOME environment variable on Mac OS X</a></p>
 </li>
-<li><p><a href="https://maven.apache.org/install.html" target="_blank" rel="external">Installing Apache Maven</a></p>
+<li><p><a href="https://maven.apache.org/install.html" target="_blank" rel="external">Installing Apache Maven</a><br>Jenkins Alternote</p>
+</li>
+<li><p><a href="http://iterm2colorschemes.com" target="_blank" rel="external">Iterm2-color-schemes</a>o</p>
+</li>
+<li><p><a href="https://github.com/keycastr/keycastr" target="_blank" rel="external">Keycastr</a><br>KeyCastr, an open-source keystroke visualizer</p>
+</li>
+<li><p><a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">MySQL</a></p>
+</li>
+<li><p><a href="http://mikebuss.com/2014/02/02/a-beautiful-productive-terminal-experience/" target="_blank" rel="external">Mac Terminal</a></p>
 </li>
 </ul>
 ]]></content>
@@ -297,7 +242,7 @@
     <title><![CDATA[Hexo]]></title>
     <link href="http://psyyz10.github.io/2016/01/hello-world/"/>
     <id>http://psyyz10.github.io/2016/01/hello-world/</id>
-    <published>2016-01-12T08:34:36.000Z</published>
+    <published>2016-01-12T08:26:14.000Z</published>
     <updated>2015-11-12T18:48:13.000Z</updated>
     <content type="html"><![CDATA[<p> Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask questions on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
@@ -384,7 +329,7 @@
     <link href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/"/>
     <id>http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/</id>
     <published>2015-12-26T04:50:06.000Z</published>
-    <updated>2016-01-15T10:53:45.000Z</updated>
+    <updated>2016-03-26T02:44:54.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Offer_选择：">Offer 选择：</h2><ul>
 <li><a href="http://kedebug.com/blog/campus-offer-2015/" target="_blank" rel="external">2015 校招总结</a></li>
 <li><a href="http://www.muzhibus.com/Htmls/Sykx/2015/0703/4990.shtml" target="_blank" rel="external">2015年互联网行业薪酬报告</a></li>
@@ -430,17 +375,92 @@
 </li>
 <li>java 反射 (reflection) 的作用和原理<br>* </li>
 <li>Concurrent 包里</li>
-<li>写出生产者消费者模型</li>
-<li>写出单例线程安全的懒汉模式</li>
+<li></li>
+<li></li>
 <li>for each 和 for 循环的效率比较</li>
 <li>设计模式：单例， 工厂， 适配器， 责任链， 观察者等</li>
-<li>ThreadPool 的用法与优势</li>
+<li>ThreadPool 的用法与优势<ul>
+<li><a href="http://www.aiuxian.com/article/p-2686289.html" target="_blank" rel="external">ThreadPool用法与优势</a></li>
+</ul>
+</li>
 <li>ThreadLocal 的设计理念与作用</li>
-<li>Synchronize 的 机制</li>
+<li>hashcode and equals<ul>
+<li><a href="http://www.cnblogs.com/dolphin0520/p/3681042.html" target="_blank" rel="external">浅谈Java中的hashcode方法</a></li>
+<li><a href="http://www.iteye.com/topic/257191" target="_blank" rel="external">java中hashcode()和equals()的详解</a></li>
+</ul>
+</li>
 <li>什么情况下一个object不会被回收</li>
 <li>写一个服务器log程序</li>
 <li>内存溢出(out of memory)和内存泄漏(memory leak):<ul>
 <li><a href="http://blog.csdn.net/seelye/article/details/8269705" target="_blank" rel="external">Java内存泄露原因详解</a></li>
+</ul>
+</li>
+<li>找公共父节点</li>
+<li>Java Object 自带方法<ul>
+<li><a href="http://blog.sina.com.cn/s/blog_6f68ede80100vpz1.html" target="_blank" rel="external">JAVA中Object类方法介绍 </a></li>
+</ul>
+</li>
+<li>String Buffer 和 String Builder 的区别<ul>
+<li><a href="http://www.cnblogs.com/A_ming/archive/2010/04/13/1711395.html" target="_blank" rel="external">String、StringBuffer与StringBuilder之间区别</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="多线程">多线程</h2><ol>
+<li>Synchronize 的机制</li>
+<li>volatile 关键字<ul>
+<li><a href="http://www.cnblogs.com/dolphin0520/p/3920373.html" target="_blank" rel="external">Java并发编程：volatile关键字解析</a></li>
+<li><a href="http://www.cnblogs.com/yakun/p/3589437.html" target="_blank" rel="external">彻底弄明白之java多线程中的volatile</a></li>
+</ul>
+</li>
+<li>Synchronized 适用情况</li>
+<li>写出单例线程安全的懒汉模式<ul>
+<li><a href="http://blog.csdn.net/youcanping2008/article/details/8579409" target="_blank" rel="external">解决单例设计模式中懒汉式线程安全问题</a></li>
+<li><a href="http://zhidao.baidu.com/link?url=v1AEElpCgtz9PStM-ooHSoszscIJOuArLRY5-ZbOWxQ7i9-l9tTUmOt7pi3YbMKSjLa06Fvibrs8b86XimS7US4JkH9TZPKaeUOD73Wv1p_" target="_blank" rel="external">单例中懒汉和饿汉的本质区别？</a></li>
+</ul>
+</li>
+<li>写出生产者消费者模型<ul>
+<li><a href="http://www.cnblogs.com/linjiqin/archive/2011/04/15/2016820.html" target="_blank" rel="external">多线程模拟实现生产者／消费者模型</a></li>
+<li><a href="http://blog.csdn.net/luohuacanyue/article/details/14648185" target="_blank" rel="external">生产者消费者模型你知道多少</a></li>
+</ul>
+</li>
+<li>解决死锁<ul>
+<li><a href="http://blog.csdn.net/bxyill/article/details/8237339" target="_blank" rel="external">产生死锁的原因和必要条件+解决死锁的基本方法</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="Linux_常用指令">Linux 常用指令</h2><ol>
+<li><h2 id="数据库">数据库</h2></li>
+<li>SQL 索引<br> <em><a href="http://blog.jobbole.com/86594/" target="_blank" rel="external">MySQL索引原理及慢查询优化</a>
+ </em><a href="http://www.jb51.net/article/49346.htm" target="_blank" rel="external">MySQL索引类型总结和使用技巧以及注意事项</a><br> <em><a href="http://www.cnblogs.com/hustcat/archive/2009/10/28/1591648.html" target="_blank" rel="external">理解MySQL——索引与优化</a>
+ </em><a href="http://www.cnblogs.com/sopc-mc/archive/2011/11/01/2232212.html" target="_blank" rel="external">MySQL引擎</a><br> *<a href="http://blog.csdn.net/xluren/article/details/32746183" target="_blank" rel="external">mysql索引总结—-mysql 索引类型以及创建</a></li>
+<li>mySQL事务关系, 数据库事务</li>
+</ol>
+<h2 id="测试">测试</h2><ol>
+<li><h2 id="Python">Python</h2></li>
+<li><a href="http://blog.csdn.net/soft_lawrency/article/details/8638360" target="_blank" rel="external">python 面试题</a></li>
+<li><a href=""></a></li>
+</ol>
+<h2 id="Java_和_C++的区别">Java 和 C++的区别</h2><h2 id="Java_1-8_新特性">Java 1.8 新特性</h2><ol>
+<li><h2 id="JVM">JVM</h2></li>
+<li>内存溢出(out of memory)和内存泄漏(memory leak):<ul>
+<li><a href="http://blog.csdn.net/seelye/article/details/8269705" target="_blank" rel="external">Java内存泄露原因详解</a></li>
+</ul>
+</li>
+<li>类加载器：<ul>
+<li><a href=""></a></li>
+</ul>
+</li>
+<li></li>
+</ol>
+<p>clone 方法的实现，<br>浏览器敲回车会发生的过程</p>
+<p>## </p>
+<h2 id="sort">sort</h2><ol>
+<li><h2 id="Data_Structure_and_algorithm">Data Structure and algorithm</h2></li>
+<li>Priority Queue</li>
+<li>TreeMap and TreeSet</li>
+<li>海量数据处理问题<ul>
+<li><a href="http://www.cnblogs.com/v-July-v/archive/2012/03/22/2413055.html" target="_blank" rel="external">教你如何迅速秒杀99%的海量数据处理面试题</a></li>
+<li><a href="http://blog.csdn.net/xwphust/article/details/6647224" target="_blank" rel="external">海量数据排序和查找问题</a></li>
 </ul>
 </li>
 </ol>
@@ -448,17 +468,28 @@
 <li><a href="http://www.oracle.com/technetwork/cn/community/java/apache-maven-getting-started-1-406235-zhs.html" target="_blank" rel="external">Apache Maven 入门篇 ( 上 )</a></li>
 </ol>
 <h2 id="操作系统">操作系统</h2><ol>
-<li>线程与进程的区别</li>
-<li>线程之间的通讯方式</li>
+<li>线程与进程的区别<ul>
+<li><a href="http://www.cnblogs.com/hazir/archive/2011/05/09/2447287.html" target="_blank" rel="external">进程与线程的区别？</a></li>
+<li><a href=""></a></li>
+</ul>
+</li>
+<li>进程之间的通讯方式<ul>
+<li><a href="http://jingyan.baidu.com/article/3a2f7c2e17e12b26afd611cb.html" target="_blank" rel="external">进程之间的8种通信方式</a></li>
+</ul>
+</li>
 <li>函数调用过程栈帧变化<ul>
 <li><a href="http://www.cnblogs.com/fxplove/articles/2574451.html" target="_blank" rel="external">函数调用过程栈帧变化详解</a></li>
+</ul>
+</li>
+<li>线程之间访问共享资源<ul>
+<li><a href="http://www.cnblogs.com/zuizuihao/archive/2012/08/08/2627506.html" target="_blank" rel="external">多线程对共享资源的访问</a></li>
 </ul>
 </li>
 </ol>
 <h2 id="网络协议：">网络协议：</h2><ol>
 <li>三次握手<br><a href="http://baike.baidu.com/link?url=aRAJTJY3t3oolqouJtyyp08wbUvacypDytnUgvXx_C-fDnBF-IXBLLALKgZdzU85pWuxmq13EyGrcBxEGcHJsK" target="_blank" rel="external">参考</a></li>
 <li>从客户端发送信息到服务器端的过程模拟</li>
-<li>get, put, post 的区别<br> <a href=""></a></li>
+<li>get, put, post 的区别<br> <a href="http://blog.csdn.net/mfe10714022/article/details/39692305" target="_blank" rel="external">GET，POST，PUT，DELETE的区别</a></li>
 <li>Cookie 和 Session<br> <a href="http://blog.csdn.net/fangaoxin/article/details/6952954" target="_blank" rel="external">Cookie/Session机制详解</a></li>
 </ol>
 ]]></content>
@@ -1264,7 +1295,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
     <link href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/"/>
     <id>http://psyyz10.github.io/2015/11/Trapping-Rain-Water/</id>
     <published>2015-11-13T02:39:18.000Z</published>
-    <updated>2015-11-17T23:23:17.000Z</updated>
+    <updated>2016-01-06T13:53:19.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
 <pre><code>For example, 
 Given [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>], <span class="keyword">return</span> <span class="number">6.</span>
