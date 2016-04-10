@@ -69,6 +69,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java-8-Lambda-Expression" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/Java-8-Lambda-Expression/" class="article-date">
+  <time datetime="2016-04-10T07:22:30.000Z" itemprop="datePublished">2016-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/Java-8-Lambda-Expression/">Java 8 Lambda Expressions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>There is a general usage in <em>Swing</em> library: <strong>we need a action listener to response a user operation</strong>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"button clicked"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/" data-id="cimuabbic0046e8u51btoa8cq" class="article-share-link">Share</a>
+      
+        <a href="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-8/">Java 8</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Programming-Languag/">Programming Languag</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Java-8-new-properties" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/Java-8-new-properties/" class="article-date">
@@ -95,17 +136,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Lambda_Expression">Lambda Expression</h1><p>There is a general usage in <strong>Swing</strong> library: <em>we need a action listener to response a user operation</em>. </p>
-
+        <p>Java 8 Lambdas: Functional Programming For The Masses by Richard Warburton gives a short, concise and surprisingly good coverage of how Java 8 lambdas (or “closures”) work and intended to be used, with focus on simplified and safer parallelism. In later context, also gives nice overview of emerging “reactive programming” and event-driven frameworks like Vert.x.</p>
+<p>This blog summerizes some notes about the new properties in Java 8. It is a reading note of the book ‘Java 8 Lambdas: Functional Programming for Masses’. The content links are shown below.</p>
+<pre><code><span class="bullet">1. </span>[<span class="link_label">Lambda Expressions</span>](<span class="link_url">/.</span>)
+<span class="bullet">2. </span>[<span class="link_label">Stream</span>](<span class="link_url"></span>)
+<span class="bullet">3. </span>[<span class="link_label">Libraries</span>](<span class="link_url"></span>)
+<span class="bullet">4. </span>[<span class="link_label">Advanced Collector</span>](<span class="link_url"></span>)
+<span class="bullet">5. </span>[<span class="link_label">Data Parallelism</span>](<span class="link_url"></span>)
+<span class="bullet">6. </span>[<span class="link_label">Test, Debug and Refactor</span>](<span class="link_url"></span>)
+<span class="bullet">7. </span>[<span class="link_label">The Principle of Design and Architect</span>](<span class="link_url"></span>)
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Java-8-new-properties/" data-id="cimptggy6003xuvu5hu3lqzdw" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Java-8-new-properties/" data-id="cimuabbi8003xe8u5ybjq54cn" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Java-8-new-properties/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-8/">Java 8</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Programming-Language/">Programming Language</a><span class="article-tag-list-count">1</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-8/">Java 8</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Programming-Language/">Programming Language</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -140,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/" data-id="cimptggxp003fuvu5wykyo05l" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/" data-id="cimuabbhw003fe8u595al23kt" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -184,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/" data-id="cimptggxn003buvu5sldwr7wb" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/" data-id="cimuabbhs003be8u567supbkn" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -224,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Bash-Note/" data-id="cimptggzd0058uvu5txwgyvpa" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Bash-Note/" data-id="cimuabbjb005de8u5dmmjh0ln" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Bash-Note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -270,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Git-Note/" data-id="cimptggyf004cuvu5u60ip3ly" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Git-Note/" data-id="cimuabbii004he8u51tbhuxv5" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Git-Note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -403,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="cimptggxg0033uvu53pfma57s" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="cimuabbhm0033e8u5z6nytynv" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -472,7 +521,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Mac-Configurationd/" data-id="cimptggxk0038uvu56gkejqhq" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Mac-Configurationd/" data-id="cimuabbhp0038e8u5126qd2ju" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Mac-Configurationd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -521,7 +570,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/hello-world/" data-id="cimptggti0009uvu5tlwxafbu" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/hello-world/" data-id="cimuabbf60009e8u55mrwy2h9" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -561,7 +610,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Functional-Programming/" data-id="cimptggym004juvu5zl703acf" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Functional-Programming/" data-id="cimuabbiq004oe8u5aaa2h58a" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Functional-Programming/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -614,7 +663,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/12/CPP-Review-note/" data-id="cimptggza0054uvu5857gvxga" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/12/CPP-Review-note/" data-id="cimuabbj90059e8u5l3wuy9ka" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/12/CPP-Review-note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -820,7 +869,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/" data-id="cimptggz4004xuvu5qw9tkuwx" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/" data-id="cimuabbj40052e8u5ts4vgznf" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -868,7 +917,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Interview-Review-Link/" data-id="cimptggya0046uvu5j58rvvud" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Interview-Review-Link/" data-id="cimuabbie004be8u5rnwjwqtb" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Interview-Review-Link/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -912,7 +961,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Valid-Palindrome/" data-id="cimptggts000fuvu5wkczw422" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Valid-Palindrome/" data-id="cimuabbfb000fe8u5437l779z" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Valid-Palindrome/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -960,7 +1009,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/LRU-Cache/" data-id="cimptggy3003suvu53fmjt3oq" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/LRU-Cache/" data-id="cimuabbi6003se8u535rxuxjs" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/LRU-Cache/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1011,7 +1060,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reorder-List/" data-id="cimptggvy0023uvu5pdthzzip" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reorder-List/" data-id="cimuabbgp0023e8u5dj71ybey" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reorder-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1061,7 +1110,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/" data-id="cimptggxz003nuvu54r1clkdd" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/" data-id="cimuabbi2003ne8u5vcwvfn2m" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1109,7 +1158,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle/" data-id="cimptggxt003juvu576546n58" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle/" data-id="cimuabbi0003je8u595iv9pjr" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Linked-List-Cycle/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1156,7 +1205,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/" data-id="cimptggyz004ouvu5hvvwq0hn" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/" data-id="cimuabbiz004te8u5ahxdmlcd" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1210,7 +1259,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/" data-id="cimptggvp001xuvu5sq8rjkha" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/" data-id="cimuabbgl001xe8u5gl9o38ug" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1260,7 +1309,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/" data-id="cimptggu5000puvu51hdvmv9i" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/" data-id="cimuabbfk000pe8u5fm0hn6bx" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1310,7 +1359,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-List/" data-id="cimptggvg001ruvu5fl1ycc2q" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-List/" data-id="cimuabbge001re8u5dv67ki16" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Rotate-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1359,7 +1408,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/" data-id="cimptggwg002cuvu5cqrfdaft" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/" data-id="cimuabbh2002ce8u54ha8r67t" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1420,7 +1469,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/" data-id="cimptgguc000tuvu517e2sqty" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/" data-id="cimuabbfq000te8u55keb0k2u" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1469,7 +1518,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="cimptggwa0029uvu5288u6vvf" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="cimuabbgx0029e8u5zq9kfk6z" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1518,7 +1567,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Partition-List/" data-id="cimptggx8002tuvu5czlxl1wf" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Partition-List/" data-id="cimuabbhe002te8u5g3ghaeb4" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Partition-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1570,7 +1619,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/" data-id="cimptggvu0020uvu5eya5mv4k" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/" data-id="cimuabbgn0020e8u5vs0wh30k" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1620,7 +1669,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/" data-id="cimptggzh005cuvu578y8cynd" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/" data-id="cimuabbjf005he8u5yimd9684" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1671,7 +1720,7 @@ Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers/" data-id="cimptggzf0059uvu5jj1wwwxo" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers/" data-id="cimuabbjd005ee8u5dde6a0b7" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1727,7 +1776,7 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-III/" data-id="cimptgguk0011uvu57f7fk4an" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-III/" data-id="cimuabbfu0011e8u5wbnps7y4" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number-III/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1778,7 +1827,7 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="cimptgguq0015uvu5x60g1mws" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="cimuabbfy0015e8u5jm1yo3lm" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1828,7 +1877,7 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="cimptggug000wuvu5ikpt5wn6" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="cimuabbfs000we8u5lo4w77as" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1888,7 +1937,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="cimptggz70051uvu51bd7z2mu" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="cimuabbj60056e8u5b9wew6ot" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Candy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1940,7 +1989,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="cimptggyi004guvu5767mexn4" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="cimuabbin004le8u5yfocgrdj" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Gas-Station/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1994,7 +2043,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/" data-id="cimptgguu0019uvu5tmjtvzhj" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/" data-id="cimuabbg10019e8u5afzy14xk" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2089,7 +2138,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gray-Code/" data-id="cimptggyd0049uvu5ltaaux4o" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Gray-Code/" data-id="cimuabbig004ee8u5q92vxf4z" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Gray-Code/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2181,7 +2230,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="cimptggz2004suvu5l4z3or86" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="cimuabbj2004xe8u58ate3nlv" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Climbing-Stairs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2234,7 +2283,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Plus-One/" data-id="cimptggx2002luvu5hxuh90t1" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Plus-One/" data-id="cimuabbh9002le8u5u9wmrx5i" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Plus-One/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2292,7 +2341,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="cimptggvl001uuvu54mf0cy50" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="cimuabbgi001ue8u596mejti3" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Rotate-Image/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2358,7 +2407,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="cimptggu2000muvu5qu9xrm83" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="cimuabbfi000me8u50rqgpwaq" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2410,7 +2459,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="cimptggtn000cuvu5ol0rfx39" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="cimuabbf9000ce8u5qeum5072" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Valid-Sudoku/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2475,7 +2524,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="cimptggx4002ouvu5bur3ypl5" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="cimuabbhb002oe8u583j8w09h" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Permutation-Sequence/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2530,7 +2579,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="cimptggxa002wuvu5omlkg0kl" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="cimuabbhg002we8u570udjggd" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Next-Permutation/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2578,7 +2627,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="cimptggw30026uvu5pj7n119x" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="cimuabbgs0026e8u5ulna1o4l" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Element/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2632,7 +2681,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="cimptggzk005fuvu5sfbflmvg" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="cimuabbjh005ke8u5s4ovmkjy" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/4Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2684,7 +2733,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="cimptggs80000uvu5oqn5kgiq" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="cimuabbea0000e8u52vzjs0d7" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum-Closest/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2737,7 +2786,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="cimptggzm005juvu5ulhjp2gl" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="cimuabbjl005oe8u5fmf1hj4r" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2791,7 +2840,7 @@ Output: index1=<span class="number">1</span>, index2=<span class="number">2</spa
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="cimptggty000juvu5e8fa2pnp" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="cimuabbff000je8u56psl46m8" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Two-Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2850,7 +2899,7 @@ The longest consecutive elements sequence is [<span class="number">1</span>, <sp
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/" data-id="cimptggxr003guvu59p5ect6d" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/" data-id="cimuabbhy003ge8u5ad9utvkw" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2915,7 +2964,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/" data-id="cimptggxc002zuvu5iqvk5fn4" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/" data-id="cimuabbhi002ze8u5n0xi7m7b" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2970,7 +3019,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/" data-id="cimptggv6001huvu51v9mqlvn" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/" data-id="cimuabbg7001he8u5vyogexzc" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3032,7 +3081,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="cimptgguz001cuvu5bu7xrnhj" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="cimuabbg4001ce8u5v610jopq" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3083,7 +3132,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="cimptggwz002iuvu5t0imhdq5" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="cimuabbh7002ie8u5n5el85fe" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3138,7 +3187,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cimptggww002fuvu5piasgwrf" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="cimuabbh5002fe8u5bjtg2c5p" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3188,7 +3237,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="cimptggyw004kuvu5kdfuixtr" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="cimuabbix004pe8u5zxmgub7r" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3271,7 +3320,7 @@ img.math {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="cimptggva001kuvu5ofhe8lc9" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="cimuabbga001ke8u5zrmtjnhf" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/SDA/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3303,7 +3352,7 @@ img.math {
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-Search/">Binary Search</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Configuration/">Configuration</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hash-Map/">Hash Map</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interview/">Interview</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-8/">Java 8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/">Linked List</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Programming-Language/">Programming Language</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Two-Pointers/">Two Pointers</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-Search/">Binary Search</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Configuration/">Configuration</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hash-Map/">Hash Map</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interview/">Interview</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-8/">Java 8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/">Linked List</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Programming-Languag/">Programming Languag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Programming-Language/">Programming Language</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Two-Pointers/">Two Pointers</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -3312,7 +3361,7 @@ img.math {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 20px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 12px;">Binary Search</a> <a href="/tags/Bit-Manipulation/" style="font-size: 14px;">Bit Manipulation</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Configuration/" style="font-size: 10px;">Configuration</a> <a href="/tags/DP/" style="font-size: 10px;">DP</a> <a href="/tags/Deep-Learning/" style="font-size: 12px;">Deep Learning</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hash-Map/" style="font-size: 12px;">Hash Map</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 12px;">Interview</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java-8/" style="font-size: 10px;">Java 8</a> <a href="/tags/Linked-List/" style="font-size: 18px;">Linked List</a> <a href="/tags/Machine-Learning/" style="font-size: 12px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math/" style="font-size: 12px;">Math</a> <a href="/tags/Programming-Language/" style="font-size: 10px;">Programming Language</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Two-Pointers/" style="font-size: 16px;">Two Pointers</a>
+      <a href="/tags/Array/" style="font-size: 20px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 12px;">Binary Search</a> <a href="/tags/Bit-Manipulation/" style="font-size: 14px;">Bit Manipulation</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Configuration/" style="font-size: 10px;">Configuration</a> <a href="/tags/DP/" style="font-size: 10px;">DP</a> <a href="/tags/Deep-Learning/" style="font-size: 12px;">Deep Learning</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hash-Map/" style="font-size: 12px;">Hash Map</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 12px;">Interview</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Java-8/" style="font-size: 12px;">Java 8</a> <a href="/tags/Linked-List/" style="font-size: 18px;">Linked List</a> <a href="/tags/Machine-Learning/" style="font-size: 12px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math/" style="font-size: 12px;">Math</a> <a href="/tags/Programming-Languag/" style="font-size: 10px;">Programming Languag</a> <a href="/tags/Programming-Language/" style="font-size: 10px;">Programming Language</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Two-Pointers/" style="font-size: 16px;">Two Pointers</a>
     </div>
   </div>
 
@@ -3321,7 +3370,7 @@ img.math {
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">44</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">44</span></li></ul>
     </div>
   </div>
 
@@ -3331,6 +3380,10 @@ img.math {
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/04/Java-8-Lambda-Expression/">Java 8 Lambda Expressions</a>
+          </li>
         
           <li>
             <a href="/2016/03/Java-8-new-properties/">Java 8 new properties</a>
@@ -3346,10 +3399,6 @@ img.math {
         
           <li>
             <a href="/2016/01/Bash-Note/">Bash Note</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/Git-Note/">Git Note</a>
           </li>
         
       </ul>

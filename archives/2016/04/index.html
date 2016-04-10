@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Gas Station | YAO&#39;s BLOG</title>
+  <title>Archives: 2016/4 | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Problem:There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
-You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Gas Station">
-<meta property="og:url" content="http://psyyz10.github.io/2015/11/Gas-Station/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YAO's BLOG">
+<meta property="og:url" content="http://psyyz10.github.io/archives/2016/04/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="Problem:There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
-You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i">
-<meta property="og:updated_time" content="2015-11-17T23:42:24.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gas Station">
-<meta name="twitter:description" content="Problem:There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
-You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i">
+<meta name="twitter:title" content="YAO's BLOG">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -71,83 +67,40 @@ You have a car with an unlimited gas tank and it costs cost[i] of gas to travel 
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Gas-Station" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/Gas-Station/" class="article-date">
-  <time datetime="2015-11-15T11:33:35.000Z" itemprop="datePublished">2015-11-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Leetcode-and-Lintcode/">Leetcode and Lintcode</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Gas Station
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/04/Java-8-Lambda-Expression/" class="archive-article-date">
+  <time datetime="2016-04-10T07:22:30.000Z" itemprop="datePublished">Apr 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/04/Java-8-Lambda-Expression/">Java 8 Lambda Expressions</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem:">Problem:</h2><p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
-<p>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.</p>
-<p>Return the starting gas station’s index if you can travel around the circuit once, otherwise return -1.</p>
-<p>Have you met this question in a real interview? Yes<br>    Example<br>    Given 4 gas stations with gas[i]=[1,1,3,1], and the cost[i]=[2,2,1,1]. The starting gas station’s index is 2.</p>
-<p>Note<br>The solution is guaranteed to be unique.</p>
-<p>Challenge<br>O(n) time and O(1) extra space</p>
-<h2 id="Solution:">Solution:</h2><p>Use a ‘total’ variable to record the total amount of gas left through the circus.<br>Use a ‘sum’ variable to record the current gas left in the tank.<br>Use a pointer to record the starting label.<br>Once the there is no gass left in the car before next gas station available, set the label next gas station as the new starting gas station.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: GasStation.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Sun 15 Nov 19:33:24 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GasStation</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="keyword">int</span>[] gas, <span class="keyword">int</span>[] cost)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> label = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; gas.length; i++)&#123;</span><br><span class="line">            total += gas[i];</span><br><span class="line">            sum += gas[i];</span><br><span class="line"></span><br><span class="line">            total -= cost[i];</span><br><span class="line">            sum -= cost[i];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (sum &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">                label = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> total &gt;= <span class="number">0</span> ? label : -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="cimuabbin004le8u5yfocgrdj" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2015/11/Gas-Station/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a><span class="article-tag-list-count">25</span></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/11/Candy/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Candy
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/11/Set-Matrix-Zeroes/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Set Matrix Zeroes</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
+    </div></section>
+  
+  
 </section>
         
           <aside id="sidebar">
@@ -247,13 +200,11 @@ You have a car with an unlimited gas tank and it costs cost[i] of gas to travel 
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2015/11/Gas-Station/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
