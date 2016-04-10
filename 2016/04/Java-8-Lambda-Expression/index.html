@@ -5,19 +5,16 @@
   
   <title>Java 8 Lambda Expressions | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There is a general usage in Swing library: we need a action listener to response a user operation.
-12345button.addActionListener(new ActionListener() &amp;#123;    public void actionPerformed(ActionEvent">
+  <meta name="description" content="Your First Lambda Expression:There is a general usage in Swing library: we need a action listener to response a user operation.Before Java 8, we have to create a new inner class which implements Actio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 8 Lambda Expressions">
 <meta property="og:url" content="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="There is a general usage in Swing library: we need a action listener to response a user operation.
-12345button.addActionListener(new ActionListener() &amp;#123;    public void actionPerformed(ActionEvent">
-<meta property="og:updated_time" content="2016-04-10T08:04:25.000Z">
+<meta property="og:description" content="Your First Lambda Expression:There is a general usage in Swing library: we need a action listener to response a user operation.Before Java 8, we have to create a new inner class which implements Actio">
+<meta property="og:updated_time" content="2016-04-10T09:16:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 8 Lambda Expressions">
-<meta name="twitter:description" content="There is a general usage in Swing library: we need a action listener to response a user operation.
-12345button.addActionListener(new ActionListener() &amp;#123;    public void actionPerformed(ActionEvent">
+<meta name="twitter:description" content="Your First Lambda Expression:There is a general usage in Swing library: we need a action listener to response a user operation.Before Java 8, we have to create a new inner class which implements Actio">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -93,12 +90,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>There is a general usage in <em>Swing</em> library: <strong>we need a action listener to response a user operation</strong>.</p>
+        <h3 id="Your_First_Lambda_Expression:">Your First Lambda Expression:</h3><p>There is a general usage in <em>Swing</em> library: <strong>we need a action listener to response a user operation</strong>.<br>Before Java 8, we have to create a new inner class which implements <em>ActionListener</em> interface and overide its unique method <code>actionPerformed</code> like the following code:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"button clicked"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>There are two problem:</p>
+<pre><code><span class="number">1.</span> So many template codes
+<span class="number">2.</span> The codes are <span class="operator">not</span> easy <span class="built_in">to</span> <span class="built_in">read</span> <span class="keyword">without</span> expressing <span class="operator">the</span> purpose <span class="operator">of</span> <span class="operator">the</span> programmers
+</code></pre><p>With Java 8, we can create a lambda expression:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(event -&gt; System.out.println(<span class="string">"button clicked"</span>));</span><br></pre></td></tr></table></figure>
+<p>Instead of passing in an object that implements an interface, we are passing in a bock of code : a function without a name.<br>In this code, we do not need to explicitly declare the type of event. In Lambda Expression, java compiler can infer the type of variable <code>event</code> from the context. </p>
+<p>Note: For the sake of readability and familiarity, you have the option to include the type declarations, and sometimes the compiler<br>just can’t work it out!</p>
+<h3 id="How_to_Spot_a_Lambda_in_a_Haystack">How to Spot a Lambda in a Haystack</h3><p>The following code are five forms of lambda expression as an example:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Runnable noArguments = () -&gt; System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">ActionListener oneArgument = event -&gt; System.out.println(<span class="string">"button clicked"</span>);</span><br><span class="line">Runnable multiStatement = () -&gt; &#123;</span><br><span class="line">    System.out.print(<span class="string">"Hello"</span>);</span><br><span class="line">    System.out.println(<span class="string">" World"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">BinaryOperator&lt;Long&gt; add = (x, y) -&gt; x + y;</span><br><span class="line">BinaryOperator&lt;Long&gt; addExplicit = (Long x, Long y) -&gt; x + y;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Using_Values,_Not_Varialbes">Using Values, Not Varialbes</h3><p>When you want to pass a varible outside the anonymous method into the method, you should declared the variable as <em>final</em>. Making a variable final means that you can’t reassign to that variable.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> String name = getUserName();</span><br><span class="line">button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hi "</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>For lambda expression, although you do not need to set the outside variable as final, but you can still not change the value. If you changed, there will be an complie error.</p>
+<h3 id="Functional_Interfaces">Functional Interfaces</h3><p><em>A functional interface is an interface with a single abstract method that is used as the type of a lambda expression.</em></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/" data-id="cimuabbic0046e8u51btoa8cq" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/" data-id="cimucvg0m0046h0u55r7tqkiz" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/#disqus_thread" class="article-comment-link">Comments</a>
       
