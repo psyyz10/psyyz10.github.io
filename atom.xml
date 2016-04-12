@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-04-10T09:16:00.000Z</updated>
+  <updated>2016-04-11T03:40:17.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,31 +19,87 @@
     <link href="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/"/>
     <id>http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/</id>
     <published>2016-04-10T07:22:30.000Z</published>
-    <updated>2016-04-10T09:16:00.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="Your_First_Lambda_Expression:">Your First Lambda Expression:</h3><p>There is a general usage in <em>Swing</em> library: <strong>we need a action listener to response a user operation</strong>.<br>Before Java 8, we have to create a new inner class which implements <em>ActionListener</em> interface and overide its unique method <code>actionPerformed</code> like the following code:</p>
+    <updated>2016-04-11T03:40:17.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Your_First_Lambda_Expression:">Your First Lambda Expression:</h3><p>There is a general usage in <strong>Swing</strong> library: <em>we need a action listener to response a user operation</em>.<br>Before Java 8, we have to create a new inner class which implements <em>ActionListener</em> interface and overide its unique method <code>actionPerformed</code> like the following code:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"button clicked"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>There are two problem:</p>
+<p>There are two problem: </p>
 <pre><code><span class="number">1.</span> So many template codes
 <span class="number">2.</span> The codes are <span class="operator">not</span> easy <span class="built_in">to</span> <span class="built_in">read</span> <span class="keyword">without</span> expressing <span class="operator">the</span> purpose <span class="operator">of</span> <span class="operator">the</span> programmers
 </code></pre><p>With Java 8, we can create a lambda expression:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(event -&gt; System.out.println(<span class="string">"button clicked"</span>));</span><br></pre></td></tr></table></figure>
 <p>Instead of passing in an object that implements an interface, we are passing in a bock of code : a function without a name.<br>In this code, we do not need to explicitly declare the type of event. In Lambda Expression, java compiler can infer the type of variable <code>event</code> from the context. </p>
 <p>Note: For the sake of readability and familiarity, you have the option to include the type declarations, and sometimes the compiler<br>just can’t work it out!</p>
-<h3 id="How_to_Spot_a_Lambda_in_a_Haystack">How to Spot a Lambda in a Haystack</h3><p>The following code are five forms of lambda expression as an example:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Runnable noArguments = () -&gt; System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">ActionListener oneArgument = event -&gt; System.out.println(<span class="string">"button clicked"</span>);</span><br><span class="line">Runnable multiStatement = () -&gt; &#123;</span><br><span class="line">    System.out.print(<span class="string">"Hello"</span>);</span><br><span class="line">    System.out.println(<span class="string">" World"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">BinaryOperator&lt;Long&gt; add = (x, y) -&gt; x + y;</span><br><span class="line">BinaryOperator&lt;Long&gt; addExplicit = (Long x, Long y) -&gt; x + y;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Using_Values,_Not_Varialbes">Using Values, Not Varialbes</h3><p>When you want to pass a varible outside the anonymous method into the method, you should declared the variable as <em>final</em>. Making a variable final means that you can’t reassign to that variable.</p>
+<h3 id="How_to_Spot_a_Lambda_in_a_Haystack">How to Spot a Lambda in a Haystack</h3><p>The following code are five forms of lambda expressions as an example:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Runnable noArguments = () -&gt; System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">ActionListener oneArgument = event -&gt; System.out.println(<span class="string">"button clicked"</span>);</span><br><span class="line">Runnable multiStatement = () -&gt; &#123;</span><br><span class="line">    System.out.print(<span class="string">"Hello"</span>);</span><br><span class="line">    System.out.println(<span class="string">" World"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">BinaryOperator&lt;Long&gt; add = (x, y) -&gt; x + y;</span><br><span class="line">BinaryOperator&lt;Long&gt; addExplicit = (Long x, Long y) -&gt; x + y;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Using_Values,_Not_Varialbes">Using Values, Not Varialbes</h3><p>When you want to pass a varible outside the anonymous method into the method, you should declared the variable as <strong>final</strong>. Making a variable final means that you can’t reassign to that variable.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> String name = getUserName();</span><br><span class="line">button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hi "</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>For lambda expression, although you do not need to set the outside variable as final, but you can still not change the value. If you changed, there will be an complie error.</p>
-<h3 id="Functional_Interfaces">Functional Interfaces</h3><p><em>A functional interface is an interface with a single abstract method that is used as the type of a lambda expression.</em></p>
+<p>For lambda expression, although you do not need to set the outside variable as final, but you can still not change the value. If you changed, there will be an complie error.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Formula</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">double</span> <span class="title">sqrt</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Math.sqrt(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Default_Methods_for_Interfaces">Default Methods for Interfaces</h3><p>Java 8 enables us to add non-abstract method implementations to interfaces by utilizing the <code>default</code> keyword. This feature is also known as Extension Methods. Here is our first example:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Formula</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">double</span> <span class="title">sqrt</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Math.sqrt(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Functional_Interfaces">Functional Interfaces</h3><p><strong>A functional interface is an interface with a single abstract method that is used as the type of a lambda expression.</strong></p>
+<p>How does lambda expressions fit into Javas type system? Each lambda corresponds to a given type, specifibd by an interface. A so called <em>functional interface</em> must contain <strong>exactly one abstract method</strong> declaration. Each lambda expression of that type will be matched to this abstract method. Since default methods are not abstract you’re free to add default methods to your functional interface.</p>
+<p>To ensure that your interface meet the requirements, you should add the <code>@FunctionalInterface</code> annotation. The compiler is aware of this annotation and throws a compiler error as soon as you try to add a second abstract method declaration to the interface.</p>
+<p>Example:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Converter</span>&lt;<span class="title">F</span>, <span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">T <span class="title">convert</span><span class="params">(F from)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Keep in mind that the code is also valid if the @FunctionalInterface annotation would be ommited.</p>
+<table>
+<thead>
+<tr>
+<th>Interface name</th>
+<th>Arguments</th>
+<th>Returns</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predicate<t></t></td>
+<td>T</td>
+<td>boolean</td>
+<td>Has this album been released yet?</td>
+</tr>
+<tr>
+<td>Consumer<t></t></td>
+<td>T</td>
+<td>void</td>
+<td>Printing out a value</td>
+</tr>
+<tr>
+<td>Function<t,r></t,r></td>
+<td>T</td>
+<td>R</td>
+<td>Get the name from an Artist object</td>
+</tr>
+<tr>
+<td>Supplier<t></t></td>
+<td>None</td>
+<td>T</td>
+<td>A factory method</td>
+</tr>
+<tr>
+<td>UnaryOperator<t></t></td>
+<td>T</td>
+<td>T</td>
+<td>Logical not (!)</td>
+</tr>
+<tr>
+<td>BinaryOperator<t></t></td>
+<td>(T, T)</td>
+<td>T</td>
+<td>Multiplying two numbers (*)</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="Your_First_Lambda_Expression:">Your First Lambda Expression:</h3><p>There is a general usage in <em>Swing</em> library: <strong>we n]]>
+    <![CDATA[<h3 id="Your_First_Lambda_Expression:">Your First Lambda Expression:</h3><p>There is a general usage in <strong>Swing</strong> library: <em>]]>
     </summary>
     
       <category term="Java" scheme="http://psyyz10.github.io/tags/Java/"/>
     
       <category term="Java 8" scheme="http://psyyz10.github.io/tags/Java-8/"/>
     
-      <category term="Programming Languag" scheme="http://psyyz10.github.io/tags/Programming-Languag/"/>
+      <category term="Programming Language" scheme="http://psyyz10.github.io/tags/Programming-Language/"/>
+    
+      <category term="Java" scheme="http://psyyz10.github.io/categories/Java/"/>
     
   </entry>
   
@@ -52,10 +108,10 @@
     <link href="http://psyyz10.github.io/2016/03/Java-8-new-properties/"/>
     <id>http://psyyz10.github.io/2016/03/Java-8-new-properties/</id>
     <published>2016-03-31T10:11:23.000Z</published>
-    <updated>2016-04-10T07:47:58.000Z</updated>
+    <updated>2016-04-10T13:45:00.000Z</updated>
     <content type="html"><![CDATA[<p>Java 8 Lambdas: Functional Programming For The Masses by Richard Warburton gives a short, concise and surprisingly good coverage of how Java 8 lambdas (or “closures”) work and intended to be used, with focus on simplified and safer parallelism. In later context, also gives nice overview of emerging “reactive programming” and event-driven frameworks like Vert.x.</p>
 <p>This blog summerizes some notes about the new properties in Java 8. It is a reading note of the book ‘Java 8 Lambdas: Functional Programming for Masses’. The content links are shown below.</p>
-<pre><code><span class="bullet">1. </span>[<span class="link_label">Lambda Expressions</span>](<span class="link_url">/.</span>)
+<pre><code><span class="bullet">1. </span>[<span class="link_label">Lambda Expressions</span>](<span class="link_url">./</span>)
 <span class="bullet">2. </span>[<span class="link_label">Stream</span>](<span class="link_url"></span>)
 <span class="bullet">3. </span>[<span class="link_label">Libraries</span>](<span class="link_url"></span>)
 <span class="bullet">4. </span>[<span class="link_label">Advanced Collector</span>](<span class="link_url"></span>)
