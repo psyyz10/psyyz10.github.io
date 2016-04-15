@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-04-11T03:40:17.000Z</updated>
+  <updated>2016-04-15T15:35:51.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -15,11 +15,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Good Courses]]></title>
+    <link href="http://psyyz10.github.io/2016/04/Good-Courses/"/>
+    <id>http://psyyz10.github.io/2016/04/Good-Courses/</id>
+    <published>2016-04-13T22:01:52.000Z</published>
+    <updated>2016-04-15T15:35:51.000Z</updated>
+    <content type="html"><![CDATA[<p>Operating System:<br><a href="http://web.stanford.edu/~ouster/cgi-bin/cs140-winter16/lecture.php?topic=intro" target="_blank" rel="external">CS 140: Operating Systems (Standford Winter 2016)</a><br><a href="http://web.stanford.edu/class/cs240/" target="_blank" rel="external">CS240: Advanced Topics in Operating Systems (Standford)</a></p>
+<p>Machine Learning:<br><a href="http://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/Bayesian.html" target="_blank" rel="external">Course 493: Intelligent Data Analysis and Probabilistic Inference (Imperial College)</a><br><a href="http://ibug.doc.ic.ac.uk/courses/machine-learning-course-395/" target="_blank" rel="external">Machine Learning (course 395) (Imperial College)</a><br><a href="http://ibug.doc.ic.ac.uk/courses/advanced-statistical-machine-learning-495/" target="_blank" rel="external">Advanced Statistical Machine learning 495</a></p>
+<p>sleep()方法，yield（）的重写，volatile关键字，线程安全，线程池类，</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Operating System:<br><a href="http://web.stanford.edu/~ouster/cgi-bin/cs140-winter16/lecture.php?topic=intro" target="_blank" rel="extern]]>
+    </summary>
+    
+      <category term="Open Courses" scheme="http://psyyz10.github.io/tags/Open-Courses/"/>
+    
+      <category term="Learning Note" scheme="http://psyyz10.github.io/categories/Learning-Note/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Java 8 Lambda Expressions]]></title>
     <link href="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/"/>
     <id>http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/</id>
     <published>2016-04-10T07:22:30.000Z</published>
-    <updated>2016-04-11T03:40:17.000Z</updated>
+    <updated>2016-04-13T01:22:02.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Your_First_Lambda_Expression:">Your First Lambda Expression:</h3><p>There is a general usage in <strong>Swing</strong> library: <em>we need a action listener to response a user operation</em>.<br>Before Java 8, we have to create a new inner class which implements <em>ActionListener</em> interface and overide its unique method <code>actionPerformed</code> like the following code:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"button clicked"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>There are two problem: </p>
@@ -108,7 +128,7 @@
     <link href="http://psyyz10.github.io/2016/03/Java-8-new-properties/"/>
     <id>http://psyyz10.github.io/2016/03/Java-8-new-properties/</id>
     <published>2016-03-31T10:11:23.000Z</published>
-    <updated>2016-04-12T11:08:02.000Z</updated>
+    <updated>2016-04-13T01:21:59.000Z</updated>
     <content type="html"><![CDATA[<p>Java 8 Lambdas: Functional Programming For The Masses by Richard Warburton gives a short, concise and surprisingly good coverage of how Java 8 lambdas (or “closures”) work and intended to be used, with focus on simplified and safer parallelism. In later context, also gives nice overview of emerging “reactive programming” and event-driven frameworks like Vert.x.</p>
 <p>This blog summerizes some notes about the new properties in Java 8. It is a reading note of the book ‘Java 8 Lambdas: Functional Programming for Masses’. The content links are shown below.</p>
 <pre><code><span class="bullet">1. </span>[<span class="link_label">Lambda Expressions</span>](<span class="link_url">./</span>)
@@ -138,10 +158,10 @@
     <link href="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/"/>
     <id>http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/</id>
     <published>2016-03-06T06:09:42.000Z</published>
-    <updated>2016-03-06T06:09:42.000Z</updated>
-    <content type="html"></content>
+    <updated>2016-04-13T01:23:14.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
-    
+    <![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><]]>
     </summary>
     
   </entry>
@@ -151,10 +171,11 @@
     <link href="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/"/>
     <id>http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/</id>
     <published>2016-03-02T10:56:13.000Z</published>
-    <updated>2016-03-06T06:15:02.000Z</updated>
+    <updated>2016-04-13T01:23:15.000Z</updated>
     <content type="html"><![CDATA[<p>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For “bbbbb” the longest substring is “b”, with the length of 1.</p>
 <p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">Leetcode link</a></p>
-<h2 id="Solution:">Solution:</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>]; <span class="comment">//Map the character to the first occurence index</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> slow = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        Arrays.fill(map,-<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> fast = <span class="number">0</span>; fast &lt; s.length(); fast++)&#123;</span><br><span class="line">            <span class="keyword">char</span> current = s.charAt(fast);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (slow &lt;= map[current])&#123;</span><br><span class="line">                max = Math.max(max, fast - slow);</span><br><span class="line">                slow = map[current] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            map[current] = fast;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        max = Math.max(max, s.length() - slow);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<p>``<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>]; <span class="comment">//Map the character to the first occurence index</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> slow = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        Arrays.fill(map,-<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> fast = <span class="number">0</span>; fast &lt; s.length(); fast++)&#123;</span><br><span class="line">            <span class="keyword">char</span> current = s.charAt(fast);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (slow &lt;= map[current])&#123;</span><br><span class="line">                max = Math.max(max, fast - slow);</span><br><span class="line">                slow = map[current] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            map[current] = fast;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        max = Math.max(max, s.length() - slow);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
     <summary type="html">
     <![CDATA[<p>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeati]]>
     </summary>
@@ -427,7 +448,7 @@
     <link href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/"/>
     <id>http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/</id>
     <published>2015-12-26T04:50:06.000Z</published>
-    <updated>2016-03-26T02:44:54.000Z</updated>
+    <updated>2016-04-13T21:35:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Offer_选择：">Offer 选择：</h2><ul>
 <li><a href="http://kedebug.com/blog/campus-offer-2015/" target="_blank" rel="external">2015 校招总结</a></li>
 <li><a href="http://www.muzhibus.com/Htmls/Sykx/2015/0703/4990.shtml" target="_blank" rel="external">2015年互联网行业薪酬报告</a></li>
@@ -548,7 +569,10 @@
 <li><a href=""></a></li>
 </ul>
 </li>
-<li></li>
+<li>JVM调优<ul>
+<li><a href="http://unixboy.iteye.com/blog/174173" target="_blank" rel="external">JVM调优总结 -Xms -Xmx -Xmn -Xss</a></li>
+</ul>
+</li>
 </ol>
 <p>clone 方法的实现，<br>浏览器敲回车会发生的过程</p>
 <p>## </p>
@@ -1648,39 +1672,6 @@ Output: index1=<span class="number">1</span>, index2=<span class="number">2</spa
     <summary type="html">
     <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
 <p>The]]>
-    </summary>
-    
-      <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>
-    
-      <category term="Leetcode and Lintcode" scheme="http://psyyz10.github.io/categories/Leetcode-and-Lintcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Longest Consecutive Sequence]]></title>
-    <link href="http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/"/>
-    <id>http://psyyz10.github.io/2015/11/Longest-Consecutive-Sequence/</id>
-    <published>2015-11-11T08:09:38.000Z</published>
-    <updated>2015-11-17T23:47:26.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
-<pre><code>Example
-Given [<span class="number">100</span>, <span class="number">4</span>, <span class="number">200</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],
-The longest consecutive elements sequence is [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]. Return its length: <span class="number">4.</span>
-</code></pre><p>Clarification<br>Your algorithm should run in O(n) complexity.</p>
-<p><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/longest-consecutive-sequence/" target="_blank" rel="external">lintcode link</a></p>
-<h2 id="My_Solution:">My Solution:</h2><p>The most intuitive solution is to sort the array and then find the longest sequence.<br>The space cost is O(1), time cost is O(Nlog N).</p>
-<p>To save time cost, we can use a hash map to record two information:</p>
-<ol>
-<li>whether the number is in the list</li>
-<li>whether the number has been visited (to avoid duplicate search)</li>
-</ol>
-<p>So we need a HashMap<integer, boolean=""> to record the information.</integer,></p>
-<p>For each number in the list, if it has not been visited, we expend it to the smaller and larger number respectively.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: LongestConsecutiveSequence.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Wed 11 Nov 16:12:07 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongestConsecutiveSequence</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestConsecutive</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Boolean&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Boolean&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) map.put(num,<span class="keyword">false</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.get(num)) <span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span> length = <span class="number">1</span>;</span><br><span class="line">            map.put(num,<span class="keyword">true</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> left = num - <span class="number">1</span>; map.containsKey(left); left--)&#123;</span><br><span class="line">                map.put(left,<span class="keyword">true</span>);</span><br><span class="line">                length ++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> right = num + <span class="number">1</span>; map.containsKey(right); right++)&#123;</span><br><span class="line">                map.put(right,<span class="keyword">true</span>);</span><br><span class="line">                length++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            longest = Math.max(length,longest);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> longest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="Problem:">Problem:</h2><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
-<pr]]>
     </summary>
     
       <category term="Array" scheme="http://psyyz10.github.io/tags/Array/"/>

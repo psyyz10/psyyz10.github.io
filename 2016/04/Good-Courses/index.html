@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Candy | YAO&#39;s BLOG</title>
+  <title>Good Courses | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Problem:There are N children standing in a line. Each child is assigned a rating value.
-You are giving candies to these children subjected to the following requirements:
-Each child must have at least">
+  <meta name="description" content="Operating System:CS 140: Operating Systems (Standford Winter 2016)CS240: Advanced Topics in Operating Systems (Standford)
+Machine Learning:Course 493: Intelligent Data Analysis and Probabilistic Infer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Candy">
-<meta property="og:url" content="http://psyyz10.github.io/2015/11/Candy/index.html">
+<meta property="og:title" content="Good Courses">
+<meta property="og:url" content="http://psyyz10.github.io/2016/04/Good-Courses/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="Problem:There are N children standing in a line. Each child is assigned a rating value.
-You are giving candies to these children subjected to the following requirements:
-Each child must have at least">
-<meta property="og:updated_time" content="2015-11-17T23:39:20.000Z">
+<meta property="og:description" content="Operating System:CS 140: Operating Systems (Standford Winter 2016)CS240: Advanced Topics in Operating Systems (Standford)
+Machine Learning:Course 493: Intelligent Data Analysis and Probabilistic Infer">
+<meta property="og:updated_time" content="2016-04-15T15:35:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Candy">
-<meta name="twitter:description" content="Problem:There are N children standing in a line. Each child is assigned a rating value.
-You are giving candies to these children subjected to the following requirements:
-Each child must have at least">
+<meta name="twitter:title" content="Good Courses">
+<meta name="twitter:description" content="Operating System:CS 140: Operating Systems (Standford Winter 2016)CS240: Advanced Topics in Operating Systems (Standford)
+Machine Learning:Course 493: Intelligent Data Analysis and Probabilistic Infer">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -74,14 +71,14 @@ Each child must have at least">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Candy" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Good-Courses" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/11/Candy/" class="article-date">
-  <time datetime="2015-11-15T14:04:01.000Z" itemprop="datePublished">2015-11-15</time>
+    <a href="/2016/04/Good-Courses/" class="article-date">
+  <time datetime="2016-04-13T22:01:52.000Z" itemprop="datePublished">2016-04-14</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Leetcode-and-Lintcode/">Leetcode and Lintcode</a>
+    <a class="article-category-link" href="/categories/Learning-Note/">Learning Note</a>
   </div>
 
   </div>
@@ -92,7 +89,7 @@ Each child must have at least">
         
   
     <h1 class="article-title" itemprop="name">
-      Candy
+      Good Courses
     </h1>
   
 
@@ -100,32 +97,19 @@ Each child must have at least">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Problem:">Problem:</h2><p>There are N children standing in a line. Each child is assigned a rating value.</p>
-<p>You are giving candies to these children subjected to the following requirements:</p>
-<p>Each child must have at least one candy.</p>
-<p>Children with a higher rating get more candies than their neighbors.</p>
-<p>What is the minimum candies you must give?</p>
-<p>Have you met this question in a real interview? Yes</p>
-<p>Example<br>    Given ratings = [1, 2], return 3.</p>
-<pre><code>given ratings = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], <span class="keyword">return</span> <span class="number">3.</span>
-
-Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>], <span class="keyword">return</span> <span class="number">4.</span> ([<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>]).
-</code></pre><p><a href="https://leetcode.com/problems/candy/" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/candy/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="Solution:">Solution:</h2><p>Initialize the candy array to 1s.<br>First go through from left to right;<br>Second go through form right to left with the following condition:</p>
-<ul>
-<li>If the current child’s rating is greater than the previous one, the current candies should be at least 1 more than the previous one</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: Candy.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Sun 15 Nov 22:03:51 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Candy</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">candy</span><span class="params">(<span class="keyword">int</span>[] ratings)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (ratings == <span class="keyword">null</span> || ratings.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> length = ratings.length;</span><br><span class="line">        <span class="keyword">int</span>[] candies = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">        Arrays.fill(candies,<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i-<span class="number">1</span>]) &#123;</span><br><span class="line">                candies[i] = candies[i-<span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> sum = candies[length - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i+<span class="number">1</span>])&#123; </span><br><span class="line">                <span class="comment">// Note that candies[i] may greater than (candies[i+1] + 1), so we use the max one</span></span><br><span class="line">                candies[i] = Math.max(candies[i], candies[i+<span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            sum += candies[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>Operating System:<br><a href="http://web.stanford.edu/~ouster/cgi-bin/cs140-winter16/lecture.php?topic=intro" target="_blank" rel="external">CS 140: Operating Systems (Standford Winter 2016)</a><br><a href="http://web.stanford.edu/class/cs240/" target="_blank" rel="external">CS240: Advanced Topics in Operating Systems (Standford)</a></p>
+<p>Machine Learning:<br><a href="http://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/Bayesian.html" target="_blank" rel="external">Course 493: Intelligent Data Analysis and Probabilistic Inference (Imperial College)</a><br><a href="http://ibug.doc.ic.ac.uk/courses/machine-learning-course-395/" target="_blank" rel="external">Machine Learning (course 395) (Imperial College)</a><br><a href="http://ibug.doc.ic.ac.uk/courses/advanced-statistical-machine-learning-495/" target="_blank" rel="external">Advanced Statistical Machine learning 495</a></p>
+<p>sleep()方法，yield（）的重写，volatile关键字，线程安全，线程池类，</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="cin1vnx690053agu5se4loquw" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/04/Good-Courses/" data-id="cin1vnx52004aagu5kcy6qdkx" class="article-share-link">Share</a>
       
-        <a href="http://psyyz10.github.io/2015/11/Candy/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://psyyz10.github.io/2016/04/Good-Courses/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a><span class="article-tag-list-count">24</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Courses/">Open Courses</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -133,19 +117,10 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
     
 <nav id="article-nav">
   
-    <a href="/2015/11/Single-Number/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Single number
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/Gas-Station/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/04/Java-8-Lambda-Expression/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Gas Station</div>
+      <div class="article-nav-title">Java 8 Lambda Expressions</div>
     </a>
   
 </nav>
@@ -258,7 +233,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2015/11/Candy/';
+  var disqus_url = 'http://psyyz10.github.io/2016/04/Good-Courses/';
   
   (function(){
     var dsq = document.createElement('script');
