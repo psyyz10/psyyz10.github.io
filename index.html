@@ -95,15 +95,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="A_Some_Program_generating_Fractals_with_Haskell">A Some Program generating Fractals with Haskell</h1><p>This blog is about how to use the functional programming language Haskell to write a small program to generate Fractals pictures.<br>If you have never seen a fractal before, there are two famous examples shown in the following pictures (Mandelbrot and Julia):</p>
+        <h1 id="A_Small_Program_generating_Fractals_with_Haskell">A Small Program generating Fractals with Haskell</h1><p>This blog is about how to use the functional programming language Haskell to write a small program to generate Fractals pictures.<br>If you have never seen a fractal before, there are two famous examples shown in the following pictures (Mandelbrot and Julia):</p>
 <div style="width:830; background-color:white;  overflow:auto;"><br><center><br>    <img style=" float:left; display:inline" src="https://psyyz10.github.io/img/mandelbrot.png" width="200"><br>    <img style=" float:left; display:inline" src="https://psyyz10.github.io/img/julia.png" width="200"><br></center><br></div>
 
-<p>You can think of the fractals in this exercise as the graph of a complicated mathematical function. You may befamiliarwithgraphsoffunctionssuchasf(x)=x×x org(x)=a×x+b.Afractalisagraphofamore complicated function over more dimensions. One interesting property of fractals is that they are self-similar— if you zoom close enough, you will see copies of the fractal again. This pattern arises in nature as well: every cauliflower floret has the same shape as an entire cauliflower.<br>You can find a lot more information about fractals on Wikipedia: <a href="http://en.wikipedia.org/wiki/Fractal" target="_blank" rel="external">http://en.wikipedia.org/wiki/Fractal</a></p>
+<p>You can think of the fractals in this exercise as the graph of a complicated mathematical function. You may be familiar with graphs of functions such as $f(x) = x <em> x$ or $g(x) = a </em> x + b$. A fractal is a graph of a more complicated function over more dimensions. One interesting property of fractals is that they are self-similar if you zoom close enough, you will see copies of the fractal again. This pattern arises in nature as well: every cauliflower floret has the same shape as an entire cauliflower.<br>You can find a lot more information about fractals on Wikipedia: <a href="http://en.wikipedia.org/wiki/Fractal" target="_blank" rel="external">http://en.wikipedia.org/wiki/Fractal</a></p>
+<figure class="highlight hs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br></pre></td><td class="code"><pre><span class="line"><span class="module"><span class="keyword">module</span> Fractals <span class="keyword">where</span></span></span><br><span class="line"></span><br><span class="line"><span class="import"><span class="keyword">import</span> Data.Char</span></span><br><span class="line"><span class="import"><span class="keyword">import</span> System.IO</span></span><br><span class="line"><span class="import"><span class="keyword">import</span> Data.List <span class="container">(<span class="title">intersperse</span>, <span class="title">transpose</span>)</span></span></span><br><span class="line"><span class="import"><span class="keyword">import</span> Data.Maybe </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">validColour</span> colour       = colour &gt;= <span class="number">0</span> &amp;&amp; colour &lt;=<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="title">validRGB</span> (<span class="type">RGB</span> a b c)     = all validColour [a, b, c]</span><br><span class="line"></span><br><span class="line"><span class="title">ppmHeader</span> (a, b)         = <span class="string">"P6 "</span> ++ show a ++ <span class="string">" "</span> ++ show b ++ <span class="string">" 255\n"</span></span><br><span class="line"></span><br><span class="line"><span class="title">validBitmap</span> []           = <span class="type">Just</span>(<span class="number">0</span>, <span class="number">0</span>)                               </span><br><span class="line"><span class="title">validBitmap</span> a@(xs:xss)   | all (all validRGB) a &amp;&amp; all (== length xs) (map length a)  = <span class="type">Just</span>(length xs, length a) </span><br><span class="line">                         | otherwise                                                  = <span class="type">Nothing</span></span><br><span class="line">                          </span><br><span class="line"><span class="title">encodeRGB</span>  (<span class="type">RGB</span> a b c)   = chr a : chr b : chr c :[]</span><br><span class="line"></span><br><span class="line"><span class="title">encodeBitmap</span>             = concatMap (concatMap encodeRGB) </span><br><span class="line"></span><br><span class="line"><span class="title">writePPM</span>  f x            | validBitmap x == <span class="type">Nothing</span> = error <span class="string">"The bitmap is not valid."</span></span><br><span class="line">                         | otherwise                = writeBinaryFile f ( (ppmHeader . fromJust . validBitmap) x ++ encodeBitmap x )</span><br><span class="line"></span><br><span class="line"><span class="title">mandelbrot</span> p             = iterate (nextPoint p) (<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title">julia</span> c                  = iterate (nextPoint c) </span><br><span class="line"></span><br><span class="line"><span class="title">sample</span> pss i             = map (map i) pss</span><br><span class="line"></span><br><span class="line"><span class="title">fairlyClose</span> (a, b)       = a * a + b * b &lt; <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="title">fairlyCloseTill</span> n f p    = length (takeWhile fairlyClose (take n (f p)))</span><br><span class="line">                            </span><br><span class="line"><span class="title">fracImage</span> f p            = palette !! (fairlyCloseTill (length palette - <span class="number">1</span>) f p)</span><br><span class="line"></span><br><span class="line"><span class="title">draw</span> pss f               = sample pss (fracImage f)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="typedef"><span class="keyword">type</span> <span class="type">Colour</span>    = <span class="type">Int</span></span></span><br><span class="line"><span class="typedef"><span class="keyword">data</span> <span class="type">RGB</span>       = <span class="type">RGB</span> <span class="type">Colour</span> <span class="type">Colour</span> <span class="type">Colour</span></span></span><br><span class="line"><span class="typedef"><span class="keyword">type</span> <span class="type">Bitmap</span>    = [[<span class="type">RGB</span>]]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">--                             PART ONE: BITMAPS                             --</span></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="title">validColour</span> :: <span class="type">Colour</span> -&gt; <span class="type">Bool</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">validRGB</span> :: <span class="type">RGB</span> -&gt; <span class="type">Bool</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">ppmHeader</span> :: (<span class="type">Int</span>,<span class="type">Int</span>) -&gt; <span class="type">String</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">validBitmap</span> :: <span class="type">Bitmap</span> -&gt; <span class="type">Maybe</span> (<span class="type">Int</span>,<span class="type">Int</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">encodeRGB</span> :: <span class="type">RGB</span> -&gt; <span class="type">String</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">encodeBitmap</span> :: <span class="type">Bitmap</span> -&gt; <span class="type">String</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">writeBinaryFile</span>     :: <span class="type">FilePath</span> -&gt; <span class="type">String</span> -&gt; <span class="type">IO</span> ()</span><br><span class="line"><span class="title">writeBinaryFile</span> f x = <span class="keyword">do</span></span><br><span class="line">  h &lt;- openBinaryFile f <span class="type">WriteMode</span></span><br><span class="line">  hPutStr h x</span><br><span class="line">  hClose h</span><br><span class="line"></span><br><span class="line"><span class="title">writePPM</span> :: <span class="type">FilePath</span> -&gt; <span class="type">Bitmap</span> -&gt; <span class="type">IO</span> ()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Here are a few example bitmaps. You can use them to test the</span></span><br><span class="line"><span class="comment">-- "writePPM" function.</span></span><br><span class="line"><span class="title">chessboard</span> :: <span class="type">Bitmap</span></span><br><span class="line"><span class="title">chessboard</span> = concat $ alternate <span class="number">8</span> evenRow oddRow</span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">  blackSquare   = replicate <span class="number">10</span> (replicate <span class="number">10</span> black)</span><br><span class="line">  whiteSquare   = replicate <span class="number">10</span> (replicate <span class="number">10</span> white)</span><br><span class="line">  evenRow       = transpose $ concat $ alternate <span class="number">8</span> whiteSquare blackSquare</span><br><span class="line">  oddRow        = transpose $ concat $ alternate <span class="number">8</span> blackSquare whiteSquare</span><br><span class="line">  alternate n x y</span><br><span class="line">    | n == <span class="number">0</span>    = []</span><br><span class="line">    | otherwise = x : alternate (n - <span class="number">1</span>) y x</span><br><span class="line"></span><br><span class="line"><span class="title">gradient</span> :: <span class="type">Bitmap</span></span><br><span class="line"><span class="title">gradient</span> =  map (map distance) [[(x,y) | x &lt;- [<span class="number">0.</span>.size-<span class="number">1</span>]] | y &lt;- [<span class="number">0.</span>.size-<span class="number">1</span>]]</span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">  size = <span class="number">80</span></span><br><span class="line">  distance (x,y) =</span><br><span class="line">       <span class="keyword">let</span> step = round (fromIntegral (x + y) * <span class="number">255</span> / <span class="number">158</span>)</span><br><span class="line">       <span class="keyword">in</span> <span class="type">RGB</span> step step <span class="number">255</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">--                             PART TWO: FRACTALS                            --</span></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="typedef"><span class="keyword">type</span> <span class="type">Point</span> = <span class="container">(<span class="type">Float</span>, <span class="type">Float</span>)</span></span></span><br><span class="line"><span class="typedef"><span class="keyword">type</span> <span class="type">Fractal</span> = <span class="type">Point</span> -&gt; [<span class="type">Point</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="title">nextPoint</span>             :: <span class="type">Point</span> -&gt; <span class="type">Point</span> -&gt; <span class="type">Point</span></span><br><span class="line"><span class="title">nextPoint</span> (u,v) (x,y) = (x*x-y*y+u, <span class="number">2</span>*x*y+v)</span><br><span class="line"></span><br><span class="line"><span class="title">mandelbrot</span> :: <span class="type">Fractal</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">julia</span> :: <span class="type">Point</span> -&gt; <span class="type">Fractal</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">--                      PART THREE: RENDERING FRACTALS                       --</span></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="typedef"><span class="keyword">type</span> <span class="type">Image</span> = <span class="type">Point</span> -&gt; <span class="type">RGB</span></span></span><br><span class="line"></span><br><span class="line"><span class="title">sample</span> :: [[<span class="type">Point</span>]] -&gt; <span class="type">Image</span> -&gt; <span class="type">Bitmap</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">fairlyClose</span> :: <span class="type">Point</span> -&gt; <span class="type">Bool</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">fairlyCloseTill</span> :: <span class="type">Int</span> -&gt; <span class="type">Fractal</span> -&gt; <span class="type">Point</span> -&gt; <span class="type">Int</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">fracImage</span> :: <span class="type">Fractal</span> -&gt; <span class="type">Image</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title">draw</span> :: [[<span class="type">Point</span>]] -&gt; <span class="type">Fractal</span> -&gt; <span class="type">Bitmap</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- The colour palette</span></span><br><span class="line"><span class="typedef"><span class="keyword">type</span> <span class="type">Palette</span> = [<span class="type">RGB</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="title">palette</span> :: <span class="type">Palette</span></span><br><span class="line"><span class="title">palette</span> = take <span class="number">15</span> (iterate f darkred) ++ replicate <span class="number">5</span> green ++ [blue, black]</span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">  darkred = <span class="type">RGB</span> <span class="number">200</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line">  f (<span class="type">RGB</span> r g b) = <span class="type">RGB</span> (r + <span class="number">2</span>) (g + <span class="number">10</span>) (b)</span><br><span class="line"></span><br><span class="line"><span class="title">black</span>   = <span class="type">RGB</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"><span class="title">cyan</span>    = <span class="type">RGB</span> <span class="number">0</span> <span class="number">255</span> <span class="number">255</span></span><br><span class="line"><span class="title">blue</span>    = <span class="type">RGB</span> <span class="number">0</span> <span class="number">0</span> <span class="number">255</span></span><br><span class="line"><span class="title">green</span>   = <span class="type">RGB</span> <span class="number">0</span> <span class="number">255</span> <span class="number">0</span></span><br><span class="line"><span class="title">magenta</span> = <span class="type">RGB</span> <span class="number">255</span> <span class="number">0</span> <span class="number">255</span></span><br><span class="line"><span class="title">yellow</span>  = <span class="type">RGB</span> <span class="number">255</span> <span class="number">255</span> <span class="number">0</span></span><br><span class="line"><span class="title">red</span>     = <span class="type">RGB</span> <span class="number">255</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"><span class="title">white</span>   = <span class="type">RGB</span> <span class="number">255</span> <span class="number">255</span> <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Useful functions for computing bitmaps from an Image</span></span><br><span class="line"><span class="title">size</span> :: <span class="type">Int</span></span><br><span class="line"><span class="title">size</span> = <span class="number">400</span></span><br><span class="line"></span><br><span class="line"><span class="title">for</span> :: <span class="type">Int</span> -&gt; <span class="type">Float</span> -&gt; <span class="type">Float</span> -&gt; [<span class="type">Float</span>]</span><br><span class="line"><span class="title">for</span> n min max = take n [min, min + delta_ ..]</span><br><span class="line">  <span class="keyword">where</span> delta_ = (max-min) / fromIntegral (n-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="title">grid</span> :: <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Point</span> -&gt; <span class="type">Point</span> -&gt; [[<span class="type">Point</span>]]</span><br><span class="line"><span class="title">grid</span> c r (xmin,ymin) (xmax,ymax) =</span><br><span class="line">  [[ (x,y) | x &lt;- for c xmin xmax ] | y &lt;- for r ymin ymax ]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- A few examples</span></span><br><span class="line"><span class="title">figure1</span> :: <span class="type">Bitmap</span></span><br><span class="line"><span class="title">figure1</span> = draw points mandelbrot</span><br><span class="line">  <span class="keyword">where</span> points = grid size size (-<span class="number">2.25</span>, -<span class="number">1.5</span>) (<span class="number">0.75</span>, <span class="number">1.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="title">figure2</span> :: <span class="type">Bitmap</span></span><br><span class="line"><span class="title">figure2</span> = draw points (julia (<span class="number">0.32</span>,<span class="number">0.043</span>))</span><br><span class="line">  <span class="keyword">where</span> points = grid size size (-<span class="number">1.5</span>, -<span class="number">1.5</span>) (<span class="number">1.5</span>, <span class="number">1.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="title">main</span> = <span class="keyword">do</span></span><br><span class="line">  putStrLn <span class="string">"Writing mandelbrot bitmap..."</span></span><br><span class="line">  writePPM <span class="string">"mandelbrot.ppm"</span> figure1</span><br><span class="line">  putStrLn <span class="string">"Writing julia bitmap..."</span></span><br><span class="line">  writePPM <span class="string">"julia.ppm"</span> figure2</span><br><span class="line">  putStrLn <span class="string">"Done."</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/11/Fractals/" data-id="civjm3qff004qfzu5pmak44nd" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/11/Fractals/" data-id="civjm6my1004qi1u5323fse8i" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/11/Fractals/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -154,7 +155,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/05/Rotate-String/" data-id="civjm3qcm001qfzu57u6ds30z" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/05/Rotate-String/" data-id="civjm6mqw001qi1u5kvomgvy1" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/05/Rotate-String/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -200,7 +201,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/05/Ugly-Number-II/" data-id="civjm3qbk000efzu5v1snwsh7" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/05/Ugly-Number-II/" data-id="civjm6mp4000ei1u5fungs1pg" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/05/Ugly-Number-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -247,7 +248,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/05/Digit-Count/" data-id="civjm3qfk004xfzu5maex89ql" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/05/Digit-Count/" data-id="civjm6myd004xi1u530zqc7ug" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/05/Digit-Count/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -295,7 +296,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/04/Good-Courses/" data-id="civjm3qf1004efzu5r0ee5g0i" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/04/Good-Courses/" data-id="civjm6mwy004ei1u5ap74r2l1" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/04/Good-Courses/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -407,7 +408,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/" data-id="civjm3qev0046fzu5yg0f3w4e" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/" data-id="civjm6mwk0046i1u5m5lxbie9" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -460,7 +461,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Java-8-new-properties/" data-id="civjm3qer003xfzu5osw5rfrw" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Java-8-new-properties/" data-id="civjm6mvu003xi1u50y1olwd4" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Java-8-new-properties/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -500,7 +501,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/" data-id="civjm3qeb003ifzu54lbuywh8" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/" data-id="civjm6mup003ii1u52zqzvh28" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -545,7 +546,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/" data-id="civjm3qe8003dfzu5nndug2o5" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/" data-id="civjm6mud003di1u5xg95jgmq" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -585,7 +586,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Bash-Note/" data-id="civjm3qg4005qfzu5afq70sp4" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Bash-Note/" data-id="civjm6mzz005qi1u51gd3g277" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Bash-Note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -631,7 +632,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Git-Note/" data-id="civjm3qf4004ifzu5pby51pvc" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Git-Note/" data-id="civjm6mx6004ii1u5ix6hl4sc" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Git-Note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -765,7 +766,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="civjm3qe10035fzu5jhne7u7m" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="civjm6mtx0035i1u5x1pczu7e" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -834,7 +835,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Mac-Configurationd/" data-id="civjm3qe5003afzu5yi2anz00" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Mac-Configurationd/" data-id="civjm6mu4003ai1u58zugh05m" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Mac-Configurationd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -883,7 +884,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/hello-world/" data-id="civjm3qay0002fzu5seboik6g" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/hello-world/" data-id="civjm6mo50002i1u5w2y7owc8" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -923,7 +924,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Functional-Programming/" data-id="civjm3qfc004pfzu5nzcmxj1u" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Functional-Programming/" data-id="civjm6mxw004pi1u54bopsjr9" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Functional-Programming/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -976,7 +977,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/12/CPP-Review-note/" data-id="civjm3qg0005mfzu59q4gyqru" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/12/CPP-Review-note/" data-id="civjm6mzd005mi1u5apip9sho" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/12/CPP-Review-note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1185,7 +1186,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/" data-id="civjm3qfw005efzu57li3zw4i" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/" data-id="civjm6mz1005ei1u5y573klzb" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1229,7 +1230,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Valid-Palindrome/" data-id="civjm3qbf000afzu5oijvzsit" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Valid-Palindrome/" data-id="civjm6moy000ai1u5ncux45pa" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Valid-Palindrome/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1277,7 +1278,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/LRU-Cache/" data-id="civjm3qeo003sfzu5h1n60quw" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/LRU-Cache/" data-id="civjm6mvn003si1u5uo46gxqp" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/LRU-Cache/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1328,7 +1329,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reorder-List/" data-id="civjm3qcy0025fzu5ox026uub" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reorder-List/" data-id="civjm6mrl0025i1u5pexzp0z0" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reorder-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1378,7 +1379,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/" data-id="civjm3qek003nfzu5szl5m6ep" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/" data-id="civjm6mv8003ni1u5gc97ppa5" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1426,7 +1427,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle/" data-id="civjm3qeg003jfzu52tftc452" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle/" data-id="civjm6muz003ji1u52f7ti2it" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Linked-List-Cycle/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1473,7 +1474,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/" data-id="civjm3qfp0055fzu5k1artftg" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/" data-id="civjm6myq0055i1u58bk4h31d" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1527,7 +1528,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/" data-id="civjm3qcs001zfzu5jtqsl1d9" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/" data-id="civjm6mra001zi1u5lw9ha0y2" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1577,7 +1578,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/" data-id="civjm3qbs000ofzu5dbk6kyl8" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/" data-id="civjm6mph000oi1u5wve9ammu" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1627,7 +1628,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-List/" data-id="civjm3qco001tfzu5yg4tmo06" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-List/" data-id="civjm6mr1001ti1u5h1w5kbih" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Rotate-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1676,7 +1677,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/" data-id="civjm3qdb002efzu514j2t7e8" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/" data-id="civjm6ms1002ei1u5mdhs5pqn" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1737,7 +1738,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/" data-id="civjm3qbx000sfzu5d3i0bvbz" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/" data-id="civjm6mps000si1u5b99c84zl" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1786,7 +1787,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="civjm3qd9002bfzu51lw7his9" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="civjm6mrx002bi1u5btwo97jv" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1835,7 +1836,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Partition-List/" data-id="civjm3qdm002vfzu53ynbhh6q" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Partition-List/" data-id="civjm6msn002vi1u5yn8tu2kl" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Partition-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1887,7 +1888,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/" data-id="civjm3qcv0022fzu54jwvabht" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/" data-id="civjm6mrg0022i1u5zvn49c6q" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1937,7 +1938,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/" data-id="civjm3qg8005ufzu53z797h0w" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/" data-id="civjm6n0g005ui1u5fccc7am8" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1988,7 +1989,7 @@ Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers/" data-id="civjm3qg6005rfzu59tuenmai" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers/" data-id="civjm6n04005ri1u5unvg3ger" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2044,7 +2045,7 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-III/" data-id="civjm3qc10010fzu5s683wa0l" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-III/" data-id="civjm6mq00010i1u5vqa8bu2x" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number-III/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2095,7 +2096,7 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="civjm3qc50014fzu5hn38em4s" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="civjm6mq60014i1u52remt2es" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2145,7 +2146,7 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="civjm3qbz000vfzu5pf1h5495" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="civjm6mpv000vi1u531ybo12m" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2205,7 +2206,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="civjm3qfy005jfzu5ts5av3zy" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="civjm6mz8005ji1u57xykesj1" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Candy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2257,7 +2258,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="civjm3qf9004mfzu5u98uliex" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="civjm6mxp004mi1u5fypmc0cd" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Gas-Station/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2311,7 +2312,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/" data-id="civjm3qc70018fzu5p0o13402" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/" data-id="civjm6mq90018i1u5b5m34qkb" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2406,7 +2407,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gray-Code/" data-id="civjm3qey004bfzu5451afobl" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Gray-Code/" data-id="civjm6mws004bi1u5af4goqb4" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Gray-Code/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2498,7 +2499,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="civjm3qfr0059fzu5keen65w6" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="civjm6myv0059i1u5ia4pvt5g" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Climbing-Stairs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2551,7 +2552,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Plus-One/" data-id="civjm3qdh002nfzu5rc2lcxry" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Plus-One/" data-id="civjm6msc002ni1u5ucjtoqxh" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Plus-One/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2609,7 +2610,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="civjm3qcr001wfzu525jisheb" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="civjm6mr7001wi1u5ktg0b38y" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Rotate-Image/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2675,7 +2676,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="civjm3qbp000lfzu5vdmqnkwn" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="civjm6mpc000li1u538ejkeue" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2727,7 +2728,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="civjm3qb90005fzu5074pabkn" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="civjm6moq0005i1u5qp6ew4k2" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Valid-Sudoku/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2792,7 +2793,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="civjm3qdk002qfzu5h10oeqja" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="civjm6msh002qi1u56hnonhyb" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Permutation-Sequence/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2847,7 +2848,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="civjm3qdo002yfzu5o7wq422w" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="civjm6msq002yi1u53xuzidy2" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Next-Permutation/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2895,7 +2896,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="civjm3qd30028fzu5ni967v1y" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="civjm6mrt0028i1u5nd6xo93y" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Element/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2949,7 +2950,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="civjm3qgb005xfzu51lz5mkfx" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="civjm6n0o005xi1u5waeegrsh" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/4Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3001,7 +3002,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="civjm3qgg0065fzu525k0qc7n" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="civjm6n140065i1u5w4ud2eaf" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum-Closest/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3054,7 +3055,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="civjm3qge0061fzu5t7ha9s7n" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="civjm6n0y0061i1u5ielv6r7m" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3108,7 +3109,7 @@ Output: index1=<span class="number">1</span>, index2=<span class="number">2</spa
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="civjm3qbm000ifzu5ra5rndqv" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="civjm6mp8000ii1u5vbdbwtng" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Two-Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3173,7 +3174,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/" data-id="civjm3qdy0031fzu58p518d71" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/" data-id="civjm6mti0031i1u56akk9lhl" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3228,7 +3229,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/" data-id="civjm3qcf001gfzu5j2f6hlhb" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/" data-id="civjm6mqk001gi1u5u62qmn1q" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3290,7 +3291,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="civjm3qca001bfzu5iloxow6z" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="civjm6mqe001bi1u5x4a48nfm" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3341,7 +3342,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="civjm3qdf002kfzu52q6fr7vu" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="civjm6ms9002ki1u553zlkqvy" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3396,7 +3397,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="civjm3qdd002hfzu5ob7c1jro" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="civjm6ms5002hi1u5w43zzj7c" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3446,7 +3447,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="civjm3qfn0051fzu57abpf07n" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="civjm6myk0051i1u55v27aocj" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3529,7 +3530,7 @@ img.math {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="civjm3qci001jfzu5s50m8xso" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="civjm6mqp001ji1u59y6m2xo0" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/SDA/#disqus_thread" class="article-comment-link">Comments</a>
       
