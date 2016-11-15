@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-11-09T13:07:57.000Z</updated>
+  <updated>2016-11-15T14:25:26.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,11 +19,21 @@
     <link href="http://psyyz10.github.io/2016/11/Fractals/"/>
     <id>http://psyyz10.github.io/2016/11/Fractals/</id>
     <published>2016-11-09T13:07:57.000Z</published>
-    <updated>2016-11-09T13:07:57.000Z</updated>
-    <content type="html"></content>
+    <updated>2016-11-15T14:25:26.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="A_Some_Program_generating_Fractals_with_Haskell">A Some Program generating Fractals with Haskell</h1><p>This blog is about how to use the functional programming language Haskell to write a small program to generate Fractals pictures.<br>If you have never seen a fractal before, there are two famous examples shown in the following pictures (Mandelbrot and Julia):</p>
+<div style="width:830; background-color:white;  overflow:auto;"><br><center><br>    <img style=" float:left; display:inline" src="https://psyyz10.github.io/img/mandelbrot.png" width="200"><br>    <img style=" float:left; display:inline" src="https://psyyz10.github.io/img/julia.png" width="200"><br></center><br></div>
+
+<p>You can think of the fractals in this exercise as the graph of a complicated mathematical function. You may befamiliarwithgraphsoffunctionssuchasf(x)=x×x org(x)=a×x+b.Afractalisagraphofamore complicated function over more dimensions. One interesting property of fractals is that they are self-similar— if you zoom close enough, you will see copies of the fractal again. This pattern arises in nature as well: every cauliflower floret has the same shape as an entire cauliflower.<br>You can find a lot more information about fractals on Wikipedia: <a href="http://en.wikipedia.org/wiki/Fractal" target="_blank" rel="external">http://en.wikipedia.org/wiki/Fractal</a></p>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<h1 id="A_Some_Program_generating_Fractals_with_Haskell">A Some Program generating Fractals with Haskell</h1><p>This blog is about how to us]]>
     </summary>
+    
+      <category term="Functional Programming" scheme="http://psyyz10.github.io/tags/Functional-Programming/"/>
+    
+      <category term="Haskell" scheme="http://psyyz10.github.io/tags/Haskell/"/>
+    
+      <category term="Haskell" scheme="http://psyyz10.github.io/categories/Haskell/"/>
     
   </entry>
   

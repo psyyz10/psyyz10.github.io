@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Longest Substring Without Repeating Characters | YAO&#39;s BLOG</title>
+  <title>Category: Haskell | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Longest Substring Without Repeating Characters">
-<meta property="og:url" content="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YAO's BLOG">
+<meta property="og:url" content="http://psyyz10.github.io/categories/Haskell/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For">
-<meta property="og:updated_time" content="2016-04-13T01:23:15.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For">
+<meta name="twitter:title" content="YAO's BLOG">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -68,78 +67,40 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Longest-Substring-Without-Repeating-Characters" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/Longest-Substring-Without-Repeating-Characters/" class="article-date">
-  <time datetime="2016-03-02T10:56:13.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Leetcode-and-Lintcode/">Leetcode and Lintcode</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Longest Substring Without Repeating Characters
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/11/Fractals/" class="archive-article-date">
+  <time datetime="2016-11-09T13:07:57.000Z" itemprop="datePublished">Nov 9</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/11/Fractals/">Fractals</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for “abcabcbb” is “abc”, which the length is 3. For “bbbbb” the longest substring is “b”, with the length of 1.</p>
-<p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">Leetcode link</a></p>
-<p>``<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>]; <span class="comment">//Map the character to the first occurence index</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> slow = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        Arrays.fill(map,-<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> fast = <span class="number">0</span>; fast &lt; s.length(); fast++)&#123;</span><br><span class="line">            <span class="keyword">char</span> current = s.charAt(fast);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (slow &lt;= map[current])&#123;</span><br><span class="line">                max = Math.max(max, fast - slow);</span><br><span class="line">                slow = map[current] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            map[current] = fast;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        max = Math.max(max, s.length() - slow);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/" data-id="civjlcwmn003ddzu55lpb4flr" class="article-share-link">Share</a>
-      
-        <a href="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Two-Pointers/">Two Pointers</a><span class="article-tag-list-count">6</span></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/03/Longest-Palindromic-Substring/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Longest Palindromic Substring
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/01/Bash-Note/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Bash Note</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
+    </div></section>
+  
+  
 </section>
         
           <aside id="sidebar">
@@ -239,13 +200,11 @@
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
