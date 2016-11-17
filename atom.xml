@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-11-17T14:50:53.000Z</updated>
+  <updated>2016-11-17T15:01:24.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,8 +19,14 @@
     <link href="http://psyyz10.github.io/2016/11/Deep-Belief-Network/"/>
     <id>http://psyyz10.github.io/2016/11/Deep-Belief-Network/</id>
     <published>2016-11-17T14:21:29.000Z</published>
-    <updated>2016-11-17T14:50:53.000Z</updated>
-    <content type="html"><![CDATA[<p>One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images <a href="#Hinton06">[Hinton06]</a>, speech representation <a href="#Mohamed11">[Mohamed11]</a> and moving ratings <a href="#Salakhutdinov07">[Salakhutdinov07]</a> . It was another success in building a generative model for bags of words that represents documents [31], which indicate its potential capacity to build a model to predict the stock with financial documents. The most widely usage of RBM is composed to build a Deep Belief Network (DBN). The learning process of RBM is usually contrastive divergence. Experiences are needed to decide the setting of numerical parameters, such the batch size, the learning rate, the momentum, the number of epochs to iterate, the layers of hidden units, and how many units in each hidden layer, the update methods being deterministically or stochastically and the initialization of weights and bias. It also needs to be considered the way to monitor the learning process and stop criteria. This section will introduce the key components and training method of our DBN model, based on the guide in <a href="#Hinton10">[Hinton10]</a>.</p>
+    <updated>2016-11-17T15:01:24.000Z</updated>
+    <content type="html"><![CDATA[<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async src="https://psyyz10.github.io/js/MathJax.js">
+</script>
+
+<p>One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images <a href="#Hinton06">[Hinton06]</a>, speech representation <a href="#Mohamed11">[Mohamed11]</a> and moving ratings <a href="#Salakhutdinov07">[Salakhutdinov07]</a> . It was another success in building a generative model for bags of words that represents documents [31], which indicate its potential capacity to build a model to predict the stock with financial documents. The most widely usage of RBM is composed to build a Deep Belief Network (DBN). The learning process of RBM is usually contrastive divergence. Experiences are needed to decide the setting of numerical parameters, such the batch size, the learning rate, the momentum, the number of epochs to iterate, the layers of hidden units, and how many units in each hidden layer, the update methods being deterministically or stochastically and the initialization of weights and bias. It also needs to be considered the way to monitor the learning process and stop criteria. This section will introduce the key components and training method of our DBN model, based on the guide in <a href="#Hinton10">[Hinton10]</a>.</p>
 <h2 id="Restricted_Boltzmann_Machines">Restricted Boltzmann Machines</h2><p>Energy based model assigns an energy value to each possible configuration of units by an energy function. The function will be trained to make it has some properties such as making the energy of desirable configuration has energy as low as possible. Boltzmann Machines (BMs) are a type of energy model in a form of Markov Ran- dom Field whose energy function is linear for its parameters. In order to make it sufficiently powerful to express complex functions, some invisible variables as hid- den units are added. The Restricted Boltzmann Machines is a restricted version of BMs, which constrain the BMs without the connections between different vision units or connections between di↵erent hidden units. A example graph is shown in figure below. </p>
 <center><br>    <img id="F1_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 1.1: A Restricted Boltzmann Machine</p><br></center>
 
@@ -39,7 +45,10 @@
 <p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data i]]>
+    <![CDATA[<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="tex]]>
     </summary>
     
       <category term="Deep Learning" scheme="http://psyyz10.github.io/tags/Deep-Learning/"/>
@@ -55,11 +64,11 @@
     <link href="http://psyyz10.github.io/2016/11/Fractals/"/>
     <id>http://psyyz10.github.io/2016/11/Fractals/</id>
     <published>2016-11-09T13:07:57.000Z</published>
-    <updated>2016-11-17T14:18:01.000Z</updated>
+    <updated>2016-11-17T15:01:26.000Z</updated>
     <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
-<script type="text/javascript" async src="/js/MathJax.js">
+<script type="text/javascript" async src="https://psyyz10.github.io/js/MathJax.js">
 </script>
 
 <h1 id="A_Small_Program_generating_Fractals_with_Haskell">A Small Program generating Fractals with Haskell</h1><p>This blog is about how to use the functional programming language Haskell to write a small program to generate Fractals pictures.<br>If you have never seen a fractal before, there are two famous examples shown in the following pictures (Mandelbrot and Julia):</p>
