@@ -3,24 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Reverse Nodes in k-Group | YAO&#39;s BLOG</title>
+  <title>Deep Belief Network | YAO&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
-If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
-Y">
+  <meta name="description" content="One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images [Hinton06], speech representation [Mohamed11] a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reverse Nodes in k-Group">
-<meta property="og:url" content="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/index.html">
+<meta property="og:title" content="Deep Belief Network">
+<meta property="og:url" content="http://psyyz10.github.io/2016/11/Deep-Belief-Network/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
-<meta property="og:description" content="Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
-If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
-Y">
-<meta property="og:updated_time" content="2015-11-20T06:35:49.000Z">
+<meta property="og:description" content="One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images [Hinton06], speech representation [Mohamed11] a">
+<meta property="og:image" content="http://psyyz10.github.io/img/7.png">
+<meta property="og:updated_time" content="2016-11-17T14:50:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Reverse Nodes in k-Group">
-<meta name="twitter:description" content="Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
-If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
-Y">
+<meta name="twitter:title" content="Deep Belief Network">
+<meta name="twitter:description" content="One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images [Hinton06], speech representation [Mohamed11] a">
   
     <link rel="alternative" href="/atom.xml" title="YAO&#39;s BLOG" type="application/atom+xml">
   
@@ -74,14 +69,14 @@ Y">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Reverse-Nodes-in-k-Group" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Deep-Belief-Network" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/11/Reverse-Nodes-in-k-Group/" class="article-date">
-  <time datetime="2015-11-18T15:46:58.000Z" itemprop="datePublished">2015-11-18</time>
+    <a href="/2016/11/Deep-Belief-Network/" class="article-date">
+  <time datetime="2016-11-17T14:21:29.000Z" itemprop="datePublished">2016-11-17</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Leetcode-and-Lintcode/">Leetcode and Lintcode</a>
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
   </div>
 
   </div>
@@ -92,7 +87,7 @@ Y">
         
   
     <h1 class="article-title" itemprop="name">
-      Reverse Nodes in k-Group
+      Deep Belief Network
     </h1>
   
 
@@ -100,26 +95,33 @@ Y">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.</p>
-<p>If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.</p>
-<p>You may not alter the values in the nodes, only nodes itself may be changed. Only constant memory is allowed.</p>
-<p>Example<br>    Given this linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5</p>
-<pre><code>For k = <span class="number">2</span>, you should <span class="keyword">return</span>: <span class="number">2</span>-&gt;<span class="number">1</span>-&gt;<span class="number">4</span>-&gt;<span class="number">3</span>-&gt;<span class="number">5</span>
+        <p>One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images <a href="#Hinton06">[Hinton06]</a>, speech representation <a href="#Mohamed11">[Mohamed11]</a> and moving ratings <a href="#Salakhutdinov07">[Salakhutdinov07]</a> . It was another success in building a generative model for bags of words that represents documents [31], which indicate its potential capacity to build a model to predict the stock with financial documents. The most widely usage of RBM is composed to build a Deep Belief Network (DBN). The learning process of RBM is usually contrastive divergence. Experiences are needed to decide the setting of numerical parameters, such the batch size, the learning rate, the momentum, the number of epochs to iterate, the layers of hidden units, and how many units in each hidden layer, the update methods being deterministically or stochastically and the initialization of weights and bias. It also needs to be considered the way to monitor the learning process and stop criteria. This section will introduce the key components and training method of our DBN model, based on the guide in <a href="#Hinton10">[Hinton10]</a>.</p>
+<h2 id="Restricted_Boltzmann_Machines">Restricted Boltzmann Machines</h2><p>Energy based model assigns an energy value to each possible configuration of units by an energy function. The function will be trained to make it has some properties such as making the energy of desirable configuration has energy as low as possible. Boltzmann Machines (BMs) are a type of energy model in a form of Markov Ran- dom Field whose energy function is linear for its parameters. In order to make it sufficiently powerful to express complex functions, some invisible variables as hid- den units are added. The Restricted Boltzmann Machines is a restricted version of BMs, which constrain the BMs without the connections between different vision units or connections between di↵erent hidden units. A example graph is shown in figure below. </p>
+<center><br>    <img id="F1_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 1.1: A Restricted Boltzmann Machine</p><br></center>
 
-For k = <span class="number">3</span>, you should <span class="keyword">return</span>: <span class="number">3</span>-&gt;<span class="number">2</span>-&gt;<span class="number">1</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>
-</code></pre><p><a href="http://www.ox.ac.uk/students/visa/during/extend/requirements" target="_blank" rel="external">Leetcode link</a><br><a href="http://www.lintcode.com/en/problem/reverse-nodes-in-k-group/" target="_blank" rel="external">Lintcode link</a></p>
-<h2 id="Solution:">Solution:</h2><p>Go through the list to obtain the length of the list.<br>Reverse the successive k nodes if the lenght of the right side is greater than k.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span><br><span class="line">	&gt; File Name: ReverseNodesinK-Group.java</span><br><span class="line">	&gt; Author: Yao Zhang </span><br><span class="line">	&gt; Mail: psyyz10@163.com </span><br><span class="line">	&gt; Created Time: Wed 18 Nov 23:51:11 2015</span><br><span class="line"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReverseNodesinK</span>-<span class="title">Group</span></span>&#123;</span><br><span class="line">   	<span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseKGroup</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span> || k == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>)&#123;</span><br><span class="line">            length++;</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        head = dummy;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (length &gt;= k)&#123;</span><br><span class="line">            head = reverse(head, k);</span><br><span class="line">            length -= k;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverse</span><span class="params">(ListNode node, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">        ListNode head = node.next;</span><br><span class="line">        ListNode startNode = head;</span><br><span class="line">        ListNode prev = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k ; i++)&#123;</span><br><span class="line">            ListNode temp = head.next;</span><br><span class="line">            head.next = prev;</span><br><span class="line">            prev = head;</span><br><span class="line">            head = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        startNode.next = head;</span><br><span class="line">        node.next = prev;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> startNode;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The energy function is shown below:<br>$$E(\pmb{v,h}) =  - \sum_{j\in \text{hidden}}a_jh<em>j - \sum</em>{i\in \text{visible}} b_iv<em>i -\sum</em>{i,j}h_jv<em>iw</em>{ij}$$</p>
+<p>where $h_j$ $v_i$ represent the value of the hidden and visible units. $a_j$ is the offset of the visible layer and $b<em>i$ is the offsets of the hidden layer. $w</em>{ij}$ is the weights connecting the hidden and visible units. The energy model defines the probability distribution via the energy function:<br>$$p(\pmb{v,h}) = \frac{1}{Z}e^{-E(\pmb{v,h})}$$<br>where $Z$ called partition function is a sum of all possible combinations of visible and hidden vectors:<br>$$Z=\sum<em>{\pmb{v,h}} e^{-E(\pmb{v,h})}$$<br>The probability of a given vector can be calculated by summing all hidden units:<br>$$p(\pmb{v}) = \frac{1}{Z}\sum</em>{\pmb{h}}e^{-E(\pmb{v,h})}$$<br>According to the free energy function of Energy-Based Models $G(\pmb{v}) = -\log\sum<em>{\pmb{h}}e^{-E(\pmb{v,h})}$, we can get the free energy of RBM model:<br>$$G(\pmb{v}) = -\pmb{bv} -\sum</em>{i}\log{\sum_{h_i} e^{h_i(a_i + W_i\pmb{v})}}$$<br>The probability assigned to a training input can be increased via adjusting $W$, $\pmb{a}$ and $\pmb{b}$ to make the energy of the training examples lower and other examples in the input space higher. Both of the visible units $\pmb{v}$ and hidden units are conditionally independent of one anther, by reason of its specific structure. It can be mathematically expressed as:<br>$$P(h_i = 1|\pmb{v}) = sigmoid(W_i\pmb{v} + a_i)$$<br>$$P(v_j = 1|\pmb{h}) = sigmoid(W_j\pmb{h} + b<em>j)$$<br>Then the free energy of a RBM can be simplified to the following equation:<br>$$G(\pmb{v}) = -\pmb{bv} -\sum</em>{i}\log{1 + e^{a_i + W_i\pmb{v}}}$$</p>
+<p>##Deep Belief Networks<br>Deep Belief Networks (DBNs)~\citep{hinton2006reducing} is a greedy layer-wise form network consists of stacked RBMs, and its hierachical architecture is shown in Figure~\ref{DBN}. It is also a graphical model which learns a multi-layer representation of the training examples. </p>
+<p>As a stacking autoencoder, an DBN is stacked with RBMs by greedy layer wise unsupervised feature learning\citep{hinton2006reducing,bengio2007greedy}, and each layer is a building block trained by RBM. After the hidden layer $\pmb{h^{i}}$ is trained, in next train step it will be as the visible layer, and the successive layer $h^{i + 1}$ will be the hidden layer. The joint distribution between input $\pmb{x}$ and all hidden layers $\pmb{h^{i}} (i\in [1,n])$ can be expressed in Equation~\ref{joint} below. $n$ is the number of RBM layrs. $x$ is the first layer so it can also be viewed as $\pmb{h^{0}}$. $P(\pmb{h^{n-1},h^{n}})$ is the joint probability between visible layer $\pmb{h^{n-1}}$ and hidden layer $\pmb{h^{n}}$ which is on the top of the DBN. $P(\pmb{h^{i-1}|h^i})$ is the distribution for the visible layer $\pmb{h^{i-1}}$ conditioned on layer $\pmb{h^i}$ at level $i$.<br>$$P(\pmb{x, h^1,..,h^n}) = P(\pmb{h^{n-1}, h^n})\left(\prod_{i=1}^{n-1}P(\pmb{h^{i-1}|h^{i}})\right)$$<br>The training process of DBN is shown in Algorithm:<br>For the fine-tuning part in this project, a logistic regression classifier was extended to the last layer. A training label will be assigned to each input and the parameters of the DBN will be tuned by gradient descent algorithm based on the negative log likelihood cost function.</p>
+<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
+<p><a name="Mohamed11">[Mohamed11]</a> Abdel-rahman Mohamed, Tara N Sainath, George Dahl, Bhuvana Ramabhad- ran, Geo↵rey E Hinton, Michael Picheny, et al. Deep belief networks using discriminative features for phone recognition. In Acoustics, Speech and Signal Processing (ICASSP), 2011 IEEE International Conference on, pages 5060– 5063. IEEE, 2011.</p>
+<p><a name="Salakhutdinov07">[Salakhutdinov07]</a> Ruslan Salakhutdinov, Andriy Mnih, and Geo↵rey Hinton. Restricted boltz- mann machines for collaborative filtering. In Proceedings of the 24th interna- tional conference on Machine learning, pages 791–798. ACM, 2007.</p>
+<p><a name="Hinton10">[Hinton10]</a> Georey Hinton. A practical guide to training restricted boltzmann machines. Momentum, 9(1):926, 2010.</p>
+<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
+<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
+<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
+<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
+<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/" data-id="civmh5exz0020vou52zrbbgvn" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/11/Deep-Belief-Network/" data-id="civmh5f6f0056vou5bbpzazm0" class="article-share-link">Share</a>
       
-        <a href="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://psyyz10.github.io/2016/11/Deep-Belief-Network/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-List/">Linked List</a><span class="article-tag-list-count">14</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="article-tag-list-count">3</span></li></ul>
 
     </footer>
   </div>
@@ -127,19 +129,10 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
     
 <nav id="article-nav">
   
-    <a href="/2015/11/Copy-List-with-Random-Pointer/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Copy List with Random Pointer
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/Swap-Nodes-in-Pairs/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/Fractals/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Swap Nodes in Pairs</div>
+      <div class="article-nav-title">Fractals</div>
     </a>
   
 </nav>
@@ -252,7 +245,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/';
+  var disqus_url = 'http://psyyz10.github.io/2016/11/Deep-Belief-Network/';
   
   (function(){
     var dsq = document.createElement('script');
