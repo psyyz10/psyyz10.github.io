@@ -103,26 +103,40 @@
 
 <p>One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images <a href="#Hinton06">[Hinton06]</a>, speech representation <a href="#Mohamed11">[Mohamed11]</a> and moving ratings <a href="#Salakhutdinov07">[Salakhutdinov07]</a> . It was another success in building a generative model for bags of words that represents documents [31], which indicate its potential capacity to build a model to predict the stock with financial documents. The most widely usage of RBM is composed to build a Deep Belief Network (DBN). The learning process of RBM is usually contrastive divergence. Experiences are needed to decide the setting of numerical parameters, such the batch size, the learning rate, the momentum, the number of epochs to iterate, the layers of hidden units, and how many units in each hidden layer, the update methods being deterministically or stochastically and the initialization of weights and bias. It also needs to be considered the way to monitor the learning process and stop criteria. This section will introduce the key components and training method of our DBN model, based on the guide in <a href="#Hinton10">[Hinton10]</a>.</p>
 <h2 id="Restricted_Boltzmann_Machines">Restricted Boltzmann Machines</h2><p>Energy based model assigns an energy value to each possible configuration of units by an energy function. The function will be trained to make it has some properties such as making the energy of desirable configuration has energy as low as possible. Boltzmann Machines (BMs) are a type of energy model in a form of Markov Ran- dom Field whose energy function is linear for its parameters. In order to make it sufficiently powerful to express complex functions, some invisible variables as hid- den units are added. The Restricted Boltzmann Machines is a restricted version of BMs, which constrain the BMs without the connections between different vision units or connections between di↵erent hidden units. A example graph is shown in figure below. </p>
-<center><br>    <img id="F1_1" style="height:300px" src="http://psyyz10.github.io/img/7.png"><br>    <p>Figure 1.1: A Restricted Boltzmann Machine</p><br></center>
+<center><br>    <img id="F1_1" style="height:300px" src="http://psyyz10.github.io/img/rbm.png"><br>    <p>Figure 1.1: A Restricted Boltzmann Machine</p><br></center>
 
 <p>The energy function is shown below:<br>$$E(\pmb{v,h}) =  - \sum_{j\in \text{hidden}}a_jh<em>j - \sum</em>{i\in \text{visible}} b_iv<em>i -\sum</em>{i,j}h_jv<em>iw</em>{ij}$$</p>
-<p>where $h_j$ $v_i$ represent the value of the hidden and visible units. $a_j$ is the offset of the visible layer and $b<em>i$ is the offsets of the hidden layer. $w</em>{ij}$ is the weights connecting the hidden and visible units. The energy model defines the probability distribution via the energy function:<br>$$p(\pmb{v,h}) = \frac{1}{Z}e^{-E(\pmb{v,h})}$$<br>where $Z$ called partition function is a sum of all possible combinations of visible and hidden vectors:<br>$$Z=\sum<em>{\pmb{v,h}} e^{-E(\pmb{v,h})}$$<br>The probability of a given vector can be calculated by summing all hidden units:<br>$$p(\pmb{v}) = \frac{1}{Z}\sum</em>{\pmb{h}}e^{-E(\pmb{v,h})}$$<br>According to the free energy function of Energy-Based Models $G(\pmb{v}) = -\log\sum<em>{\pmb{h}}e^{-E(\pmb{v,h})}$, we can get the free energy of RBM model:<br>$$G(\pmb{v}) = -\pmb{bv} -\sum</em>{i}\log{\sum_{h_i} e^{h_i(a_i + W_i\pmb{v})}}$$<br>The probability assigned to a training input can be increased via adjusting $W$, $\pmb{a}$ and $\pmb{b}$ to make the energy of the training examples lower and other examples in the input space higher. Both of the visible units $\pmb{v}$ and hidden units are conditionally independent of one anther, by reason of its specific structure. It can be mathematically expressed as:<br>$$P(h_i = 1|\pmb{v}) = sigmoid(W_i\pmb{v} + a_i)$$<br>$$P(v_j = 1|\pmb{h}) = sigmoid(W_j\pmb{h} + b<em>j)$$<br>Then the free energy of a RBM can be simplified to the following equation:<br>$$G(\pmb{v}) = -\pmb{bv} -\sum</em>{i}\log{1 + e^{a_i + W_i\pmb{v}}}$$</p>
-<p>##Deep Belief Networks<br>Deep Belief Networks (DBNs)~\citep{hinton2006reducing} is a greedy layer-wise form network consists of stacked RBMs, and its hierachical architecture is shown in Figure~\ref{DBN}. It is also a graphical model which learns a multi-layer representation of the training examples. </p>
-<p>As a stacking autoencoder, an DBN is stacked with RBMs by greedy layer wise unsupervised feature learning\citep{hinton2006reducing,bengio2007greedy}, and each layer is a building block trained by RBM. After the hidden layer $\pmb{h^{i}}$ is trained, in next train step it will be as the visible layer, and the successive layer $h^{i + 1}$ will be the hidden layer. The joint distribution between input $\pmb{x}$ and all hidden layers $\pmb{h^{i}} (i\in [1,n])$ can be expressed in Equation~\ref{joint} below. $n$ is the number of RBM layrs. $x$ is the first layer so it can also be viewed as $\pmb{h^{0}}$. $P(\pmb{h^{n-1},h^{n}})$ is the joint probability between visible layer $\pmb{h^{n-1}}$ and hidden layer $\pmb{h^{n}}$ which is on the top of the DBN. $P(\pmb{h^{i-1}|h^i})$ is the distribution for the visible layer $\pmb{h^{i-1}}$ conditioned on layer $\pmb{h^i}$ at level $i$.<br>$$P(\pmb{x, h^1,..,h^n}) = P(\pmb{h^{n-1}, h^n})\left(\prod_{i=1}^{n-1}P(\pmb{h^{i-1}|h^{i}})\right)$$<br>The training process of DBN is shown in Algorithm:<br>For the fine-tuning part in this project, a logistic regression classifier was extended to the last layer. A training label will be assigned to each input and the parameters of the DBN will be tuned by gradient descent algorithm based on the negative log likelihood cost function.</p>
-<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
+<p>where $h_j$ $v_i$ represent the value of the hidden and visible units. $a_j$ is the offset of the visible layer and $b<em>i$ is the offsets of the hidden layer. $w</em>{ij}$ is the weights connecting the hidden and visible units. The energy model defines the probability distribution via the energy function: </p>
+<p>$$p(\pmb{v,h}) = \frac{1}{Z}e^{-E(\pmb{v,h})}$$</p>
+<p>where $Z$ called partition function is a sum of all possible combinations of visible and hidden vectors:</p>
+<p>$$Z=\sum_{\pmb{v,h}} e^{-E(\pmb{v,h})}$$</p>
+<p>The probability of a given vector can be calculated by summing all hidden units:</p>
+<p>$$p(\pmb{v}) = \frac{1}{Z}\sum_{\pmb{h}}e^{-E(\pmb{v,h})}$$</p>
+<p>According to the free energy function of Energy-Based Models $G(\pmb{v}) = -\log\sum_{\pmb{h}}e^{-E(\pmb{v,h})}$, we can get the free energy of RBM model:</p>
+<p>$$G(\pmb{v}) = -\pmb{bv} -\sum<em>{i}\log{\sum</em>{h_i} e^{h_i(a_i + W_i\pmb{v})}}$$</p>
+<p>The probability assigned to a training input can be increased via adjusting $W$, $\pmb{a}$ and $\pmb{b}$ to make the energy of the training examples lower and other examples in the input space higher. Both of the visible units $\pmb{v}$ and hidden units are conditionally independent of one anther, by reason of its specific structure. It can be mathematically expressed as:</p>
+<p>$$P(h_i = 1|\pmb{v}) = sigmoid(W_i\pmb{v} + a_i)$$<br>$$P(v_j = 1|\pmb{h}) = sigmoid(W_j\pmb{h} + b_j)$$</p>
+<p>Then the free energy of a RBM can be simplified to the following equation:<br>$$G(\pmb{v}) = -\pmb{bv} -\sum_{i}\log{1 + e^{a_i + W_i\pmb{v}}}$$</p>
+<center><br>    <img id="F1_2" style="height:300px" src="http://psyyz10.github.io/img/rbmTr.png"><br>    <p>Figure 1.2: A Restricted Boltzmann Machine</p><br></center>
+
+<p>##Deep Belief Networks<br>Deep Belief Networks (DBNs)<a href="#Hinton06">[Hinton06]</a> is a greedy layer-wise form network consists of stacked RBMs, and its hierachical architecture is shown in Figure~\ref{DBN}. It is also a graphical model which learns a multi-layer representation of the training examples. </p>
+<center><br>    <img id="F1_3" style="height:300px" src="http://psyyz10.github.io/img/dbn.png"><br>    <p>Figure 1.3: A Deep Belief Network</p><br></center>
+
+<p>As a stacking autoencoder, an DBN is stacked with RBMs by greedy layer wise unsupervised feature learning<a href="#Bengio07">[Bengio07]</a> , and each layer is a building block trained by RBM. After the hidden layer $\pmb{h^{i}}$ is trained, in next train step it will be as the visible layer, and the successive layer $h^{i + 1}$ will be the hidden layer. The joint distribution between input $\pmb{x}$ and all hidden layers $\pmb{h^{i}} (i\in [1,n])$ can be expressed in Equation~\ref{joint} below. $n$ is the number of RBM layrs. $x$ is the first layer so it can also be viewed as $\pmb{h^{0}}$. $P(\pmb{h^{n-1},h^{n}})$ is the joint probability between visible layer $\pmb{h^{n-1}}$ and hidden layer $\pmb{h^{n}}$ which is on the top of the DBN. $P(\pmb{h^{i-1}|h^i})$ is the distribution for the visible layer $\pmb{h^{i-1}}$ conditioned on layer $\pmb{h^i}$ at level $i$.</p>
+<p>$$P(\pmb{x, h^1,..,h^n}) = P(\pmb{h^{n-1}, h^n})\left(\prod_{i=1}^{n-1}P(\pmb{h^{i-1}|h^{i}})\right)$$<br>The training process of DBN is shown in Algorithm:</p>
+<center><br>    <img id="F1_4" style="height:300px" src="http://psyyz10.github.io/img/dbnAl.png"><br></center>
+
+<p>For the fine-tuning part in this project, a logistic regression classifier was extended to the last layer. A training label will be assigned to each input and the parameters of the DBN will be tuned by gradient descent algorithm based on the negative log likelihood cost function.</p>
+<p><a name="Hinton06">[Hinton06]</a> Geoffrey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
 <p><a name="Mohamed11">[Mohamed11]</a> Abdel-rahman Mohamed, Tara N Sainath, George Dahl, Bhuvana Ramabhad- ran, Geo↵rey E Hinton, Michael Picheny, et al. Deep belief networks using discriminative features for phone recognition. In Acoustics, Speech and Signal Processing (ICASSP), 2011 IEEE International Conference on, pages 5060– 5063. IEEE, 2011.</p>
 <p><a name="Salakhutdinov07">[Salakhutdinov07]</a> Ruslan Salakhutdinov, Andriy Mnih, and Geo↵rey Hinton. Restricted boltz- mann machines for collaborative filtering. In Proceedings of the 24th interna- tional conference on Machine learning, pages 791–798. ACM, 2007.</p>
-<p><a name="Hinton10">[Hinton10]</a> Georey Hinton. A practical guide to training restricted boltzmann machines. Momentum, 9(1):926, 2010.</p>
-<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
-<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
-<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
-<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
-<p><a name="Hinton06">[Hinton06]</a> Georey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
+<p><a name="Hinton10">[Hinton10]</a> Geoffrey Hinton. A practical guide to training restricted boltzmann machines. Momentum, 9(1):926, 2010.</p>
+<p><a name="Bengio07">[Bengio07]</a> Yoshua Bengio, Pascal Lamblin, Dan Popovici, Hugo Larochelle, et al. Greedy layer-wise training of deep networks. Advances in neural information processing systems, 19:153, 2007.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/11/Deep-Belief-Network/" data-id="civmhiwtm0056x0u5pe9nemi2" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/11/Deep-Belief-Network/" data-id="civmiglaj00563nu5mbg4gpak" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/11/Deep-Belief-Network/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -177,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/11/Fractals/" data-id="civmhiwrx004rx0u5j1nktkys" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/11/Fractals/" data-id="civmigla7004r3nu57lxh0d2n" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/11/Fractals/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -228,7 +242,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/05/Rotate-String/" data-id="civmhiwij001rx0u5skilkyyl" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/05/Rotate-String/" data-id="civmigl5q001r3nu5k3n7eq7x" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/05/Rotate-String/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -274,7 +288,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/05/Ugly-Number-II/" data-id="civmhiwee000fx0u5be8d2u4b" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/05/Ugly-Number-II/" data-id="civmigl47000f3nu59p5mjala" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/05/Ugly-Number-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -321,7 +335,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/05/Digit-Count/" data-id="civmhiwt8004yx0u5pjcb0dfu" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/05/Digit-Count/" data-id="civmiglac004y3nu5y89nk545" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/05/Digit-Count/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -369,7 +383,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/04/Good-Courses/" data-id="civmhiwqk004fx0u5pru1ykzp" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/04/Good-Courses/" data-id="civmigl9a004f3nu5h3f6pb7w" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/04/Good-Courses/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -481,7 +495,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/" data-id="civmhiwpw0047x0u5sah90xil" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/" data-id="civmigl8w00473nu5a87pnlz5" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/04/Java-8-Lambda-Expression/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -534,7 +548,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Java-8-new-properties/" data-id="civmhiwph003yx0u50r9cazns" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Java-8-new-properties/" data-id="civmigl8p003y3nu5dktmc0a4" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Java-8-new-properties/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -574,7 +588,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/" data-id="civmhiwo2003jx0u55i6f5jci" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/" data-id="civmigl82003j3nu5ak2llv5z" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Longest-Palindromic-Substring/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -619,7 +633,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/" data-id="civmhiwns003ex0u5vbgfanqo" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/" data-id="civmigl7z003e3nu517mewi3c" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/03/Longest-Substring-Without-Repeating-Characters/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -659,7 +673,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Bash-Note/" data-id="civmhiwuw005vx0u5w2s66rb3" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Bash-Note/" data-id="civmiglb2005v3nu5tajjwn2x" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Bash-Note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -705,7 +719,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Git-Note/" data-id="civmhiwr2004jx0u5ctkb8zgn" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Git-Note/" data-id="civmigl9i004j3nu53t4go1dk" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Git-Note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -839,7 +853,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="civmhiwnb0036x0u5v42dk6ag" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Markdown-Tutorial/" data-id="civmigl7s00363nu56r0rzqjg" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Markdown-Tutorial/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -908,7 +922,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Mac-Configurationd/" data-id="civmhiwnk003bx0u50e8mbwcf" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Mac-Configurationd/" data-id="civmigl7w003b3nu5slpjdsla" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Mac-Configurationd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -957,7 +971,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/hello-world/" data-id="civmhiwcl0003x0u52pkslxwr" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/hello-world/" data-id="civmigl3i00033nu51tnxgi6w" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -997,7 +1011,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/01/Functional-Programming/" data-id="civmhiwrq004qx0u5nbf404f0" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/01/Functional-Programming/" data-id="civmigla4004q3nu5poordkkp" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/01/Functional-Programming/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1050,7 +1064,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/12/CPP-Review-note/" data-id="civmhiwun005rx0u5i57agz7b" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/12/CPP-Review-note/" data-id="civmiglay005r3nu5hw8imyoa" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/12/CPP-Review-note/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1259,7 +1273,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/" data-id="civmhiwu7005jx0u5b36vl2s6" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/" data-id="civmiglar005j3nu5x3kvb6ec" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/12/Chinese-interview-questions-about-technical-basic-knowledge/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1303,7 +1317,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Valid-Palindrome/" data-id="civmhiwe0000bx0u52eavnlwb" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Valid-Palindrome/" data-id="civmigl41000b3nu5a9ucarkw" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Valid-Palindrome/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1351,7 +1365,7 @@ offset=<span class="number">3</span> =&gt; <span class="string">"efgabcd"</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/LRU-Cache/" data-id="civmhiwp4003tx0u5ute9z92q" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/LRU-Cache/" data-id="civmigl8i003t3nu5csrj5asb" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/LRU-Cache/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1402,7 +1416,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reorder-List/" data-id="civmhiwk10026x0u5168ff5ra" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reorder-List/" data-id="civmigl6f00263nu5ish1wtku" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reorder-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1452,7 +1466,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/" data-id="civmhiwou003ox0u5tewclb6b" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/" data-id="civmigl8d003o3nu5zr315gxg" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Linked-List-Cycle-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1500,7 +1514,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle/" data-id="civmhiwoe003kx0u57lhlmcug" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Linked-List-Cycle/" data-id="civmigl87003k3nu52kzehjhs" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Linked-List-Cycle/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1547,7 +1561,7 @@ Given {<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/" data-id="civmhiwtt005ax0u5r8p0gla7" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/" data-id="civmiglal005a3nu5ju1nvvlr" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Copy-List-with-Random-Pointer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1601,7 +1615,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/" data-id="civmhiwja0020x0u51ll119id" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/" data-id="civmigl6300203nu57mjff756" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reverse-Nodes-in-k-Group/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1651,7 +1665,7 @@ For k = <span class="number">3</span>, you should <span class="keyword">return</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/" data-id="civmhiwfk000px0u5i2hnhkur" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/" data-id="civmigl4l000p3nu5quik8drm" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Swap-Nodes-in-Pairs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1701,7 +1715,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-List/" data-id="civmhiwit001ux0u5933igkul" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-List/" data-id="civmigl5v001u3nu5d2jb9fx1" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Rotate-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1750,7 +1764,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/" data-id="civmhiwks002fx0u5g0vem3m5" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/" data-id="civmigl6q002f3nu5lkaku6ys" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1811,7 +1825,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/" data-id="civmhiwfu000tx0u53q86cqox" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/" data-id="civmigl4o000t3nu5t5mshu22" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/String-to-Integer-atoi/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1860,7 +1874,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="civmhiwki002cx0u5whssgymf" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/" data-id="civmigl6m002c3nu5ng3bud8s" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1909,7 +1923,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Partition-List/" data-id="civmhiwm1002wx0u584md2xvb" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Partition-List/" data-id="civmigl78002w3nu5tg9td29i" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Partition-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1961,7 +1975,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/" data-id="civmhiwjm0023x0u5iypewp3o" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/" data-id="civmigl6900233nu5b0olmuix" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Reverse-Linked-List-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2011,7 +2025,7 @@ Given <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/" data-id="civmhiwve005zx0u59zwp0kx2" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/" data-id="civmiglb7005z3nu5zg48epjc" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2062,7 +2076,7 @@ Given <span class="number">3</span>-&gt;<span class="number">1</span>-&gt;<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers/" data-id="civmhiwv5005wx0u5zvy9ni44" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Add-Two-Numbers/" data-id="civmiglb3005w3nu5w12iplr1" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Add-Two-Numbers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2118,7 +2132,7 @@ Given [<span class="number">1</span>,<span class="number">2</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-III/" data-id="civmhiwgi0011x0u5zm4yx3jk" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-III/" data-id="civmigl4x00113nu5fahnkfkf" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number-III/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2169,7 +2183,7 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="civmhiwgy0015x0u524yfpq28" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number-II/" data-id="civmigl5200153nu5lwb82sw9" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2219,7 +2233,7 @@ Given [<span class="number">1</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="civmhiwg2000wx0u534cly9j7" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Single-Number/" data-id="civmigl4s000w3nu5d0ckms30" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Single-Number/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2279,7 +2293,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="civmhiwue005ox0u535rlk0hs" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Candy/" data-id="civmiglau005o3nu54d9iz4wi" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Candy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2331,7 +2345,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="civmhiwrf004nx0u5kawmjysz" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Gas-Station/" data-id="civmigl9n004n3nu5ev50ubn9" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Gas-Station/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2385,7 +2399,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/" data-id="civmhiwh80019x0u5vfnbiluf" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/" data-id="civmigl5600193nu58wr38e4d" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Set-Matrix-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2480,7 +2494,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Gray-Code/" data-id="civmhiwqb004cx0u5j0zmo52z" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Gray-Code/" data-id="civmigl96004c3nu5pjewyjtr" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Gray-Code/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2572,7 +2586,7 @@ Given ratings = [<span class="number">1</span>, <span class="number">2</span>, <
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="civmhiwu0005ex0u5yvsotcso" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Climbing-Stairs/" data-id="civmiglan005e3nu5mzu1p4rn" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Climbing-Stairs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2625,7 +2639,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Plus-One/" data-id="civmhiwli002ox0u5pqjk1e0d" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Plus-One/" data-id="civmigl70002o3nu5ogfdlev5" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Plus-One/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2683,7 +2697,7 @@ Given [<span class="number">9</span>,<span class="number">9</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="civmhiwj1001xx0u5x5dv5xoj" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Rotate-Image/" data-id="civmigl5z001x3nu5ezbn0d12" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Rotate-Image/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2749,7 +2763,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="civmhiwf1000mx0u5pcobbx5d" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/" data-id="civmigl4e000m3nu5tqbi5tw7" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Trapping-Rain-Water/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2801,7 +2815,7 @@ Given [<span class="number">0</span>,<span class="number">1</span>,<span class="
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="civmhiwdi0006x0u531o7nu3a" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Valid-Sudoku/" data-id="civmigl3v00063nu5w0o43i4i" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Valid-Sudoku/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2866,7 +2880,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="civmhiwls002rx0u5pcqm1w8u" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Permutation-Sequence/" data-id="civmigl74002r3nu5k1pbky0n" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Permutation-Sequence/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2921,7 +2935,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="civmhiwme002zx0u5z9wov3g6" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Next-Permutation/" data-id="civmigl7d002z3nu5q3rq4fpw" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Next-Permutation/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2969,7 +2983,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="civmhiwk80029x0u5m9dlxcaq" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Element/" data-id="civmigl6j00293nu593zhvfyw" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Element/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3023,7 +3037,7 @@ a_n = <span class="number">1</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="civmhiwvm0062x0u5xxshhpa7" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/4Sum/" data-id="civmiglbb00623nu5zibka92g" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/4Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3075,7 +3089,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="civmhiwvz006ax0u5vsqkqjd6" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum-Closest/" data-id="civmiglbh006a3nu5bpyhezds" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum-Closest/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3128,7 +3142,7 @@ The sum that is closest to the target is <span class="number">2.</span> (-<span 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="civmhiwvt0066x0u5l4zty690" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/3Sum/" data-id="civmiglbe00663nu5b68ewf8t" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/3Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3182,7 +3196,7 @@ Output: index1=<span class="number">1</span>, index2=<span class="number">2</spa
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="civmhiwep000jx0u5jz0gp83j" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Two-Sum/" data-id="civmigl4a000j3nu5vdyqvuds" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Two-Sum/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3247,7 +3261,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/" data-id="civmhiwn20032x0u5sbksfcv2" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/" data-id="civmigl7p00323nu56itruo0f" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Median-of-Two-Sorted-Arrays/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3302,7 +3316,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/" data-id="civmhiwhv001hx0u5es5590w7" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/" data-id="civmigl5g001h3nu5uhlnwckk" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3364,7 +3378,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="civmhiwhi001cx0u5db4xmwux" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/" data-id="civmigl5a001c3nu540gxrdhb" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Search-in-Rotated-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3415,7 +3429,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="civmhiwla002lx0u5kf019coh" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/" data-id="civmigl6y002l3nu5kpy3j9ki" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array-II/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3470,7 +3484,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="civmhiwl0002ix0u501h3mlm9" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/" data-id="civmigl6u002i3nu5i36mjz16" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Remove-Duplicates-from-Sorted-Array/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3520,7 +3534,7 @@ Given A=[<span class="number">1</span>,<span class="number">2</span>,<span class
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="civmhiwtf0052x0u5wrhf9tpb" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/" data-id="civmiglag00523nu5rtbk925c" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/Deep-Learning-Overview/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3603,7 +3617,7 @@ img.math {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="civmhiwi4001kx0u5prxwnqfc" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2015/11/SDA/" data-id="civmigl5k001k3nu5563gudoq" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2015/11/SDA/#disqus_thread" class="article-comment-link">Comments</a>
       
