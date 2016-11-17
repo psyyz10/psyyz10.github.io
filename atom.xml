@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A personal blog of Yao Zhang]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://psyyz10.github.io/"/>
-  <updated>2016-11-17T15:31:21.000Z</updated>
+  <updated>2016-11-17T15:37:35.000Z</updated>
   <id>http://psyyz10.github.io/</id>
   
   <author>
@@ -19,16 +19,16 @@
     <link href="http://psyyz10.github.io/2016/11/Deep-Belief-Network/"/>
     <id>http://psyyz10.github.io/2016/11/Deep-Belief-Network/</id>
     <published>2016-11-17T14:21:29.000Z</published>
-    <updated>2016-11-17T15:31:21.000Z</updated>
+    <updated>2016-11-17T15:37:35.000Z</updated>
     <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
-<script type="text/javascript" async src="https://psyyz10.github.io/js/MathJax.js?config=TeX-AMS_CHTML">
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
 </script>
 
 <p>One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many types of data including images <a href="#Hinton06">[Hinton06]</a>, speech representation <a href="#Mohamed11">[Mohamed11]</a> and moving ratings <a href="#Salakhutdinov07">[Salakhutdinov07]</a> . It was another success in building a generative model for bags of words that represents documents [31], which indicate its potential capacity to build a model to predict the stock with financial documents. The most widely usage of RBM is composed to build a Deep Belief Network (DBN). The learning process of RBM is usually contrastive divergence. Experiences are needed to decide the setting of numerical parameters, such the batch size, the learning rate, the momentum, the number of epochs to iterate, the layers of hidden units, and how many units in each hidden layer, the update methods being deterministically or stochastically and the initialization of weights and bias. It also needs to be considered the way to monitor the learning process and stop criteria. This section will introduce the key components and training method of our DBN model, based on the guide in <a href="#Hinton10">[Hinton10]</a>.</p>
 <h2 id="Restricted_Boltzmann_Machines">Restricted Boltzmann Machines</h2><p>Energy based model assigns an energy value to each possible configuration of units by an energy function. The function will be trained to make it has some properties such as making the energy of desirable configuration has energy as low as possible. Boltzmann Machines (BMs) are a type of energy model in a form of Markov Ran- dom Field whose energy function is linear for its parameters. In order to make it sufficiently powerful to express complex functions, some invisible variables as hid- den units are added. The Restricted Boltzmann Machines is a restricted version of BMs, which constrain the BMs without the connections between different vision units or connections between di↵erent hidden units. A example graph is shown in figure below. </p>
-<center><br>    <img id="F1_1" style="height:300px" src="http://psyyz10.github.io/img/rbm.png"><br>    <p>Figure 1.1: A Restricted Boltzmann Machine</p><br></center>
+<center><br>    <img id="F1_1" style="height:150px" src="http://psyyz10.github.io/img/rbm.png"><br>    <p>Figure 1.1: A Restricted Boltzmann Machine</p><br></center>
 
 <p>The energy function is shown below:<br>$$E(\pmb{v,h}) =  - \sum_{j\in \text{hidden}}a_jh<em>j - \sum</em>{i\in \text{visible}} b_iv<em>i -\sum</em>{i,j}h_jv<em>iw</em>{ij}$$</p>
 <p>where $h_j$ $v_i$ represent the value of the hidden and visible units. $a_j$ is the offset of the visible layer and $b<em>i$ is the offsets of the hidden layer. $w</em>{ij}$ is the weights connecting the hidden and visible units. The energy model defines the probability distribution via the energy function: </p>
@@ -42,14 +42,14 @@
 <p>The probability assigned to a training input can be increased via adjusting $W$, $\pmb{a}$ and $\pmb{b}$ to make the energy of the training examples lower and other examples in the input space higher. Both of the visible units $\pmb{v}$ and hidden units are conditionally independent of one anther, by reason of its specific structure. It can be mathematically expressed as:</p>
 <p>$$P(h_i = 1|\pmb{v}) = sigmoid(W_i\pmb{v} + a_i)$$<br>$$P(v_j = 1|\pmb{h}) = sigmoid(W_j\pmb{h} + b_j)$$</p>
 <p>Then the free energy of a RBM can be simplified to the following equation:<br>$$G(\pmb{v}) = -\pmb{bv} -\sum_{i}\log{1 + e^{a_i + W_i\pmb{v}}}$$</p>
-<center><br>    <img id="F1_2" style="height:300px" src="http://psyyz10.github.io/img/rbmTr.png"><br>    <p>Figure 1.2: A Restricted Boltzmann Machine</p><br></center>
+<center><br>    <img id="F1_2" style="width:90%" src="http://psyyz10.github.io/img/rbmTr.png"><br>    <p>Figure 1.2: A Restricted Boltzmann Machine</p><br></center>
 
 <p>##Deep Belief Networks<br>Deep Belief Networks (DBNs)<a href="#Hinton06">[Hinton06]</a> is a greedy layer-wise form network consists of stacked RBMs, and its hierachical architecture is shown in Figure~\ref{DBN}. It is also a graphical model which learns a multi-layer representation of the training examples. </p>
-<center><br>    <img id="F1_3" style="height:300px" src="http://psyyz10.github.io/img/dbn.png"><br>    <p>Figure 1.3: A Deep Belief Network</p><br></center>
+<center><br>    <img id="F1_3" style="height:450px" src="http://psyyz10.github.io/img/dbn.png"><br>    <p>Figure 1.3: A Deep Belief Network</p><br></center>
 
 <p>As a stacking autoencoder, an DBN is stacked with RBMs by greedy layer wise unsupervised feature learning<a href="#Bengio07">[Bengio07]</a> , and each layer is a building block trained by RBM. After the hidden layer $\pmb{h^{i}}$ is trained, in next train step it will be as the visible layer, and the successive layer $h^{i + 1}$ will be the hidden layer. The joint distribution between input $\pmb{x}$ and all hidden layers $\pmb{h^{i}} (i\in [1,n])$ can be expressed in Equation~\ref{joint} below. $n$ is the number of RBM layrs. $x$ is the first layer so it can also be viewed as $\pmb{h^{0}}$. $P(\pmb{h^{n-1},h^{n}})$ is the joint probability between visible layer $\pmb{h^{n-1}}$ and hidden layer $\pmb{h^{n}}$ which is on the top of the DBN. $P(\pmb{h^{i-1}|h^i})$ is the distribution for the visible layer $\pmb{h^{i-1}}$ conditioned on layer $\pmb{h^i}$ at level $i$.</p>
 <p>$$P(\pmb{x, h^1,..,h^n}) = P(\pmb{h^{n-1}, h^n})\left(\prod_{i=1}^{n-1}P(\pmb{h^{i-1}|h^{i}})\right)$$<br>The training process of DBN is shown in Algorithm:</p>
-<center><br>    <img id="F1_4" style="height:300px" src="http://psyyz10.github.io/img/dbnAl.png"><br></center>
+<center><br>    <img id="F1_4" style="width:90%" src="http://psyyz10.github.io/img/dbnAl.png"><br></center>
 
 <p>For the fine-tuning part in this project, a logistic regression classifier was extended to the last layer. A training label will be assigned to each input and the parameters of the DBN will be tuned by gradient descent algorithm based on the negative log likelihood cost function.</p>
 <p><a name="Hinton06">[Hinton06]</a> Geoffrey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
