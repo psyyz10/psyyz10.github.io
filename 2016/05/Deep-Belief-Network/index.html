@@ -13,7 +13,7 @@
 One of the most popular unsupervised learning models is Restricted Boltzmann Machines (RBM), which has been used for many t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep Belief Network">
-<meta property="og:url" content="http://psyyz10.github.io/2016/11/Deep-Belief-Network/index.html">
+<meta property="og:url" content="http://psyyz10.github.io/2016/05/Deep-Belief-Network/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
 <meta property="og:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
 
@@ -25,7 +25,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
 <meta property="og:image" content="http://psyyz10.github.io/img/rbmTr.png">
 <meta property="og:image" content="http://psyyz10.github.io/img/dbn.png">
 <meta property="og:image" content="http://psyyz10.github.io/img/dbnAl.png">
-<meta property="og:updated_time" content="2017-06-07T13:39:09.000Z">
+<meta property="og:updated_time" content="2017-06-07T13:56:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Belief Network">
 <meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
@@ -89,8 +89,8 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
       <div class="outer">
         <section id="main"><article id="post-Deep-Belief-Network" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/Deep-Belief-Network/" class="article-date">
-  <time datetime="2016-11-17T14:21:29.000Z" itemprop="datePublished">2016-11-17</time>
+    <a href="/2016/05/Deep-Belief-Network/" class="article-date">
+  <time datetime="2016-05-17T14:21:29.000Z" itemprop="datePublished">2016-05-17</time>
 </a>
     
   <div class="article-category">
@@ -123,7 +123,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
 <h2 id="Restricted_Boltzmann_Machines">Restricted Boltzmann Machines</h2><p>Energy based model assigns an energy value to each possible configuration of units by an energy function. The function will be trained to make it has some properties such as making the energy of desirable configuration has energy as low as possible. Boltzmann Machines (BMs) are a type of energy model in a form of Markov Ran- dom Field whose energy function is linear for its parameters. In order to make it sufficiently powerful to express complex functions, some invisible variables as hid- den units are added. The Restricted Boltzmann Machines is a restricted version of BMs, which constrain the BMs without the connections between different vision units or connections between di↵erent hidden units. A example graph is shown in figure below. </p>
 <center><br>    <img id="F1_1" style="height:150px" src="http://psyyz10.github.io/img/rbm.png"><br>    <p>Figure 1.1: A Restricted Boltzmann Machine</p><br></center>
 
-<p>The energy function is shown below:<br>$$E(\pmb{v,h}) =  - \sum_{j\in \text{hidden}}a_jh<em>j - \sum</em>{i\in \text{visible}} b_iv<em>i -\sum</em>{i,j}h_jv<em>iw</em>{ij}$$</p>
+<p>The energy function is shown below:<br>$$E(v,h) =  - \sum_{j \in hidden}a_jh<em>j - \sum</em>{i \in visible} b_iv<em>i - \sum</em>{i,j}h_jv<em>iw</em>{ij}$$</p>
 <p>where $h_j$ $v_i$ represent the value of the hidden and visible units. $a_j$ is the offset of the visible layer and $b<em>i$ is the offsets of the hidden layer. $w</em>{ij}$ is the weights connecting the hidden and visible units. The energy model defines the probability distribution via the energy function: </p>
 <p>$$p(\pmb{v,h}) = \frac{1}{Z}e^{-E(\pmb{v,h})}$$</p>
 <p>where $Z$ called partition function is a sum of all possible combinations of visible and hidden vectors:</p>
@@ -131,7 +131,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
 <p>The probability of a given vector can be calculated by summing all hidden units:</p>
 <p>$$p(\pmb{v}) = \frac{1}{Z}\sum_{\pmb{h}}e^{-E(\pmb{v,h})}$$</p>
 <p>According to the free energy function of Energy-Based Models $G(\pmb{v}) = -\log\sum_{\pmb{h}}e^{-E(\pmb{v,h})}$, we can get the free energy of RBM model:</p>
-<p>$$G(\pmb{v}) = - \pmb{bv} - \sum<em>{i} \log\sum</em>{h_i} e^{h_i(a_i + W_i \pmb{v})}$$</p>
+<p>$$G(v) = - bv - \sum<em>{i} \log\sum</em>{h_i} e^{h_i(a_i + W_i v)}$$</p>
 <p>The probability assigned to a training input can be increased via adjusting $W$, $\pmb{a}$ and $\pmb{b}$ to make the energy of the training examples lower and other examples in the input space higher. Both of the visible units $\pmb{v}$ and hidden units are conditionally independent of one anther, by reason of its specific structure. It can be mathematically expressed as:</p>
 <p>$$P(h_i = 1|\pmb{v}) = sigmoid(W_i\pmb{v} + a_i)$$<br>$$P(v_j = 1|\pmb{h}) = sigmoid(W_j\pmb{h} + b_j)$$</p>
 <p>Then the free energy of a RBM can be simplified to the following equation:<br>$$G(\pmb{v}) = -\pmb{bv} -\sum_{i}\log{1 + e^{a_i + W_i\pmb{v}}}$$</p>
@@ -154,9 +154,9 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/11/Deep-Belief-Network/" data-id="cj3n1j1xl005azeu5jm9fkfpr" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/05/Deep-Belief-Network/" data-id="cj3n24ndm005a0zu5saho4bu8" class="article-share-link">Share</a>
       
-        <a href="http://psyyz10.github.io/2016/11/Deep-Belief-Network/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://psyyz10.github.io/2016/05/Deep-Belief-Network/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="article-tag-list-count">4</span></li></ul>
@@ -167,19 +167,19 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
     
 <nav id="article-nav">
   
-    <a href="/2017/06/Sentiment/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/Fractals/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Sentiment Classification on Large Movie Reviews with BigDL
+          Fractals
         
       </div>
     </a>
   
   
-    <a href="/2016/11/Fractals/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/Rotate-String/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Fractals</div>
+      <div class="article-nav-title">Rotate String</div>
     </a>
   
 </nav>
@@ -228,7 +228,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">42</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">42</span></li></ul>
     </div>
   </div>
 
@@ -244,11 +244,11 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
           </li>
         
           <li>
-            <a href="/2016/11/Deep-Belief-Network/">Deep Belief Network</a>
+            <a href="/2016/11/Fractals/">Fractals</a>
           </li>
         
           <li>
-            <a href="/2016/11/Fractals/">Fractals</a>
+            <a href="/2016/05/Deep-Belief-Network/">Deep Belief Network</a>
           </li>
         
           <li>
@@ -292,7 +292,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
 <script>
   var disqus_shortname = 'httppsyyz10githubio';
   
-  var disqus_url = 'http://psyyz10.github.io/2016/11/Deep-Belief-Network/';
+  var disqus_url = 'http://psyyz10.github.io/2016/05/Deep-Belief-Network/';
   
   (function(){
     var dsq = document.createElement('script');
