@@ -25,7 +25,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
 <meta property="og:image" content="http://psyyz10.github.io/img/rbmTr.png">
 <meta property="og:image" content="http://psyyz10.github.io/img/dbn.png">
 <meta property="og:image" content="http://psyyz10.github.io/img/dbnAl.png">
-<meta property="og:updated_time" content="2016-11-17T15:44:45.000Z">
+<meta property="og:updated_time" content="2017-06-07T13:39:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Belief Network">
 <meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
@@ -142,7 +142,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
 
 <p>As a stacking autoencoder, an DBN is stacked with RBMs by greedy layer wise unsupervised feature learning<a href="#Bengio07">[Bengio07]</a> , and each layer is a building block trained by RBM. After the hidden layer $\pmb{h^{i}}$ is trained, in next train step it will be as the visible layer, and the successive layer $h^{i + 1}$ will be the hidden layer. The joint distribution between input $\pmb{x}$ and all hidden layers $\pmb{h^{i}} (i\in [1,n])$ can be expressed in Equation~\ref{joint} below. $n$ is the number of RBM layrs. $x$ is the first layer so it can also be viewed as $\pmb{h^{0}}$. $P(\pmb{h^{n-1},h^{n}})$ is the joint probability between visible layer $\pmb{h^{n-1}}$ and hidden layer $\pmb{h^{n}}$ which is on the top of the DBN. $P(\pmb{h^{i-1}|h^i})$ is the distribution for the visible layer $\pmb{h^{i-1}}$ conditioned on layer $\pmb{h^i}$ at level $i$.</p>
 <p>$$P(\pmb{x, h^1,..,h^n}) = P(\pmb{h^{n-1}, h^n})\left(\prod_{i=1}^{n-1}P(\pmb{h^{i-1}|h^{i}})\right)$$<br>The training process of DBN is shown in Algorithm:</p>
-<center><br>    <img id="F1_4" style="height:800px" src="http://psyyz10.github.io/img/dbnAl.png"><br></center>
+<center><br>    <img id="F1_4" style="width:500px" src="http://psyyz10.github.io/img/dbnAl.png"><br></center>
 
 <p>For the fine-tuning part in this project, a logistic regression classifier was extended to the last layer. A training label will be assigned to each input and the parameters of the DBN will be tuned by gradient descent algorithm based on the negative log likelihood cost function.</p>
 <p><a name="Hinton06">[Hinton06]</a> Geoffrey E Hinton, Simon Osindero, and Yee-Whye Teh. A fast learning algo- rithm for deep belief nets. Neural computation, 18(7):1527–1554, 2006.</p>
@@ -154,7 +154,7 @@ One of the most popular unsupervised learning models is Restricted Boltzmann Mac
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2016/11/Deep-Belief-Network/" data-id="cj3n1d3r1005ayou5z5mxh3dv" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2016/11/Deep-Belief-Network/" data-id="cj3n1j1xl005azeu5jm9fkfpr" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2016/11/Deep-Belief-Network/#disqus_thread" class="article-comment-link">Comments</a>
       

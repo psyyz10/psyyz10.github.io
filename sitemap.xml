@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://psyyz10.github.io/2016/11/Deep-Belief-Network/</loc>
+    <lastmod>2017-06-07T13:39:09.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://psyyz10.github.io/2017/06/Sentiment/</loc>
     <lastmod>2017-06-07T13:34:24.000Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://psyyz10.github.io/projects/index.html</loc>
     <lastmod>2017-06-02T10:46:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://psyyz10.github.io/2016/11/Deep-Belief-Network/</loc>
-    <lastmod>2016-11-17T15:44:45.000Z</lastmod>
   </url>
   
   <url>
