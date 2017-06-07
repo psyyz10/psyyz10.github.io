@@ -11,9 +11,9 @@
 <meta property="og:url" content="http://psyyz10.github.io/2017/06/Sentiment/index.html">
 <meta property="og:site_name" content="YAO's BLOG">
 <meta property="og:description" content="Sentiment Classification on Large Movie ReviewsSentiment Analysis is understood as a classic natural language processing problem. In this example, a large moview review dataset was chosen from IMDB to">
-<meta property="og:image" content="http://psyyz10.github.io/output_3_1.png">
-<meta property="og:image" content="http://psyyz10.github.io/output_26_1.png">
-<meta property="og:updated_time" content="2017-06-02T10:22:10.000Z">
+<meta property="og:image" content="http://psyyz10.github.io/img/output_3_1.png">
+<meta property="og:image" content="http://psyyz10.github.io/img/output_26_1.png">
+<meta property="og:updated_time" content="2017-06-07T13:29:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sentiment">
 <meta name="twitter:description" content="Sentiment Classification on Large Movie ReviewsSentiment Analysis is understood as a classic natural language processing problem. In this example, a large moview review dataset was chosen from IMDB to">
@@ -105,7 +105,9 @@ finished processing <span class="type">text</span>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Summarize review length</span></span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Review length: "</span>)</span><br><span class="line">X = np.concatenate((x_train, x_test), axis=<span class="number">0</span>)</span><br><span class="line">result = [len(x) <span class="keyword">for</span> x <span class="keyword">in</span> X]</span><br><span class="line">print(<span class="string">"Mean %.2f words (%f)"</span> % (np.mean(result), np.std(result)))</span><br><span class="line"><span class="comment"># plot review length</span></span><br><span class="line"><span class="comment"># Create a figure instance</span></span><br><span class="line">fig = pyplot.figure(<span class="number">1</span>, figsize=(<span class="number">6</span>, <span class="number">6</span>))</span><br><span class="line">pyplot.boxplot(result)</span><br><span class="line">pyplot.show()</span><br></pre></td></tr></table></figure>
 <pre><code>Review <span class="property">length</span>: 
 Mean <span class="number">233.76</span> <span class="property">words</span> (<span class="number">172.911495</span>)
-</code></pre><p><img src="output_3_1.png" alt="png"></p>
+</code></pre><center><br>    <img id="F4_1" style="height:300px" src="http://psyyz10.github.io/img/output_3_1.png"><br></center>
+
+
 <p>Looking the box and whisker plot, the max length of a sample in words is 500, and the mean and median are below 250. According to the plot, we can probably cover the mass of the distribution with a clipped length of 400 to 500. Here we set the max sequence length of each sample as 500.</p>
 <p>The corresponding vocabulary sorted by frequency is also required, for further embedding the words with pre-trained vectors. The downloaded vocabulary is in {word: index}, where each word as a key and the index as a value. It needs to be transformed into {index: word} format.</p>
 <p>Let’s define a function to obtain the vocabulary.</p>
@@ -184,7 +186,9 @@ Wall time: <span class="number">51</span>min <span class="number">52</span>s
 </code></pre><p>Show the confusion matrix</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sn</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> confusion_matrix</span><br><span class="line"></span><br><span class="line">cm = confusion_matrix(y_true, y_pred)</span><br><span class="line">cm.shape</span><br><span class="line"></span><br><span class="line">df_cm = pd.DataFrame(cm)</span><br><span class="line">plt.figure(figsize = (<span class="number">5</span>,<span class="number">4</span>))</span><br><span class="line">sn.heatmap(df_cm, annot=<span class="keyword">True</span>,fmt=<span class="string">'d'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib<span class="class">.axes</span>._subplots<span class="class">.AxesSubplot</span> at <span class="number">0</span>x7fa643fe0c50&gt;
-</code></pre><p><img src="output_26_1.png" alt="png"></p>
+</code></pre><center><br>    <img id="F5_1" style="height:300px" src="http://psyyz10.github.io/img/output_26_1.png"><br></center>
+
+
 <p>Because of the limitation of ariticle length, not all the results of optional models can be shown respectively. Please try other provided optional models to see the results. If you are interested in optimizing the results, try different training parameters which may make inpacts on the result, such as the max sequence length, batch size, training epochs, preprocessing schemes, optimization methods and so on. Among the models, CNN training would be much quicker. Note that the LSTM and it variants (eg. GRU) are difficult to train, even a unsuitable batch size may cause the model not converge. In addition it is prone to overfitting, please try different dropout threshold and/or add regularizers (abouth how to add regularizers in BigDL please see <a href="https://github.com/intel-analytics/BigDL/wiki/Programming-Guide#regularizers" target="_blank" rel="external">BigDL Wiki</a>).</p>
 <h3 id="Summary">Summary</h3><p>In this example, you learned how to use BigDL to develop deep learning models for sentiment analysis including:</p>
 <ul>
@@ -202,7 +206,7 @@ Wall time: <span class="number">51</span>min <span class="number">52</span>s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psyyz10.github.io/2017/06/Sentiment/" data-id="cj3fpalhe001clcu5knefcwod" class="article-share-link">Share</a>
+      <a data-url="http://psyyz10.github.io/2017/06/Sentiment/" data-id="cj3n16lrj001cwou58nxkl5av" class="article-share-link">Share</a>
       
         <a href="http://psyyz10.github.io/2017/06/Sentiment/#disqus_thread" class="article-comment-link">Comments</a>
       
